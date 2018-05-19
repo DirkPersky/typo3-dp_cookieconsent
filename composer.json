@@ -1,0 +1,52 @@
+{
+  "name": "dirkpersky/typo3-dp_cookieconsent",
+  "type": "typo3-cms-extension",
+  "description": "Include Cookie Consent, a lightweight JavaScript plugin for alerting users about the use of cookies on your website.",
+  "keywords": [
+    "TYPO3",
+    "cookieconsent",
+    "DSGVO",
+    "cookie",
+    "consent",
+    "ePrivacy"
+  ],
+  "homepage": "https://github.com/DirkPersky/typo3-dp_cookieconsent",
+  "support": {
+    "issues": "https://github.com/DirkPersky/typo3-dp_cookieconsent/issues"
+  },
+  "authors": [
+    {
+      "name": "Dirk Persky",
+      "role": "Developer",
+      "homepage": "http://dp-dvelop.de"
+    }
+  ],
+  "license": [
+    "GPL-3.0-or-later"
+  ],
+  "require": {
+    "typo3/cms-core": "~8.7.0||~9.2.0||dev-master"
+  },
+  "replace": {
+    "dp_cookieconsent": "self.version",
+    "typo3-ter/dp_cookieconsent": "self.version"
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin"
+  },
+  "scripts": {
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://composer.typo3.org/"
+    }
+  ],
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+plugin.tx_cookieconsent {
+    view {
+        # cat=plugin.cookieconsent/file; type=string; label=templateRootPath
+        templateRootPath =
+        # cat=plugin.cookieconsent/file; type=string; label=partialRootPath
+        partialRootPath =
+        # cat=plugin.cookieconsent/file; type=string; label=layoutRootPath
+        layoutRootPath =
+    }
+
+    settings {
+        # cat=plugin.cookieconsent; type=int+; label= PID to Data Protection
+        url =
+        # cat=plugin.cookieconsent; type=options[edgeless,classic,basic]; label=Layout
+        theme = edgeless
+        # cat=plugin.cookieconsent; type=options[top,top-left,top-right,bottom,bottom-left,bottom-right]; label= Position
+        position = bottom-right
+        # cat=plugin.cookieconsent; type=int+; label= dismiss on scroll (in MS)
+        dismissOnScroll =
+        palette {
+            popup {
+                # cat=plugin.cookieconsent/popup; type=color; label= Bar: Background
+                background = #2473be
+                # cat=plugin.cookieconsent/popup; type=color; label= Bar: Text
+                text = #fff
+            }
+            button {
+                # cat=plugin.cookieconsent/button; type=color; label= Button: Background
+                background = #f96332
+                # cat=plugin.cookieconsent/button; type=color; label= Button: Text
+                text = #fff
+            }
+        }
+    }
+}
