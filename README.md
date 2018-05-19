@@ -1,5 +1,5 @@
 # DP Cookie Consent
-This Plugin includes the most popilar solution to the EU Cookie law JavaScript Plugin (Cookie Consent)[https://cookieconsent.insites.com/].
+This Plugin includes the most popular solution to the EU Cookie law JavaScript Plugin (Cookie Consent)[https://cookieconsent.insites.com/].
 I extend a Script helper, so work with the ePrivacy law.
 
 Though don't care about the latest EU laws and handle you Cookies with this Plugins.
