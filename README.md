@@ -1,43 +1,37 @@
-# CKEditor Add-On "Fontawesome" for TYPO3
-This repository provides the add-on "Fontawesome" as a extension for TYPO3.
+# DP Cookie Consent
+This Plugin includes the most popilar solution to the EU Cookie law JavaScript Plugin (Cookie Consent)[https://cookieconsent.insites.com/].
+I extend a Script helper, so work with the ePrivacy law.
 
-## TSConfig
-### Switch back to Fontawesome 4
-For the default template ot the CKE-Editor
-```
-RTE.default.preset = defaultFA4
-```
-For the full template of CKE-Editor
-```
-RTE.default.preset = fullFA4
-```
+Though don't care about the latest EU laws and handle you Cookies with this Plugins.
 
-## Typo3 Constants:
-Disable CDN Integration in Frontend
+## Features
+### CS_SEO
+This Plugin extends the Config from (CS_SEO)[https://extensions.typo3.org/extension/cs_seo/] so that the Google analytics script and tag manager will fire after the Cookie is accepted.
+
+### load scripts after accepting
+**load script sources**
+If you want to load JavaScript resources after the Cookie is accepted you can use this snipped
 ```
-plugin.tx_ckeditor_fontawesome.loadCSS = 
-```
-Set alternativ CDN reference File
-```
-plugin.tx_ckeditor_fontawesome.css = {$path}
+<script data-ignore="1" data-cookieconsent="statistics" type="text/plain" data-src="{YOUR_LINK_TO_JS}"></script>
 ```
 
-### Switch back Fontawesome 4
+**load inline script**
+If you want to load Inline JavaScript after the Cookie is accepted use this snipped.
 ```
-# Include Fontawesome 4 from CDN
-plugin.tx_ckeditor_fontawesome.css = https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+<script data-ignore="1" data-cookieconsent="statistics" type="text/plain">
+{YOUT_DYN_JS_CODE}
+</script>
 ```
 
-## ToDo:
-- Add FA-Icon in Content Headline Definition.
+The `data-ignore="1"` attribute ist to cover the (Scriptmerger)[https://extensions.typo3.org/extension/scriptmerger/] engine to not Combine this parts.
+
 
 ## Please give us feedback
 We would appreciate any kind of feedback or ideas for further developments to keep improving the extension for your needs.
 
 ### Contact us
-- [E-Mail](mailto:d.persky@gutenberghaus.de)
-- [GitHub](https://github.com/DirkPersky/rte-ckeditor-fontawesome)
-- [Homepage](https://web-kon.de)
-- [TYPO3.org](https://extensions.typo3.org/extension/rte_ckeditor_fontawesome/)
-- [Packagist.org (composer)](https://packagist.org/packages/dirkpersky/typo3-rte-ckeditor-fontawesome)
-- [Font Awesome](https://fontawesome.com)
+- [E-Mail](mailto:info@dp-dvelop.de)
+- [GitHub](https://github.com/DirkPersky/typo3-dp_cookieconsent)
+- [Homepage](http:/dp-dvelop.de)
+- [TYPO3.org](https://extensions.typo3.org/extension/dp_cookieconsent/)
+- [Packagist.org (composer)](https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent)
