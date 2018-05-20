@@ -95,6 +95,8 @@ window.addEventListener("load", function () {
             },
             onStatusChange: function (status) {
                 if(this.hasConsented()) (new CookieConsent()).loadCookies();
+                // Remove the Node from HTML
+                this.element.parentNode.removeChild(this.element);
             }
         });
     };

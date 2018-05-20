@@ -1,6 +1,5 @@
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <script type="text/javascript" data-ignore="1">
-    var dismiss = '<f:format.raw>{settings.dismissOnScroll}</f:format.raw>';
     window.cookieconsent_options = {
         content: {
             message:'<f:translate key="message" extensionName="dp_cookieconsent" />',
@@ -10,7 +9,7 @@
         },
         theme: '<f:format.raw>{settings.theme}</f:format.raw>',
         position: '<f:format.raw>{settings.position}</f:format.raw>',
-        dismissOnScroll: dismiss||false,
+        dismissOnScroll: parseInt('<f:format.raw>{settings.dismissOnScroll}</f:format.raw>')||false,
         palette: {
             popup: {
                 background: '<f:format.raw>{settings.barBg}</f:format.raw>',

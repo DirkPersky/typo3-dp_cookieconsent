@@ -15,7 +15,7 @@ plugin.tx_cookieconsent {
         theme = edgeless
         # cat=plugin.cookieconsent; type=options[top,top-left,top-right,bottom,bottom-left,bottom-right]; label= Position
         position = bottom-right
-        # cat=plugin.cookieconsent; type=int+; label= dismiss on scroll (in MS)
+        # cat=plugin.cookieconsent; type=int+; label= dismiss on scroll (in PX)
         dismissOnScroll =
         palette {
             popup {
