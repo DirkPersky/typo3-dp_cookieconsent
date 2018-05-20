@@ -1,3 +1,8 @@
+/*!
+  * Cookie Consent Adapter
+  * Copyright 2018 Dirk Persky (https://github.com/DirkPersky/typo3-dp_cookieconsent)
+  * Licensed under GPL v3+ (https://github.com/DirkPersky/typo3-dp_cookieconsent/blob/master/LICENSE)
+  */
 window.addEventListener("load", function () {
     function CookieConsent(){}
     /** Async Load Ressources **/
