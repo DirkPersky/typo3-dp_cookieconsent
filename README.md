@@ -9,6 +9,35 @@ I extend a Script helper, so work with the ePrivacy law.
 
 Though don't care about the latest EU laws and handle you Cookies with this Plugins.
 
+## Config
+**TS-Constant**
+```
+plugin.tx_cookieconsent.settings {
+    # PID to Data Protection
+    url =
+    # Layout
+    theme = edgeless
+    # Position
+    position = bottom-right
+    # dismiss on scroll (in PX)
+    dismissOnScroll =
+    palette {
+        popup {
+            # Bar: Background color
+            background = #2473be
+            # Bar: text color
+            text = #fff
+        }
+        button {
+            # Button: Background color
+            background = #f96332
+            # Button: text color
+            text = #fff
+        }
+    }
+}
+```
+
 ## Features
 ### CS_SEO
 This Plugin extends the Config from (CS_SEO)[https://extensions.typo3.org/extension/cs_seo/] so that the Google analytics script and tag manager will fire after the Cookie is accepted.
