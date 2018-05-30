@@ -49,6 +49,7 @@ plugin.tx_dp_cookieconsent._LOCAL_LANG {
     }
 }
 ```
+**If you are from a country other than Germany, let me know your legal text and I will mark it for the next version**
 
 ## Features
 ### CS_SEO
