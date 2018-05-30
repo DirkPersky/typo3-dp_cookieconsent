@@ -10,7 +10,7 @@ I extend a Script helper, so work with the ePrivacy law.
 Though don't care about the latest EU laws and handle you Cookies with this Plugins.
 
 ## Config
-**TS-Constant**
+### TS-Constant
 ```
 plugin.tx_cookieconsent.settings {
     # PID to Data Protection
@@ -34,6 +34,18 @@ plugin.tx_cookieconsent.settings {
             # Button: text color
             text = #fff
         }
+    }
+}
+```
+
+### TypoScript
+set you own language values
+```
+plugin.tx_dp_cookieconsent._LOCAL_LANG {
+    de {
+        message = XXX
+        dismiss = XXX
+        link = XXX
     }
 }
 ```
