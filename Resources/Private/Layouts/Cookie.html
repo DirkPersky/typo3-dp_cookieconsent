@@ -5,7 +5,7 @@
             message:'<f:translate key="message" extensionName="dp_cookieconsent" />',
             dismiss:'<f:translate key="dismiss" extensionName="dp_cookieconsent" />',
             link:'<f:translate key="link" extensionName="dp_cookieconsent" />',
-            href:'<f:uri.typolink parameter="{settings.url}" />',
+            href:'<f:uri.page pageUid="{settings.url}" />',
         },
         theme: '<f:format.raw>{settings.theme}</f:format.raw>',
         position: '<f:format.raw>{settings.position}</f:format.raw>',
@@ -22,5 +22,5 @@
         }
     };
 </script>
-<script type="text/javascript" data-ignore="1" defer src="{f:uri.resource(extensionName: 'dp_cookieconsent', path:'JavaScript/cookie.min.js')}?v=9.2.4-dev"></script>
+<script type="text/javascript" data-ignore="1" defer src="{f:uri.resource(extensionName: 'dp_cookieconsent', path:'JavaScript/cookie.min.js')}?v=9.2.4"></script>
 <!-- End Cookie Consent plugin -->
