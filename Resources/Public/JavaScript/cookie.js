@@ -78,8 +78,8 @@ window.addEventListener("load", function () {
     /** load Scripts **/
     CookieConsent.prototype.load = function(){
         /** Start Loading Scripts & CSS **/
-        this.asyncCSS('https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css');
-        this.asyncJS('https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js', this.init);
+        this.asyncCSS( window.cookieconsent_options.css);
+        this.asyncJS( window.cookieconsent_options.js, this.init);
     };
     /** Init Cookie Plugin **/
     CookieConsent.prototype.init = function (){
