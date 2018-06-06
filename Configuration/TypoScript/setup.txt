@@ -53,12 +53,12 @@ page.headerData.657.20 {
         }
     }
 }
-# Modify Google Tag-Manager from CS_SEO
+# Modify Google Tag-Manager & Piwiki from CS_SEO
 page.headerData.90 = COA
 page.headerData.90 {
     wrap = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain">|</script>
 
-    10 < page.jsInline.654.15
+    10 < page.jsInline.654
 }
-# Remove Original Google Tag-Manager from CS_SEO
-page.jsInline.654.15 >
+# Remove Original Google Tag-Manager & Piwiki from CS_SEO
+page.jsInline.654 >

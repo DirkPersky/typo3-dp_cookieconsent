@@ -53,7 +53,7 @@ plugin.tx_dp_cookieconsent._LOCAL_LANG {
 
 ## Features
 ### CS_SEO
-This Plugin extends the Config from (CS_SEO)[https://extensions.typo3.org/extension/cs_seo/] so that the Google analytics script and tag manager will fire after the Cookie is accepted.
+This Plugin extends the Config from (CS_SEO)[https://extensions.typo3.org/extension/cs_seo/] so that the Google analytics script, tag manager and piwiki will fire after the Cookie is accepted.
 
 ### load scripts after accepting
 **load script sources**
