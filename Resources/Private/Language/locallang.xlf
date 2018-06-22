@@ -5,7 +5,7 @@
 		<header/>
 		<body>
 			<trans-unit id="message">
-				<source>This website uses cookies to ensure you get the best experience on our website</source>
+				<source>We use cookies and other tracking technologies to personalize and improve your experience. By continuing to use our website you consent to this.</source>
 			</trans-unit>
 			<trans-unit id="dismiss">
 				<source>allow cookies</source>
