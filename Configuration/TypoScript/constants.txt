@@ -20,13 +20,13 @@ plugin.tx_cookieconsent {
         palette {
             popup {
                 # cat=plugin.cookieconsent/popup; type=color; label= Bar: Background
-                background = #2473be
+                background = rgba(0,0,0,.8)
                 # cat=plugin.cookieconsent/popup; type=color; label= Bar: Text
                 text = #fff
             }
             button {
                 # cat=plugin.cookieconsent/button; type=color; label= Button: Background
-                background = #f96332
+                background = #b81839
                 # cat=plugin.cookieconsent/button; type=color; label= Button: Text
                 text = #fff
             }

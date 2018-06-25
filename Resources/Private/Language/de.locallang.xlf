@@ -5,7 +5,7 @@
 		<header/>
 		<body>
 			<trans-unit id="message">
-                <source>This website uses cookies to ensure you get the best experience on our website</source>
+                <source>We use cookies and other tracking technologies to personalize and improve your experience. By continuing to use our website you consent to this.</source>
                 <target>Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren und die Zugriffe auf unsere Website zu analysieren. Außerdem geben wir Informationen zu Ihrer Verwendung unserer Website an unsere Partner für soziale Medien, Werbung und Analysen weiter. Sie akzeptieren unsere Cookies, wenn Sie fortfahren diese Webseite zu nutzen.</target>
             </trans-unit>
             <trans-unit id="dismiss">
