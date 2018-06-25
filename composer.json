@@ -35,14 +35,6 @@
     "vendor-dir": ".Build/vendor",
     "bin-dir": ".Build/bin"
   },
-  "scripts": {
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://composer.typo3.org/"
-    }
-  ],
   "extra": {
     "typo3/cms": {
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
