@@ -58,7 +58,7 @@ window.addEventListener("load", function () {
             /** run Code it something in in it **/
             if(code.length) {
                 /** if Is Code Eval Code **/
-                eval(code);
+                eval.call(this,code);
             } else {
                 /** If is SRC load that **/
                 var element = elements[key];
