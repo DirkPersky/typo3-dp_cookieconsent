@@ -49,31 +49,34 @@ window.addEventListener("load", function () {
             }
             temp = null;
         }
-        /** Loop through elements and run Code **/
-        for(var key in elements){
-            /** get HTML of Elements **/
-            var code = elements[key].innerHTML;
-            /** trim Elements **/
-            if(code.length) code = code.trim();
-            /** run Code it something in in it **/
-            if(code.length) {
-                /** if Is Code Eval Code **/
-                eval.call(this,code);
-            } else {
-                /** If is SRC load that **/
-                var element = elements[key];
-                /**
-                 * Load SRC
-                 * Dont use this src="", becouse some Browser will ignore the type=text/plain
-                 * prefer use data-src=""
-                 */
-                if(element.getAttribute('data-src')) {
-                    this.asyncJS(element.getAttribute('data-src'));
-                } else if(element.src) {
-                    this.asyncJS(element.src);
+        if(elements.length > 0){
+            /** Loop through elements and run Code **/
+            for(var key in elements){
+                /** get HTML of Elements **/
+                var code = elements[key].innerHTML;
+                /** trim Elements **/
+                if(code && code.length) code = code.trim();
+                /** run Code it something in in it **/
+                if(code && code.length) {
+                    /** if Is Code Eval Code **/
+                    eval.call(this,code);
+                } else {
+                    /** If is SRC load that **/
+                    var element = elements[key];
+                    /**
+                     * Load SRC
+                     * Dont use this src="", becouse some Browser will ignore the type=text/plain
+                     * prefer use data-src=""
+                     */
+                    if(element.getAttribute('data-src')) {
+                        this.asyncJS(element.getAttribute('data-src'));
+                    } else if(element.src) {
+                        this.asyncJS(element.src);
+                    }
                 }
             }
         }
+
     };
     /** load Scripts **/
     CookieConsent.prototype.load = function(){
