@@ -21,6 +21,8 @@ plugin.tx_cookieconsent.settings {
     position = bottom-right
     # dismiss on scroll (in PX)
     dismissOnScroll =
+    # Type (info, opt-out)
+    type = opt-out
     palette {
         popup {
             # Bar: Background color

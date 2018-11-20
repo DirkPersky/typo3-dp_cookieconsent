@@ -17,6 +17,9 @@ plugin.tx_cookieconsent {
         position = bottom-right
         # cat=plugin.cookieconsent; type=int+; label= dismiss on scroll (in PX)
         dismissOnScroll =
+        # cat=plugin.cookieconsent; type=options[info,opt-out]; label = Type
+        type = info
+
         palette {
             popup {
                 # cat=plugin.cookieconsent/popup; type=color; label= Bar: Background

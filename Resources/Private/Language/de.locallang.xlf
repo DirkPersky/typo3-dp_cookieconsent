@@ -12,6 +12,14 @@
                 <source>allow cookies</source>
                 <target>Cookies zulassen!</target>
             </trans-unit>
+            <trans-unit id="deny">
+                <source>decline</source>
+                <target>Ablehnen</target>
+            </trans-unit>
+            <trans-unit id="policy">
+                <source>Cookie Policy</source>
+                <target>Cookies</target>
+            </trans-unit>
             <trans-unit id="link">
                 <source>More info</source>
                 <target>Mehr Infos</target>

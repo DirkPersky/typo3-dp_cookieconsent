@@ -21,6 +21,7 @@ page {
                 url = {$plugin.tx_cookieconsent.settings.url}
                 theme = {$plugin.tx_cookieconsent.settings.theme}
                 position = {$plugin.tx_cookieconsent.settings.position}
+                type = {$plugin.tx_cookieconsent.settings.type}
                 dismissOnScroll = {$plugin.tx_cookieconsent.settings.dismissOnScroll}
                 barBg = {$plugin.tx_cookieconsent.settings.palette.popup.background}
                 barColor = {$plugin.tx_cookieconsent.settings.palette.popup.text}

@@ -6,11 +6,15 @@
         content: {
             message:'<f:translate key="message" extensionName="dp_cookieconsent" />',
             dismiss:'<f:translate key="dismiss" extensionName="dp_cookieconsent" />',
+            allow:'<f:translate key="dismiss" extensionName="dp_cookieconsent" />',
+            deny: '<f:translate key="deny" extensionName="dp_cookieconsent" />',
             link:'<f:translate key="link" extensionName="dp_cookieconsent" />',
             href:'<f:uri.page pageUid="{settings.url}" />',
+            policy: '<f:translate key="policy" extensionName="dp_cookieconsent" />',
         },
         theme: '<f:format.raw>{settings.theme}</f:format.raw>',
         position: '<f:format.raw>{settings.position}</f:format.raw>',
+        type: '<f:format.raw>{settings.type}</f:format.raw>',
         dismissOnScroll: parseInt('<f:format.raw>{settings.dismissOnScroll}</f:format.raw>')||false,
         palette: {
             popup: {

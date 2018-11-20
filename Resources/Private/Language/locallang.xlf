@@ -10,6 +10,12 @@
 			<trans-unit id="dismiss">
 				<source>allow cookies</source>
 			</trans-unit>
+			<trans-unit id="deny">
+				<source>decline</source>
+			</trans-unit>
+			<trans-unit id="policy">
+				<source>Cookie Policy</source>
+			</trans-unit>
 			<trans-unit id="link">
 				<source>More info</source>
 			</trans-unit>

@@ -14,11 +14,12 @@ window.addEventListener("load", function () {
         switch (t){
             case 'script':
                 o.src = u;
-                o.defer = 1;
+                o.setAttribute('defer','');
                 break;
             case 'link':
                 o.rel = 'stylesheet';
                 o.type = 'text/css';
+                o.setAttribute('defer','');
                 o.href = u;
                 break;
         }
@@ -90,13 +91,14 @@ window.addEventListener("load", function () {
             position: window.cookieconsent_options.position,
             palette: window.cookieconsent_options.palette,
             dismissOnScroll: window.cookieconsent_options.dismissOnScroll,
+            type: window.cookieconsent_options.type,
             onInitialise: function(status) {
-                if(this.hasConsented()) (new CookieConsent()).loadCookies();
+                if(this.hasConsented() && (status == 'dismiss' || status == 'allow')) (new CookieConsent()).loadCookies();
             },
             onStatusChange: function (status) {
-                if(this.hasConsented()) (new CookieConsent()).loadCookies();
+                if(this.hasConsented() && (status == 'dismiss' || status == 'allow')) (new CookieConsent()).loadCookies();
                 // Remove the Node from HTML
-                this.element.parentNode.removeChild(this.element);
+                if(window.cookieconsent_options.type == 'info') this.element.parentNode.removeChild(this.element);
             }
         });
     };
