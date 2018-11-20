@@ -9,10 +9,10 @@ $EM_CONF[$_EXTKEY] = [
     'clearCacheOnLoad' => 0,
     'author' => 'Dirk Persky',
     'author_email' => 'infoy@dp-dvelop.de',
-    'version' => '9.3.1',
+    'version' => '9.5.1',
     'constraints' => [
         'depends' => [
-            'typo3' => '6.2.0-9.3.99'
+            'typo3' => '6.2.0-9.5.99'
         ],
         'conflicts' => [],
         'suggests' => [
