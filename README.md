@@ -23,6 +23,8 @@ plugin.tx_cookieconsent.settings {
     dismissOnScroll =
     # Type (info, opt-out)
     type = opt-out
+    # extend layout with checkboxes (basic,dpextend)
+    layout = basic
     palette {
         popup {
             # Bar: Background color
@@ -48,6 +50,11 @@ plugin.tx_dp_cookieconsent._LOCAL_LANG {
         message = XXX
         dismiss = XXX
         link = XXX
+        deny = XXX
+        # Checkbox labels
+        dpRequire = XXX
+        dpStatistik = XXX
+        dpMarketing = XXX
     }
 }
 ```
@@ -74,6 +81,30 @@ If you want to load Inline JavaScript after the Cookie is accepted use this snip
 
 The `data-ignore="1"` attribute ist to cover the (Scriptmerger)[https://extensions.typo3.org/extension/scriptmerger/] engine to not Combine this parts.
 
+#### Checkboxe mode
+Since Version 9.5.3 you can extend the default cookie message with checkboxes.
+Now your customer can choose what types of script he want to allow.
+You can enable this option with the TYPO3 constant `plugin.tx_cookieconsent.settings.layout = dpextend`.
+
+This 3 types are possible:
+
+**required**: 
+this checkbox cant be disabled
+```
+<script data-cookieconsent="required" ...
+```
+
+**statistics**:
+this checkbox is enabled by default
+```
+<script data-cookieconsent="statistics"...
+```
+
+**marketing**:
+this checkbox is disabled by default
+```
+<script data-cookieconsent="marketing"...
+```
 
 ## Please give us feedback
 We would appreciate any kind of feedback or ideas for further developments to keep improving the extension for your needs.
