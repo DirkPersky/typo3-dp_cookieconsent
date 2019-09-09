@@ -21,6 +21,8 @@ plugin.tx_cookieconsent {
         type = info
         # cat=plugin.cookieconsent; type=options[basic,dpextend]; label = extend layout with checkboxes
         layout = basic
+        # cat=plugin.cookieconsent; type=options[true,false]; label = adds a button to review the consent window
+        revokable = true
 
         palette {
             popup {

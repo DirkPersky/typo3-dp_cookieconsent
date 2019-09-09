@@ -28,6 +28,7 @@ page {
                 btnBg = {$plugin.tx_cookieconsent.settings.palette.button.background}
                 btnColor = {$plugin.tx_cookieconsent.settings.palette.button.text}
                 layout = {$plugin.tx_cookieconsent.settings.layout}
+                revokable = {$plugin.tx_cookieconsent.settings.revokable}
             }
         }
     }

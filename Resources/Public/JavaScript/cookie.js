@@ -200,6 +200,7 @@ window.addEventListener("load", function () {
             dismissOnScroll: window.cookieconsent_options.dismissOnScroll,
             type: window.cookieconsent_options.type,
             layout: window.cookieconsent_options.layout,
+            revokable: window.cookieconsent_options.revokable,
             cookie: (new CookieConsent()).cookie,
             layouts: {
                 dpextend: "{{dpmessagelink}}{{compliance}}",
@@ -230,11 +231,12 @@ window.addEventListener("load", function () {
                 if (this.hasConsented() && (status == 'dismiss' || status == 'allow')) (new CookieConsent()).loadCookies();
             },
             onStatusChange: function (status) {
-                if (this.hasConsented() && (status == 'dismiss' || status == 'allow')) (new CookieConsent()).loadCookies();
-                // Remove the Node from HTML
-                if (window.cookieconsent_options.type == 'info') this.element.parentNode.removeChild(this.element);
                 // save checkboxes?
                 (new CookieConsent()).setCheckboxes();
+                // load cookies
+                if (this.hasConsented() && (status == 'dismiss' || status == 'allow')) (new CookieConsent()).loadCookies();
+                // Remove the Node from HTML
+                if (window.cookieconsent_options.type == 'info' && !window.cookieconsent_options.revokable) this.element.parentNode.removeChild(this.element);
             },
             onRevokeChoice: function () {
             }
