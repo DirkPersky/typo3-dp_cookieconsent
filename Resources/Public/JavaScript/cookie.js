@@ -85,8 +85,18 @@ window.addEventListener("load", function () {
         this.asyncCSS( window.cookieconsent_options.css);
         this.asyncJS( window.cookieconsent_options.js, this.init);
     };
-    /** Init Cookie Plugin **/
+    /** Toogle Body Class **/
+    CookieConsent.prototype.setClass = function(remove) {
+        if(remove === true){
+            document.querySelector('body').classList.remove('dp--cookie-consent');
+        } else {
+            document.querySelector('body').classList.add('dp--cookie-consent');
+        }
+    };
+        /** Init Cookie Plugin **/
     CookieConsent.prototype.init = function (){
+        // set Body Class
+        (new CookieConsent()).setClass();
         /** Bind Self to Handler Class Funktions **/
         window.cookieconsent.initialise({
             content: window.cookieconsent_options.content,
@@ -97,11 +107,19 @@ window.addEventListener("load", function () {
             type: window.cookieconsent_options.type,
             onInitialise: function(status) {
                 if(this.hasConsented() && (status == 'dismiss' || status == 'allow')) (new CookieConsent()).loadCookies();
+                // remove Body Class
+                (new CookieConsent()).setClass(true);
             },
             onStatusChange: function (status) {
                 if(this.hasConsented() && (status == 'dismiss' || status == 'allow')) (new CookieConsent()).loadCookies();
                 // Remove the Node from HTML
                 if(window.cookieconsent_options.type == 'info') this.element.parentNode.removeChild(this.element);
+                // remove Body Class
+                (new CookieConsent()).setClass(true);
+            },
+            onRevokeChoice: function(){
+                // set Body Class
+                (new CookieConsent()).setClass();
             }
         });
     };
