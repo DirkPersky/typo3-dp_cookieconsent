@@ -19,6 +19,15 @@
 			<trans-unit id="link">
 				<source>More info</source>
 			</trans-unit>
+			<trans-unit id="dpRequire">
+				<source>necessary</source>
+			</trans-unit>
+			<trans-unit id="dpStatistik">
+				<source>statistics</source>
+			</trans-unit>
+			<trans-unit id="dpMarketing">
+				<source>marketing</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

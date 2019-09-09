@@ -27,6 +27,7 @@ page {
                 barColor = {$plugin.tx_cookieconsent.settings.palette.popup.text}
                 btnBg = {$plugin.tx_cookieconsent.settings.palette.button.background}
                 btnColor = {$plugin.tx_cookieconsent.settings.palette.button.text}
+                layout = {$plugin.tx_cookieconsent.settings.layout}
             }
         }
     }

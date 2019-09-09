@@ -1,0 +1,24 @@
+.dp--cookie-check {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 5px;
+    margin-top: .5rem;
+}
+.dp--cookie-check label {
+    padding: 5px;
+
+    display: block;
+    margin: 0;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.dp--cookie-check label:first-child {
+    padding-left: 10px;
+}
+.dp--cookie-check label:last-child {
+    padding-right: 10px;
+}

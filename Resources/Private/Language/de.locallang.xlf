@@ -24,6 +24,18 @@
                 <source>More info</source>
                 <target>Mehr Infos</target>
             </trans-unit>
+            <trans-unit id="dpRequire">
+                <source>necessary</source>
+                <target>Notwendig</target>
+            </trans-unit>
+            <trans-unit id="dpStatistik">
+                <source>statistics</source>
+                <target>Statistiken</target>
+            </trans-unit>
+            <trans-unit id="dpMarketing">
+                <source>marketing</source>
+                <target>Marketing</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

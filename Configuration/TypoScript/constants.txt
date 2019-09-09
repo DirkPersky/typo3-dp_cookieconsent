@@ -19,6 +19,8 @@ plugin.tx_cookieconsent {
         dismissOnScroll =
         # cat=plugin.cookieconsent; type=options[info,opt-out]; label = Type
         type = info
+        # cat=plugin.cookieconsent; type=options[basic,dpextend]; label = extend layout with checkboxes
+        layout = basic
 
         palette {
             popup {
