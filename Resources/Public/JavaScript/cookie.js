@@ -169,7 +169,7 @@ window.addEventListener("load", function () {
         if (typeof this.dpCookies != 'undefined') {
             try {
                 this.dpCookies = JSON.parse(this.dpCookies);
-            } catch {
+            } catch(error) {
                 this.dpCookies = false;
             }
         } else {
@@ -236,7 +236,7 @@ window.addEventListener("load", function () {
                 // load cookies
                 if (this.hasConsented() && (status == 'dismiss' || status == 'allow')) (new CookieConsent()).loadCookies();
                 // Remove the Node from HTML
-                if (window.cookieconsent_options.type == 'info' && !window.cookieconsent_options.revokable) this.element.parentNode.removeChild(this.element);
+                //if (window.cookieconsent_options.type == 'info' && !window.cookieconsent_options.revokable) this.element.parentNode.removeChild(this.element);
             },
             onRevokeChoice: function () {
             }
