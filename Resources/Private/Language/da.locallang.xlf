@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-10-04T20:53:14Z"
+		  product-name="cookieconsent">
+		<header/>
+		<body>
+			<trans-unit id="message">
+				<source>We use cookies and other tracking technologies to personalize and improve your experience. By continuing to use our website you consent to this.</source>
+				<target>Vi bruger cookies og andre tracking-teknologier for at personificere og forbedre din brugeroplevelse. Ved at forsætte på vores website accepterer du dette.</target>
+			</trans-unit>
+			<trans-unit id="dismiss">
+				<source>allow cookies</source>
+                <target>tillad cookies</target>
+			</trans-unit>
+			<trans-unit id="deny">
+				<source>decline</source>
+                <target>afvis</target>
+			</trans-unit>
+			<trans-unit id="policy">
+				<source>Cookie Policy</source>
+                <target>Cookie-politik</target>
+			</trans-unit>
+			<trans-unit id="link">
+				<source>More info</source>
+                <target>Mere info</target>
+			</trans-unit>
+            <trans-unit id="dpRequire">
+                <source>necessary</source>
+                <target>nødvendig</target>
+            </trans-unit>
+            <trans-unit id="dpStatistik">
+                <source>statistics</source>
+                <target>statistik</target>
+            </trans-unit>
+            <trans-unit id="dpMarketing">
+                <source>marketing</source>
+                <target>markedsføring</target>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>
