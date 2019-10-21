@@ -23,6 +23,10 @@ plugin.tx_cookieconsent {
         layout = basic
         # cat=plugin.cookieconsent; type=options[true,false]; label = adds a button to review the consent window
         revokable = true
+        # cat=plugin.cookieconsent; type=options[true,false]; label = pre check statistics in checkboxes layout
+        statistics = true
+        # cat=plugin.cookieconsent; type=options[true,false]; label = pre check statistics in checkboxes layout
+        marketing = false
 
         palette {
             popup {

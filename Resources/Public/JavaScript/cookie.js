@@ -69,8 +69,9 @@ window.addEventListener("load", function () {
             temp = null;
         }
         if (elements.length > 0) {
+            var key;
             /** Loop through elements and run Code **/
-            for (var key in elements) {
+            for(key = 0; key < elements.length; key++){
                 /** get HTML of Elements **/
                 var code = elements[key].innerHTML;
                 /** trim Elements **/
@@ -210,9 +211,9 @@ window.addEventListener("load", function () {
                     '{{message}} ' +
                     '<a aria-label="learn more about cookies" role=button tabindex="0" class="cc-link" href="{{href}}" rel="noopener noreferrer nofollow" target="{{target}}">{{link}}</a>' +
                     '<div class="dp--cookie-check">' +
-                        '<label for="dp--cookie-require"><input type="checkbox" id="dp--cookie-require" class="dp--check-box" disabled="disabled" checked="checked"> {{dpRequire}}</label>' +
-                        '<label for="dp--cookie-statistics"><input type="checkbox" id="dp--cookie-statistics" class="dp--check-box" checked="checked"> {{dpStatistik}}</label>' +
-                        '<label for="dp--cookie-marketing"><input type="checkbox" id="dp--cookie-marketing" class="dp--check-box" > {{dpMarketing}}</label>' +
+                    '<label for="dp--cookie-require"><input type="checkbox" id="dp--cookie-require" class="dp--check-box" disabled="disabled" checked="checked"> {{dpRequire}}</label>' +
+                    '<label for="dp--cookie-statistics"><input type="checkbox" id="dp--cookie-statistics" class="dp--check-box" '+(window.cookieconsent_options.checkboxes.statistics?'checked="checked"':'')+'> {{dpStatistik}}</label>' +
+                    '<label for="dp--cookie-marketing"><input type="checkbox" id="dp--cookie-marketing" class="dp--check-box" '+(window.cookieconsent_options.checkboxes.marketing?'checked="checked"':'')+'> {{dpMarketing}}</label>' +
                     '</div>' +
                     '</span>',
             },

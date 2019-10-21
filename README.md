@@ -25,6 +25,12 @@ plugin.tx_cookieconsent.settings {
     type = opt-out
     # extend layout with checkboxes (basic,dpextend)
     layout = basic
+
+    #  pre check statistics in checkboxes layout
+    statistics = true
+    # pre check statistics in checkboxes layout
+    marketing = false
+
     palette {
         popup {
             # Bar: Background color
