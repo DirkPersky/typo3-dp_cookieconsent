@@ -211,7 +211,7 @@ window.addEventListener("load", function () {
                     '<a aria-label="learn more about cookies" role=button tabindex="0" class="cc-link" href="{{href}}" rel="noopener noreferrer nofollow" target="{{target}}">{{link}}</a>' +
                     '<div class="dp--cookie-check">' +
                         '<label for="dp--cookie-require"><input type="checkbox" id="dp--cookie-require" class="dp--check-box" disabled="disabled" checked="checked"> {{dpRequire}}</label>' +
-                        '<label for="dp--cookie-statistics"><input type="checkbox" id="dp--cookie-statistics" class="dp--check-box" checked="checked"> {{dpStatistik}}</label>' +
+                        '<label for="dp--cookie-statistics"><input type="checkbox" id="dp--cookie-statistics" class="dp--check-box"> {{dpStatistik}}</label>' +
                         '<label for="dp--cookie-marketing"><input type="checkbox" id="dp--cookie-marketing" class="dp--check-box" > {{dpMarketing}}</label>' +
                     '</div>' +
                     '</span>',
