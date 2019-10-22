@@ -22,3 +22,9 @@
 .dp--cookie-check label:last-child {
     padding-right: 10px;
 }
+.dp--iframe {
+    display: none;
+}
+.dp--iframe.dp--loaded {
+    display: block;
+}

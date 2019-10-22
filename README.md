@@ -1,11 +1,11 @@
 # DP Cookie Consent
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/dirkpersky/9.99)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/dirkpersky)
 [![Latest Stable Version](https://poser.pugx.org/dirkpersky/typo3-dp_cookieconsent/v/stable)](https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent)
 [![License](https://poser.pugx.org/dirkpersky/typo3-dp_cookieconsent/license)](https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent)
 
 This Plugin includes the most popular solution to the EU Cookie law JavaScript Plugin (Cookie Consent)[https://cookieconsent.insites.com/].
-I extend a Script helper, so work with the ePrivacy law.
+I extended it with Script and iFrame helper, so it works with the ePrivacy law.
 
 Though don't care about the latest EU laws and handle you Cookies with this Plugins.
 
@@ -87,6 +87,19 @@ If you want to load Inline JavaScript after the Cookie is accepted use this snip
 
 The `data-ignore="1"` attribute ist to cover the (Scriptmerger)[https://extensions.typo3.org/extension/scriptmerger/] engine to not Combine this parts.
 
+### load iframe after accepting
+Since Version 9.7.0 you can handle iFrame's. 
+If you want to load iFrame's (YouTube, GMap, ..) after the Cookie is accepted you can use this snipped
+```
+<iframe width="560" height="315" 
+    data-cookieconsent="statistics" 
+    data-src="https://www.youtube-nocookie.com/embed/XXXXXX?autoplay=1" 
+    class="dp--iframe"
+    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreenn >
+</iframe>
+```
+With the `class="dp--iframe"` the iFrame is hidden in default and would be shown after the cookie acceptioning.
+
 #### Checkboxe mode
 Since Version 9.5.3 you can extend the default cookie message with checkboxes.
 Now your customer can choose what types of script he want to allow.
@@ -114,6 +127,10 @@ this checkbox is disabled by default
 
 ## Please give us feedback
 We would appreciate any kind of feedback or ideas for further developments to keep improving the extension for your needs.
+
+## Donate
+This is a private project.
+If you like it, please "Star" it in the right corner, or support me with a [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/dirkpersky)
 
 ### Contact us
 - [E-Mail](mailto:info@dp-dvelop.de)

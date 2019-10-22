@@ -52,30 +52,82 @@ window.addEventListener("load", function () {
     CookieConsent.prototype.asyncCSS = function (u) {
         this.asyncLoad(u, 'link');
     };
-    /** Callback after cookies are allowed **/
-    CookieConsent.prototype.loadCookies = function () {
-        /** Get all Scripts to load **/
+    /** fallback: getElementsByTagName **/
+    CookieConsent.prototype.getCookieElementsByTag = function(tag){
+        // element holder
         var elements = [];
+        // check browser function
         if (typeof document.querySelectorAll == 'undefined') {
-            elements = document.querySelectorAll('script[data-cookieconsent]');
+            elements = document.querySelectorAll(tag+'[data-cookieconsent]');
         } else {
-            var temp = document.getElementsByTagName('script');
+            // fallback
+            var temp = document.getElementsByTagName(tag);
             for (var key in temp) {
                 var element = temp[key];
                 if (typeof element.getAttribute != 'undefined' && element.getAttribute('data-cookieconsent')) {
                     elements.push(element);
                 }
             }
-            temp = null;
         }
+        // return elements
+        return elements;
+    };
+    /**
+     * Load Iframes
+     * @param element
+     */
+    CookieConsent.prototype.callIframeHandler = function(element) {
+        /**
+         * Create Element Copy
+         * @type {ActiveX.IXMLDOMNode | Node}
+         */
+        var iframe = element.cloneNode(true);
+        // replace src with data-src
+        if (iframe.getAttribute('data-src')) {
+            iframe.src = iframe.getAttribute('data-src');
+        }
+        // add Element to DOM
+        element.parentNode.replaceChild(iframe, element);
+        // add Loaded class
+        iframe.classList.add("dp--loaded");
+    };
+    /**
+     * Load Script codes
+     * @param element
+     */
+    CookieConsent.prototype.callScriptHandler = function(element) {
+        /** get HTML of Elements **/
+        var code = element.innerHTML;
+        /** trim Elements **/
+        if (code && code.length) code = code.trim();
+        /** run Code it something in in it **/
+        if (code && code.length) {
+            /** if Is Code Eval Code **/
+            eval.call(this, code);
+        } else {
+            /**
+             * If is SRC load that
+             * Dont use this src="", becouse some Browser will ignore the type=text/plain
+             * prefer use data-src=""
+             */
+            if (element.getAttribute('data-src')) {
+                this.asyncJS(element.getAttribute('data-src'));
+            } else if (element.src) {
+                this.asyncJS(element.src);
+            }
+        }
+    };
+    /** Callback after cookies are allowed **/
+    CookieConsent.prototype.loadCookies = function () {
+        /** Get all Scripts to load **/
+        var elements = this.getCookieElementsByTag('script');
+        // load Iframes
+        elements = elements.concat(this.getCookieElementsByTag('iframe'));
+        // elements exist?
         if (elements.length > 0) {
             var key;
             /** Loop through elements and run Code **/
             for(key = 0; key < elements.length; key++){
-                /** get HTML of Elements **/
-                var code = elements[key].innerHTML;
-                /** trim Elements **/
-                if (code && code.length) code = code.trim();
                 /** Chekbox Access check **/
                 if (window.cookieconsent_options.layout === 'dpextend') {
                     var group = elements[key].dataset.cookieconsent;
@@ -89,22 +141,19 @@ window.addEventListener("load", function () {
                         }
                     }
                 }
-                /** run Code it something in in it **/
-                if (code && code.length) {
-                    /** if Is Code Eval Code **/
-                    eval.call(this, code);
-                } else {
-                    /** If is SRC load that **/
-                    var element = elements[key];
+                /**
+                 * check tag name
+                 */
+                if(typeof elements[key].tagName != 'undefined') {
                     /**
-                     * Load SRC
-                     * Dont use this src="", becouse some Browser will ignore the type=text/plain
-                     * prefer use data-src=""
+                     * Call Handler based on type
                      */
-                    if (element.getAttribute('data-src')) {
-                        this.asyncJS(element.getAttribute('data-src'));
-                    } else if (element.src) {
-                        this.asyncJS(element.src);
+                    switch (elements[key].tagName.toUpperCase()) {
+                        case 'IFRAME':
+                            this.callIframeHandler(elements[key]);
+                            break;
+                        default:
+                            this.callScriptHandler(elements[key]);
                     }
                 }
             }
