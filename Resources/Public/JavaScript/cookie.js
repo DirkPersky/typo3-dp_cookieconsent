@@ -131,7 +131,7 @@ window.addEventListener("load", function () {
                 /** Chekbox Access check **/
                 if (window.cookieconsent_options.layout === 'dpextend') {
                     var group = elements[key].dataset.cookieconsent;
-                    if(group != 'rquired') {
+                    if(group != 'required') {
                         // load cookies
                         this.loadCookiesPreset();
                         // check if value exist
