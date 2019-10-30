@@ -113,6 +113,32 @@ If you want to load Inline JavaScript after the Cookie is accepted use this snip
 
 The `data-ignore="1"` attribute ist to cover the (Scriptmerger)[https://extensions.typo3.org/extension/scriptmerger/] engine to not Combine this parts.
 
+#### Checkboxe mode
+You can extend the default cookie message with checkboxes.
+Now your customer can choose what types of script he want to allow.
+You can enable this option with the TYPO3 constant `plugin.tx_cookieconsent.settings.layout = dpextend`.
+
+This 3 types are possible:
+
+**required**: 
+this checkbox cant be disabled
+```
+<script data-cookieconsent="required" ...
+```
+
+**statistics**:
+this checkbox is enabled by default
+```
+<script data-cookieconsent="statistics"...
+```
+
+**marketing**:
+this checkbox is disabled by default
+```
+<script data-cookieconsent="marketing"...
+```
+
+
 ### load iframe after accepting
 If you want to load iFrame's (YouTube, GMap, ..) after the Cookie is accepted you can use this snipped
 ```
@@ -160,33 +186,8 @@ or accept/deny cookies outside of the cookie hin, you can use the followed examp
 **deny cookies**<br/>
 `window.DPCookieConsent.forceDeny(this)`
 
-#### Checkboxe mode
-You can extend the default cookie message with checkboxes.
-Now your customer can choose what types of script he want to allow.
-You can enable this option with the TYPO3 constant `plugin.tx_cookieconsent.settings.layout = dpextend`.
-
-This 3 types are possible:
-
-**required**: 
-this checkbox cant be disabled
-```
-<script data-cookieconsent="required" ...
-```
-
-**statistics**:
-this checkbox is enabled by default
-```
-<script data-cookieconsent="statistics"...
-```
-
-**marketing**:
-this checkbox is disabled by default
-```
-<script data-cookieconsent="marketing"...
-```
-
-## Please give us feedback
-We would appreciate any kind of feedback or ideas for further developments to keep improving the extension for your needs.
+## Please give me feedback
+I would appreciate any kind of feedback or ideas for further developments to keep improving the extension for your needs.
 
 ## Say thanks! and support me
 You like this extension? Get something for me (surprise!) from my wishlist on [Amazon](https://www.amazon.de/hz/wishlist/ls/15L17XDFBEYFL/r) or [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/dirkpersky) the next pizza. Thanks a lot!
