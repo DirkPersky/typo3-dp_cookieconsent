@@ -175,9 +175,8 @@ this checkbox is disabled by default
 ## Please give us feedback
 We would appreciate any kind of feedback or ideas for further developments to keep improving the extension for your needs.
 
-## Donate
-This is a private project.
-If you like it, please "Star" it in the right corner, or support me with a [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/dirkpersky)
+## Say thanks! and support me
+You like this extension? Get something for me (surprise!) from my wishlist on [Amazon](https://www.amazon.de/hz/wishlist/ls/15L17XDFBEYFL/r) or [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/dirkpersky) the next pizza. Thanks a lot!
 
 ### Contact us
 - [E-Mail](mailto:info@dp-dvelop.de)
