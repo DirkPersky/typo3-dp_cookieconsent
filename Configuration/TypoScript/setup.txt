@@ -31,7 +31,11 @@ page {
                 revokable = {$plugin.tx_cookieconsent.settings.revokable}
                 statistics = {$plugin.tx_cookieconsent.settings.statistics}
                 marketing = {$plugin.tx_cookieconsent.settings.marketing}
-                iframeNotice = {$plugin.tx_cookieconsent.settings.iframe.notice}
+
+                # Overlay def
+                overlay = {$plugin.tx_cookieconsent.settings.overlay.notice}
+                overlayBG = {$plugin.tx_cookieconsent.settings.overlay.background}
+                overlayText = {$plugin.tx_cookieconsent.settings.overlay.text}
             }
         }
     }
