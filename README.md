@@ -158,7 +158,7 @@ or accept/deny cookies outside of the cookie hin, you can use the followed examp
 `window.DPCookieConsent.forceAccept(this)`
 
 **deny cookies**<br/>
-`window.DPCookieConsent.forceAccept(this)`
+`window.DPCookieConsent.forceDeny(this)`
 
 #### Checkboxe mode
 You can extend the default cookie message with checkboxes.
