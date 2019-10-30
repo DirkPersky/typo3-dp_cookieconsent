@@ -36,6 +36,19 @@
                 <source>marketing</source>
                 <target>Marketing</target>
             </trans-unit>
+
+            <trans-unit id="media.notice">
+                <source>Cookie Notice</source>
+                <target>Cookie-Hinweis</target>
+            </trans-unit>
+            <trans-unit id="media.desc">
+                <source>Loading this resource will connect to external servers which use cookies and other tracking technologies to personalize and improve experience. Further information can be found in our privacy policy.</source>
+                <target>Durch das Laden dieser Ressource wird eine Verbindung zu externen Servern hergestellt, die Cookies und andere Tracking-Technologien verwenden, um die Benutzererfahrung zu personalisieren und zu verbessern. Weitere Informationen finden Sie in unserer Datenschutzerklärung.</target>
+            </trans-unit>
+            <trans-unit id="media.btn">
+                <source>Allow Cookies and load this resource</source>
+                <target>Erlaube Cookies und lade diese Ressource</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

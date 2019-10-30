@@ -27,6 +27,8 @@ plugin.tx_cookieconsent {
         statistics = true
         # cat=plugin.cookieconsent; type=options[true,false]; label = pre check statistics in checkboxes layout
         marketing = false
+        # cat=plugin.cookieconsent; type=options[true,false]; label = display iframe overlay
+        iframe.notice = false
 
         palette {
             popup {
