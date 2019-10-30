@@ -31,6 +31,26 @@ plugin.tx_cookieconsent.settings {
     # pre check statistics in checkboxes layout
     marketing = false
 
+    # show Iframe overlay
+    overlay {
+        # Enable Iframe overlay
+        notice = false
+
+        box {
+            # Overlay: Background
+            background = rgba(0,0,0,.8)
+            # Overlay: Text
+            text = #fff
+        }
+        button {
+            # Overlay Button: Background
+            background = #b81839
+            # Overlay Button: Text
+            text = #fff
+        }
+    }
+
+    # Cookiehint Style
     palette {
         popup {
             # Bar: Background color
@@ -57,10 +77,16 @@ plugin.tx_dp_cookieconsent._LOCAL_LANG {
         dismiss = XXX
         link = XXX
         deny = XXX
+
         # Checkbox labels
         dpRequire = XXX
         dpStatistik = XXX
         dpMarketing = XXX
+
+        # Iframe Overlay text
+        media.notice = XXX
+        media.desc = XXX
+        media.btn = XXX
     }
 }
 ```
@@ -101,10 +127,14 @@ If you want to load iFrame's (YouTube, GMap, ..) after the Cookie is accepted yo
 With the `class="dp--iframe"` the iFrame is hidden in default and would be shown after the cookie acceptioning.
 
 # TODO
+constant
+plugin.tx_cookieconsent.settings.overlay.notice = true
+
 data-cookieconsent-notice="YOUR TEXT"
 data-cookieconsent-description="YOUR TEXT"
 data-cookieconsent-btn="YOUR TEXT"
     
+Since Version 9.8.0 you can handle iFrame's. 
 ```
 <button 
     onclick="window.DPCookieConsent.forceAccept(this)" 

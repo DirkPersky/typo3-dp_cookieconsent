@@ -38,9 +38,9 @@ plugin.tx_cookieconsent {
                 text = #fff
             }
             button {
-                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay: Background
+                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay Button: Background
                 background = #b81839
-                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay: Text
+                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay Button: Text
                 text = #fff
             }
         }
