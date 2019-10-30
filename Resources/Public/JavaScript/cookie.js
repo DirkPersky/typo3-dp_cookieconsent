@@ -1,6 +1,6 @@
 /*!
   * Cookie Consent Adapter
-  * Copyright 2018 Dirk Persky (https://github.com/DirkPersky/typo3-dp_cookieconsent)
+  * Copyright 2019 Dirk Persky (https://github.com/DirkPersky/typo3-dp_cookieconsent)
   * Licensed under GPL v3+ (https://github.com/DirkPersky/typo3-dp_cookieconsent/blob/master/LICENSE)
   */
 window.addEventListener("load", function () {
@@ -308,7 +308,10 @@ window.addEventListener("load", function () {
         };
         // Bind Popup Event
         var complete = function (popup) {
+            // store popup
             window.DPCookieConsent.setPopup(popup);
+            // init overlays
+            window.DPCookieConsent.overlays();
         };
         // init Consent
         window.cookieconsent.initialise(options, complete );
@@ -356,6 +359,54 @@ window.addEventListener("load", function () {
                 me.popup.setStatus(window.cookieconsent.status.deny);
                 me.popup.close(true);
             }, 250);
+        }
+    };
+    /**
+     * create Overlays
+     */
+    CookieConsent.prototype.overlays = function(){
+        // check if active
+        if(!window.cookieconsent_options.overlay.notice) return;
+        // elements iFrame
+        var elements = this.getCookieElementsByTag('iframe');
+        // loop elements and create overlay
+        if (elements.length > 0) {
+            var key;
+            /** Loop through elements and run Code **/
+            for (key = 0; key < elements.length; key++) {
+                var element = elements[key],
+                    notice = element.getAttribute('data-cookieconsent-notice') || window.cookieconsent_options.content.media.notice,
+                    desc = element.getAttribute('data-cookieconsent-description') || window.cookieconsent_options.content.media.desc,
+                    btn = element.getAttribute('data-cookieconsent-btn') || window.cookieconsent_options.content.media.btn,
+                    type = element.getAttribute('data-cookieconsent');
+                // create overlay
+                var div = document.createElement('div');
+                div.classList.add("dp--overlay");
+                // Button Style
+                var style = '';
+                if(window.cookieconsent_options.overlay.btn.background) {
+                    style +='background:'+window.cookieconsent_options.overlay.btn.background+';';
+                }
+                if(window.cookieconsent_options.overlay.btn.text) {
+                    style +='color:'+window.cookieconsent_options.overlay.btn.text+';';
+                }
+                // create HTML
+                div.innerHTML = "<div class=\"dp--overlay-inner\">" +
+                    "<div class='dp--overlay-header'>"+notice+"</div>" +
+                    "<div class='dp--overlay-description'>"+desc+"</div>" +
+                    "<div class='dp--overlay-button'><button class='db--overlay-submit' onclick='window.DPCookieConsent.forceAccept(this)' data-cookieconsent='"+type+"' style='"+style+"'>"+btn+"</button></div>" +
+                    "</div>";
+                // add background color
+                if(window.cookieconsent_options.overlay.box.background) {
+                    div.style.background = window.cookieconsent_options.overlay.box.background;
+                }
+                // add Text Color
+                if(window.cookieconsent_options.overlay.box.text) {
+                    div.style.color = window.cookieconsent_options.overlay.box.text;
+                }
+                // add Element to DOM
+                element.parentNode.appendChild(div);
+            }
         }
     };
     /** Init Handler **/

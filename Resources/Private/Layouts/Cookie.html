@@ -6,8 +6,14 @@
         dpCSS:'<f:uri.resource absolute="1" path="css/cookie.min.css?v=9.7.0" extensionName="dp_cookieconsent" />',
         overlay: {
             notice: <f:format.raw>{settings.overlay}</f:format.raw>,
-            background: '<f:format.raw>{settings.overlayBG}</f:format.raw>',
-            text: '<f:format.raw>{settings.overlayText}</f:format.raw>'
+            box: {
+                background: '<f:format.raw>{settings.overlayBG}</f:format.raw>',
+                text: '<f:format.raw>{settings.overlayText}</f:format.raw>'
+            },
+            btn: {
+                background: '<f:format.raw>{settings.overlayBtnBG}</f:format.raw>',
+                text: '<f:format.raw>{settings.overlayBtnText}</f:format.raw>'
+            }
         },
         content: {
             message:'<f:translate key="message" extensionName="dp_cookieconsent" />',

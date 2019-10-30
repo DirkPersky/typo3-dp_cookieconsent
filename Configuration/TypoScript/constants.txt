@@ -31,10 +31,18 @@ plugin.tx_cookieconsent {
         overlay {
             # cat=plugin.cookieconsent/overlay; type=options[true,false]; label = display iframe overlay
             notice = false
-            # cat=plugin.cookieconsent/overlay; type=color; label= Overlay: Background
-            background = rgba(0,0,0,.8)
-            # cat=plugin.cookieconsent/overlay; type=color; label= Overlay: Text
-            text = #fff
+            box {
+                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay: Background
+                background = rgba(0,0,0,.8)
+                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay: Text
+                text = #fff
+            }
+            button {
+                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay: Background
+                background = #b81839
+                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay: Text
+                text = #fff
+            }
         }
 
         palette {

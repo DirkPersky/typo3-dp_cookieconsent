@@ -100,6 +100,23 @@ If you want to load iFrame's (YouTube, GMap, ..) after the Cookie is accepted yo
 ```
 With the `class="dp--iframe"` the iFrame is hidden in default and would be shown after the cookie acceptioning.
 
+# TODO
+data-cookieconsent-notice="YOUR TEXT"
+data-cookieconsent-description="YOUR TEXT"
+data-cookieconsent-btn="YOUR TEXT"
+    
+```
+<button 
+    onclick="window.DPCookieConsent.forceAccept(this)" 
+    data-cookieconsent="statistics" 
+>allow cookies and play video</button>
+
+```
+
+window.DPCookieConsent.forceAccept(this)
+window.DPCookieConsent.forceAccept(this)
+
+
 #### Checkboxe mode
 Since Version 9.5.3 you can extend the default cookie message with checkboxes.
 Now your customer can choose what types of script he want to allow.
