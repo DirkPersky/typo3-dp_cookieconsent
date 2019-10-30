@@ -114,7 +114,6 @@ If you want to load Inline JavaScript after the Cookie is accepted use this snip
 The `data-ignore="1"` attribute ist to cover the (Scriptmerger)[https://extensions.typo3.org/extension/scriptmerger/] engine to not Combine this parts.
 
 ### load iframe after accepting
-Since Version 9.7.0 you can handle iFrame's. 
 If you want to load iFrame's (YouTube, GMap, ..) after the Cookie is accepted you can use this snipped
 ```
 <iframe width="560" height="315" 
@@ -126,15 +125,28 @@ If you want to load iFrame's (YouTube, GMap, ..) after the Cookie is accepted yo
 ```
 With the `class="dp--iframe"` the iFrame is hidden in default and would be shown after the cookie acceptioning.
 
-# TODO
-constant
-plugin.tx_cookieconsent.settings.overlay.notice = true
+#### iframe overlay
+**if you want to add an overlay to accept Cookies outside from the cookie hint**
+![iframe overlay](Documentation/iframe-overlay.png)
+you can enable this feature in the TYPO3-constants<br/>
+`plugin.tx_cookieconsent.settings.overlay.notice = true`
 
-data-cookieconsent-notice="YOUR TEXT"
-data-cookieconsent-description="YOUR TEXT"
-data-cookieconsent-btn="YOUR TEXT"
-    
-Since Version 9.8.0 you can handle iFrame's. 
+you also can modify the text in this hint individuel per iframe
+```
+<iframe
+    data-cookieconsent="statistics" 
+    data-src="https://www.youtube-nocookie.com/embed/XXXXXX?autoplay=1" 
+    class="dp--iframe"
+
+    data-cookieconsent-notice="Cookie Notice"
+    data-cookieconsent-description="Loading this...."
+    data-cookieconsent-btn="allow cookies and load this ...."
+>
+</iframe>
+```
+
+#### build your own overlay
+or accept/deny cookies outside of the cookie hin, you can use the followed example
 ```
 <button 
     onclick="window.DPCookieConsent.forceAccept(this)" 
@@ -142,13 +154,14 @@ Since Version 9.8.0 you can handle iFrame's.
 >allow cookies and play video</button>
 
 ```
+**allow cookies**<br/>
+`window.DPCookieConsent.forceAccept(this)`
 
-window.DPCookieConsent.forceAccept(this)
-window.DPCookieConsent.forceAccept(this)
-
+**deny cookies**<br/>
+`window.DPCookieConsent.forceAccept(this)`
 
 #### Checkboxe mode
-Since Version 9.5.3 you can extend the default cookie message with checkboxes.
+You can extend the default cookie message with checkboxes.
 Now your customer can choose what types of script he want to allow.
 You can enable this option with the TYPO3 constant `plugin.tx_cookieconsent.settings.layout = dpextend`.
 

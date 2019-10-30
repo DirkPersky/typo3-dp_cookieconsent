@@ -36,7 +36,7 @@
                 <source>Loading this resource will connect to external servers which use cookies and other tracking technologies to personalize and improve experience. Further information can be found in our privacy policy.</source>
             </trans-unit>
             <trans-unit id="media.btn">
-                <source>Allow Cookies and load this resource</source>
+                <source>allow cookies and load this resource</source>
             </trans-unit>
 		</body>
 	</file>
