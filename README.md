@@ -24,7 +24,7 @@ plugin.tx_cookieconsent.settings {
     # Type (info, opt-out)
     type = opt-out
     # extend layout with checkboxes (basic,dpextend)
-    layout = basic
+    layout = dpextend
 
     #  pre check statistics in checkboxes layout
     statistics = true
@@ -34,7 +34,7 @@ plugin.tx_cookieconsent.settings {
     # show Iframe overlay
     overlay {
         # Enable Iframe overlay
-        notice = false
+        notice = true
 
         box {
             # Overlay: Background
