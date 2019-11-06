@@ -32,6 +32,13 @@ page {
                 statistics = {$plugin.tx_cookieconsent.settings.statistics}
                 marketing = {$plugin.tx_cookieconsent.settings.marketing}
 
+                # Overlay def
+                overlay = {$plugin.tx_cookieconsent.settings.overlay.notice}
+                overlayBG = {$plugin.tx_cookieconsent.settings.overlay.box.background}
+                overlayText = {$plugin.tx_cookieconsent.settings.overlay.box.text}
+
+                overlayBtnBG = {$plugin.tx_cookieconsent.settings.overlay.button.background}
+                overlayBtnText = {$plugin.tx_cookieconsent.settings.overlay.button.text}
             }
         }
     }

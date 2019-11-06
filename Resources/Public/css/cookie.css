@@ -22,9 +22,44 @@
 .dp--cookie-check label:last-child {
     padding-right: 10px;
 }
+/**
+ * Iframes
+ */
 .dp--iframe {
     display: none;
 }
 .dp--iframe.dp--loaded {
     display: block;
+}
+/**
+ * Iframe Overlay
+ */
+.dp--overlay {
+    padding: 2.5rem 1.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+.dp--overlay-description{
+    margin-top: .8rem;
+}
+
+.dp--overlay-button {
+    margin-top: .8rem;
+}
+
+.db--overlay-submit {
+    border: 2px solid transparent;
+
+    display: inline-block;
+    padding: .4em .8em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.dp--iframe.dp--loaded + .dp--overlay {
+    display: none;
 }

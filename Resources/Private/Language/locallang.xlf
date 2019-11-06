@@ -28,6 +28,16 @@
 			<trans-unit id="dpMarketing">
 				<source>marketing</source>
 			</trans-unit>
+
+			<trans-unit id="media.notice">
+                <source>Cookie Notice</source>
+            </trans-unit>
+            <trans-unit id="media.desc">
+                <source>Loading this resource will connect to external servers which use cookies and other tracking technologies to personalize and improve experience. Further information can be found in our privacy policy.</source>
+            </trans-unit>
+            <trans-unit id="media.btn">
+                <source>allow cookies and load this resource</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>
