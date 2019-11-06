@@ -49,6 +49,11 @@
                 <source>Allow Cookies and load this resource</source>
                 <target>Tillad cookies og indlæs denne ressource</target>
             </trans-unit>
+
+            <trans-unit id="allowall">
+                <source>allow all!</source>
+                <target>alle accepterer</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

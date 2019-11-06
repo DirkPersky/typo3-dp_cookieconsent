@@ -21,8 +21,8 @@ plugin.tx_cookieconsent.settings {
     position = bottom-right
     # dismiss on scroll (in PX)
     dismissOnScroll =
-    # Type (info, opt-out)
-    type = opt-out
+    # Type (info, opt-out. opt-in)
+    type = opt-in
     # extend layout with checkboxes (basic,dpextend)
     layout = dpextend
 

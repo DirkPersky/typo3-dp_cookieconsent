@@ -17,7 +17,7 @@ plugin.tx_cookieconsent {
         position = bottom-right
         # cat=plugin.cookieconsent; type=int+; label= dismiss on scroll (in PX)
         dismissOnScroll =
-        # cat=plugin.cookieconsent; type=options[info,opt-out]; label = Type
+        # cat=plugin.cookieconsent; type=options[info,opt-out,opt-in]; label = Type
         type = info
         # cat=plugin.cookieconsent; type=options[basic,dpextend]; label = extend layout with checkboxes
         layout = basic
