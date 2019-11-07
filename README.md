@@ -10,7 +10,8 @@ I extended it with Script and iFrame helper, so it works with the ePrivacy law.
 Though don't care about the latest EU laws and handle you Cookies with this Plugins.
 
 ## Config
-### TS-Constant
+### TS-Constant 
+
 **plugin.tx_cookieconsent.settings.**
 
 | Property                  | Description                                   | Options                                   | Default |
@@ -32,7 +33,7 @@ Though don't care about the latest EU laws and handle you Cookies with this Plug
 | palette.popup.text        | Consent Text color                            | rgb(), hexa                               | #fff |
 | palette.button.background | Consent Button Background color               | rgba(), hexa                              | #f96332 |
 | palette.button.text       | Consent Button Text color                     | rgb(), hexa                               | #fff |
-[example config](Documentation/constant.md)
+| [example config](Documentation/constant.md)        |
 
 ### TypoScript
 set you own language values
@@ -51,7 +52,7 @@ set you own language values
 | media.notice  | overlay notice headline       |
 | media.desc    | overlay notice text           |
 | media.btn     | overlay button text           |
-[example](Documentation/translation.md)
+| [example](Documentation/translation.md)       |
 
 **If you are from a country other than Germany, let me know your legal text and I will mark it for the next version**
 
