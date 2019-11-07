@@ -12,6 +12,10 @@
 				<source>allow cookies</source>
                 <target>tillad cookies</target>
 			</trans-unit>
+            <trans-unit id="allowall">
+                <source>allow all!</source>
+                <target>alle accepterer</target>
+            </trans-unit>
 			<trans-unit id="deny">
 				<source>decline</source>
                 <target>afvis</target>
@@ -48,11 +52,6 @@
             <trans-unit id="media.btn">
                 <source>Allow Cookies and load this resource</source>
                 <target>Tillad cookies og indlæs denne ressource</target>
-            </trans-unit>
-
-            <trans-unit id="allowall">
-                <source>allow all!</source>
-                <target>alle accepterer</target>
             </trans-unit>
 		</body>
 	</file>

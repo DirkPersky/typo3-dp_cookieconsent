@@ -10,6 +10,9 @@
 			<trans-unit id="dismiss">
 				<source>allow cookies</source>
 			</trans-unit>
+            <trans-unit id="allowall">
+                <source>allow all!</source>
+            </trans-unit>
 			<trans-unit id="deny">
 				<source>decline</source>
 			</trans-unit>
@@ -37,10 +40,6 @@
             </trans-unit>
             <trans-unit id="media.btn">
                 <source>allow cookies and load this resource</source>
-            </trans-unit>
-
-            <trans-unit id="allowall">
-                <source>allow all!</source>
             </trans-unit>
 		</body>
 	</file>

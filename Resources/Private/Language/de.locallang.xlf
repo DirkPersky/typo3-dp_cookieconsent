@@ -12,6 +12,10 @@
                 <source>allow cookies</source>
                 <target>Cookies zulassen!</target>
             </trans-unit>
+            <trans-unit id="allowall">
+                <source>allow all!</source>
+                <target>alle akzeptieren!</target>
+            </trans-unit>
             <trans-unit id="deny">
                 <source>decline</source>
                 <target>Ablehnen</target>
@@ -49,12 +53,6 @@
                 <source>Allow Cookies and load this resource</source>
                 <target>Erlaube Cookies und lade diese Ressource</target>
             </trans-unit>
-
-            <trans-unit id="allowall">
-                <source>allow all!</source>
-                <target>alle akzeptieren</target>
-            </trans-unit>
-
 		</body>
 	</file>
 </xliff>
