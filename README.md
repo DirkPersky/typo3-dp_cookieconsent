@@ -11,85 +11,48 @@ Though don't care about the latest EU laws and handle you Cookies with this Plug
 
 ## Config
 ### TS-Constant
-```
-plugin.tx_cookieconsent.settings {
-    # PID to Data Protection
-    url =
-    # Layout
-    theme = edgeless
-    # Position
-    position = bottom-right
-    # dismiss on scroll (in PX)
-    dismissOnScroll =
-    # Type (info, opt-out. opt-in)
-    type = opt-in
-    # extend layout with checkboxes (basic,dpextend)
-    layout = dpextend
+**plugin.tx_cookieconsent.settings.**
 
-    #  pre check statistics in checkboxes layout
-    statistics = true
-    # pre check statistics in checkboxes layout
-    marketing = false
-
-    # show Iframe overlay
-    overlay {
-        # Enable Iframe overlay
-        notice = true
-
-        box {
-            # Overlay: Background
-            background = rgba(0,0,0,.8)
-            # Overlay: Text
-            text = #fff
-        }
-        button {
-            # Overlay Button: Background
-            background = #b81839
-            # Overlay Button: Text
-            text = #fff
-        }
-    }
-
-    # Cookiehint Style
-    palette {
-        popup {
-            # Bar: Background color
-            background = #2473be
-            # Bar: text color
-            text = #fff
-        }
-        button {
-            # Button: Background color
-            background = #f96332
-            # Button: text color
-            text = #fff
-        }
-    }
-}
-```
+| Property                  | Description                                   | Options                                   | Default |
+|---------------------------|-----------------------------------------------|-------------------------------------------|--------:|
+| url                       | PID to Data Protection                        | PID                                       | |
+| theme                     | Layout of the consent                         | edgeless, block, wire, classic            | edgeless |
+| position                  | position of the consent                       | bottom, top, bottom-left, bottom-right    | bottom-right |
+| dismissOnScroll           | auto accecpt consent on scroll after XX px    |                                           | | 
+| type                      | consent types                                 | info, opt-out, opt-in                     | info |
+| layout                    | consent layout                                | basic, dpextend                           | basic |
+| statistics                | pre check statistics in checkboxes layout     | true, false                               | false |
+| marketing                 | pre check marketing in checkboxes layout      | true, false                               | false |
+| overlay.notice            | enable or disable overlay                     | true, false                               | false |
+| overlay.box.background    | Overlay: Background color                     | rgba(), hexa                              | rgba(0,0,0,.8) |
+| overlay.box.text          | Overlay: text color                           | rgb(), hexa                               | #fff |
+| overlay.button.background | Overlay: Button Background color              | rgba(), hexa                              | #b81839 |
+| overlay.button.text       | Overlay: Button text color                    | rgb(), hexa                               | #fff |
+| palette.popup.background  | Consent Background color                      | rgba(), hexa                              | #2473be |
+| palette.popup.text        | Consent Text color                            | rgb(), hexa                               | #fff |
+| palette.button.background | Consent Button Background color               | rgba(), hexa                              | #f96332 |
+| palette.button.text       | Consent Button Text color                     | rgb(), hexa                               | #fff |
+[example config](Documentation/constant.md)
 
 ### TypoScript
 set you own language values
-```
-plugin.tx_dp_cookieconsent._LOCAL_LANG {
-    de {
-        message = XXX
-        dismiss = XXX
-        link = XXX
-        deny = XXX
+**plugin.tx_dp_cookieconsent._LOCAL_LANG.{lng}.**
 
-        # Checkbox labels
-        dpRequire = XXX
-        dpStatistik = XXX
-        dpMarketing = XXX
+| Property      | Description                   |
+|---------------|-------------------------------|
+| message       | the default consent message   |
+| dismiss       | allow cookie button           |
+| link          | read more link                |
+| deny          | decline button                |
+| allowall      | allow all cookie button       |
+| dpRequire     | checkbox required label       |
+| dpStatistik   | checkbox statistic label      |
+| dpMarketing   | checkbox marketing label      |
+| media.notice  | overlay notice headline       |
+| media.desc    | overlay notice text           |
+| media.btn     | overlay button text           |
+[example](Documentation/translation.md)
 
-        # Iframe Overlay text
-        media.notice = XXX
-        media.desc = XXX
-        media.btn = XXX
-    }
-}
-```
 **If you are from a country other than Germany, let me know your legal text and I will mark it for the next version**
 
 ## Features
