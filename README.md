@@ -20,19 +20,26 @@ Though don't care about the latest EU laws and handle you Cookies with this Plug
 | theme                     | Layout of the consent                         | edgeless, block, wire, classic            | edgeless |
 | position                  | position of the consent                       | bottom, top, bottom-left, bottom-right    | bottom-right |
 | dismissOnScroll           | auto accecpt consent on scroll after XX px    |                                           | | 
-| type                      | consent types                                 | info, opt-out, opt-in                     | info |
+| type                      | consent types *([screenshot](#types))*        | info, opt-out, opt-in                     | info |
 | layout                    | consent layout                                | basic, dpextend                           | basic |
 | statistics                | pre check statistics in checkboxes layout     | true, false                               | false |
 | marketing                 | pre check marketing in checkboxes layout      | true, false                               | false |
 | overlay.notice            | enable or disable overlay                     | true, false                               | false |
-| overlay.box.background    | Overlay: Background color                     | rgba(), hexa                              | rgba(0,0,0,.8) |
-| overlay.box.text          | Overlay: text color                           | rgb(), hexa                               | #fff |
-| overlay.button.background | Overlay: Button Background color              | rgba(), hexa                              | #b81839 |
-| overlay.button.text       | Overlay: Button text color                    | rgb(), hexa                               | #fff |
-| palette.popup.background  | Consent Background color                      | rgba(), hexa                              | #2473be |
-| palette.popup.text        | Consent Text color                            | rgb(), hexa                               | #fff |
-| palette.button.background | Consent Button Background color               | rgba(), hexa                              | #f96332 |
-| palette.button.text       | Consent Button Text color                     | rgb(), hexa                               | #fff |
+| overlay.box.background    | Overlay: Background color                     | rgba(), #hexa                             | rgba(0,0,0,.8) |
+| overlay.box.text          | Overlay: text color                           | rgb(), #hexa                              | #fff |
+| overlay.button.background | Overlay: Button Background color              | rgba(), #hexa                             | #b81839 |
+| overlay.button.text       | Overlay: Button text color                    | rgb(), #hexa                              | #fff |
+| palette.popup.background  | Consent Background color                      | rgba(), #hexa                             | #2473be |
+| palette.popup.text        | Consent Text color                            | rgb(), #hexa                              | #fff |
+| palette.button.background | Consent Button Background color               | rgba(), #hexa                             | #f96332 |
+| palette.button.text       | Consent Button Text color                     | rgb(), #hexa                              | #fff |
+
+#### types
+the screenshots are basesd one the `plugin.tx_cookieconsent.settings.layout = dpextend`
+
+| info                                 | opt-out                                 | opt-in                                 |
+| ------------------------------------ | --------------------------------------- | -------------------------------------- |
+| ![info](Documentation/type_info.png) | ![info](Documentation/type_opt-out.png) | ![info](Documentation/type_opt-in.png) |
 
 ### TypoScript
 set you own language values
@@ -79,7 +86,7 @@ The `data-ignore="1"` attribute ist to cover the (Scriptmerger)[https://extensio
 You can extend the default cookie message with checkboxes, by activiating the layout in the TYPO3 constants  `plugin.tx_cookieconsent.settings.layout = dpextend`.
 Now your customer can choose what types of scripts/cookies he want to allow.
 
-This 4 types are possible and handled by the consent:
+This 3 types are possible and handled by the consent:
 
 | Type       | Description                                          | example | 
 | ---------- | ---------------------------------------------------- | --------- |
