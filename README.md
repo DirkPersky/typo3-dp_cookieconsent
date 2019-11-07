@@ -12,10 +12,10 @@ Though don't care about the latest EU laws and handle you Cookies with this Plug
 ## Config
 ### TS-Constant 
 
-**plugin.tx_cookieconsent.settings.**
+**plugin.tx_cookieconsent.settings.** *([example config](Documentation/constant.md))*
 
 | Property                  | Description                                   | Options                                   | Default |
-|---------------------------|-----------------------------------------------|-------------------------------------------|--------:|
+| ------------------------- | --------------------------------------------- | ----------------------------------------- | -------:|
 | url                       | PID to Data Protection                        | PID                                       | |
 | theme                     | Layout of the consent                         | edgeless, block, wire, classic            | edgeless |
 | position                  | position of the consent                       | bottom, top, bottom-left, bottom-right    | bottom-right |
@@ -33,14 +33,13 @@ Though don't care about the latest EU laws and handle you Cookies with this Plug
 | palette.popup.text        | Consent Text color                            | rgb(), hexa                               | #fff |
 | palette.button.background | Consent Button Background color               | rgba(), hexa                              | #f96332 |
 | palette.button.text       | Consent Button Text color                     | rgb(), hexa                               | #fff |
-| [example config](Documentation/constant.md)        |
 
 ### TypoScript
 set you own language values
-**plugin.tx_dp_cookieconsent._LOCAL_LANG.{lng}.**
+**plugin.tx_dp_cookieconsent._LOCAL_LANG.{lng}.** *([example](Documentation/translation.md))*
 
 | Property      | Description                   |
-|---------------|-------------------------------|
+| ------------- | ----------------------------- |
 | message       | the default consent message   |
 | dismiss       | allow cookie button           |
 | link          | read more link                |
@@ -52,7 +51,6 @@ set you own language values
 | media.notice  | overlay notice headline       |
 | media.desc    | overlay notice text           |
 | media.btn     | overlay button text           |
-| [example](Documentation/translation.md)       |
 
 **If you are from a country other than Germany, let me know your legal text and I will mark it for the next version**
 
@@ -78,29 +76,16 @@ If you want to load Inline JavaScript after the Cookie is accepted use this snip
 The `data-ignore="1"` attribute ist to cover the (Scriptmerger)[https://extensions.typo3.org/extension/scriptmerger/] engine to not Combine this parts.
 
 ### Checkboxe mode
-You can extend the default cookie message with checkboxes.
-Now your customer can choose what types of script he want to allow.
-You can enable this option with the TYPO3 constant `plugin.tx_cookieconsent.settings.layout = dpextend`.
+You can extend the default cookie message with checkboxes, by activiating the layout in the TYPO3 constants  `plugin.tx_cookieconsent.settings.layout = dpextend`.
+Now your customer can choose what types of scripts/cookies he want to allow.
 
-This 3 types are possible:
+This 4 types are possible and handled by the consent:
 
-**required**: 
-this checkbox cant be disabled
-```
-<script data-cookieconsent="required" ...
-```
-
-**statistics**:
-this checkbox is enabled by default
-```
-<script data-cookieconsent="statistics"...
-```
-
-**marketing**:
-this checkbox is disabled by default
-```
-<script data-cookieconsent="marketing"...
-```
+| Type       | Description                                          | example | 
+| ---------- | ---------------------------------------------------- | --------- |
+| required   | all normal script, will always called                | `<script type="text/javascript" ...`
+| statistics | scripts that will only run after consent handling    | `<script data-cookieconsent="statistics" type="text/plain"...`
+| marketing  | scripts that will only run after consent handling    | `<script data-cookieconsent="marketing" type="text/plain"...`
 
 ### load iframe after accepting
 If you want to load iFrame's (YouTube, GMap, ..) after the Cookie is accepted you can use this snipped
