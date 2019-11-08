@@ -1,20 +1,18 @@
-{namespace dp=DirkPersky\CookieConsent\Viewhelpers}
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <script type="text/javascript" data-ignore="1">
-    <dp:CookieConsent />
     window.cookieconsent_options = {
         js:'<f:uri.resource absolute="1" path="JavaScript/cookieconsent.min.js?v=3.1.1" extensionName="dp_cookieconsent" />',
         css:'<f:uri.resource absolute="1" path="css/cookieconsent.min.css?v=3.1.1" extensionName="dp_cookieconsent" />',
         dpCSS:'<f:uri.resource absolute="1" path="css/cookie.min.css?v=9.8.0-dev" extensionName="dp_cookieconsent" />',
         overlay: {
-            notice: <f:format.raw>{settings.overlay}</f:format.raw>,
+            notice: <f:format.raw>{settings.overlay.notice}</f:format.raw>,
             box: {
-                background: '<f:format.raw>{settings.overlayBG}</f:format.raw>',
-                text: '<f:format.raw>{settings.overlayText}</f:format.raw>'
+                background: '<f:format.raw>{settings.overlay.box.background}</f:format.raw>',
+                text: '<f:format.raw>{settings.overlay.box.text}</f:format.raw>'
             },
             btn: {
-                background: '<f:format.raw>{settings.overlayBtnBG}</f:format.raw>',
-                text: '<f:format.raw>{settings.overlayBtnText}</f:format.raw>'
+                background: '<f:format.raw>{settings.overlay.button.background}</f:format.raw>',
+                text: '<f:format.raw>{settings.overlay.button.text}</f:format.raw>'
             }
         },
         content: {
@@ -44,18 +42,18 @@
         type: '<f:format.raw>{settings.type}</f:format.raw>',
         revokable: <f:format.raw>{settings.revokable}</f:format.raw>,
         checkboxes: {
-            statistics: <f:format.raw>{settings.statistics}</f:format.raw>,
-            marketing: <f:format.raw>{settings.marketing}</f:format.raw>,
+            statistics: <f:format.raw>{settings.checkboxes.statistics}</f:format.raw>,
+            marketing: <f:format.raw>{settings.checkboxes.marketing}</f:format.raw>,
         },
         dismissOnScroll: parseInt('<f:format.raw>{settings.dismissOnScroll}</f:format.raw>')||false,
         palette: {
             popup: {
-                background: '<f:format.raw>{settings.barBg}</f:format.raw>',
-                text: '<f:format.raw>{settings.barColor}</f:format.raw>'
+                background: '<f:format.raw>{settings.palette.popup.background}</f:format.raw>',
+                text: '<f:format.raw>{settings.palette.popup.text}</f:format.raw>'
             },
             button: {
-                background: '<f:format.raw>{settings.btnBg}</f:format.raw>',
-                text: '<f:format.raw>{settings.btnColor}</f:format.raw>',
+                background: '<f:format.raw>{settings.palette.button.background}</f:format.raw>',
+                text: '<f:format.raw>{settings.palette.button.text}</f:format.raw>',
             }
         }
     };
