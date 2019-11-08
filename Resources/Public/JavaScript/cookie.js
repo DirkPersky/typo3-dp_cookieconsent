@@ -282,6 +282,12 @@ window.addEventListener("load", function () {
                     '<label for="dp--cookie-marketing"><input type="checkbox" id="dp--cookie-marketing" class="dp--check-box" ' + (window.cookieconsent_options.checkboxes.marketing ? 'checked="checked"' : '') + '> {{dpMarketing}}</label>' +
                     '</div>' +
                     '</span>',
+
+                'allow-all': '<a aria-label="dismiss cookies" role=button tabindex="0"  class="cc-btn cc-dismiss">{{allow-all}}</a>',
+            },
+            compliance: {
+                'opt-in':
+                    '<div class="cc-compliance cc-highlight">{{allow}}{{allow-all}}</div>',
             },
 
             onPopupOpen: function () {
@@ -298,6 +304,18 @@ window.addEventListener("load", function () {
                 if (this.hasConsented() && (status == 'dismiss' || status == 'allow')) window.DPCookieConsent.loadCookies();
             },
             onStatusChange: function (status) {
+                // set all checkboxes
+                if( window.cookieconsent_options.type == 'opt-in' &&
+                    window.cookieconsent_options.layout === 'dpextend' &&
+                    status == 'dismiss'
+                ) {
+                    var checkboxes = window.DPCookieConsent.checkboxes;
+                    // loop checkboxes
+                    checkboxes.map(function (checkbox) {
+                        // set checkboxes to true
+                        window.DPCookieConsent.loadCheckbox('dp--cookie-'+checkbox, false, true);
+                    })
+                }
                 // save checkboxes?
                 window.DPCookieConsent.setCheckboxes();
                 // load cookies
