@@ -1,77 +1,111 @@
+# ==============================================
+# FE-Plugin configuration for EXT:dp_cookieconsent
+# ==============================================
+plugin.dp_cookieconsent {
+    view {
+        templateRootPaths {
+            0 = EXT:dp_cookieconsent/Resources/Private/Templates/
+            1 = {$plugin.tx_cookieconsent.view.templateRootPath}
+        }
+         partialRootPath {
+            0 = EXT:dp_cookieconsent/Resources/Private/Partials/
+            1 = {$plugin.tx_cookieconsent.view.partialRootPath}
+        }
+        layoutRootPath {
+            0 = EXT:dp_cookieconsent/Resources/Private/Layouts/
+            1 = {$plugin.tx_cookieconsent.view.layoutRootPath}
+        }
+    }
+
+    settings {
+        url = {$plugin.tx_cookieconsent.settings.url}
+
+        theme = {$plugin.tx_cookieconsent.settings.theme}
+        position = {$plugin.tx_cookieconsent.settings.position}
+        dismissOnScroll = {$plugin.tx_cookieconsent.settings.dismissOnScroll}
+        type = {$plugin.tx_cookieconsent.settings.type}
+        layout = {$plugin.tx_cookieconsent.settings.layout}
+        revokable = {$plugin.tx_cookieconsent.settings.revokable}
+
+        checkboxes {
+            statistics = {$plugin.tx_cookieconsent.settings.statistics}
+            marketing = {$plugin.tx_cookieconsent.settings.marketing}
+        }
+
+        overlay {
+            notice = {$plugin.tx_cookieconsent.settings.overlay.notice}
+            box {
+                background = {$plugin.tx_cookieconsent.settings.overlay.box.background}
+                text = {$plugin.tx_cookieconsent.settings.overlay.box.text}
+            }
+            button {
+                background = {$plugin.tx_cookieconsent.settings.overlay.button.background}
+                text = {$plugin.tx_cookieconsent.settings.overlay.button.text}
+            }
+        }
+
+        palette {
+            popup {
+                background = {$plugin.tx_cookieconsent.settings.palette.popup.background}
+                text = {$plugin.tx_cookieconsent.settings.palette.popup.text}
+            }
+            button {
+                background = {$plugin.tx_cookieconsent.settings.palette.button.background}
+                text = {$plugin.tx_cookieconsent.settings.palette.button.text}
+            }
+        }
+    }
+}
+
+lib.dp_cookieconsent = FLUIDTEMPLATE
+lib.dp_cookieconsent {
+    file = EXT:dp_cookieconsent/Resources/Private/Layouts/Cookie.html
+
+    templateRootPaths =< plugin.dp_cookieconsent.view.templateRootPaths
+    partialRootPath =< plugin.dp_cookieconsent.view.partialRootPath
+    layoutRootPath =< plugin.dp_cookieconsent.view.layoutRootPath
+
+    settings < plugin.dp_cookieconsent.settings
+}
+
 page {
     headerData {
-        998 = FLUIDTEMPLATE
-        998 {
-            file = EXT:dp_cookieconsent/Resources/Private/Layouts/Cookie.html
+        998 =< lib.dp_cookieconsent
 
-            templateRootPath {
-                0 = EXT:dp_cookieconsent/Resources/Private/Templates/
-                1 = {$plugin.tx_cookieconsent.view.templateRootPath}
+        # cs_seo hook
+        657 {
+            # Modify Google Analytics from CS_SEO
+            10 {
+                stdWrap.replacement  {
+                    10 {
+                        search = <script
+                        replace = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain"
+                    }
+                    20 {
+                        search = src=
+                        replace = data-src=
+                    }
+                }
             }
-            partialRootPath {
-                0 = EXT:dp_cookieconsent/Resources/Private/Partials/
-                1 = {$plugin.tx_cookieconsent.view.partialRootPath}
+            # Modify Google Analytics from CS_SEO
+            20 {
+                stdWrap.replacement  {
+                    10 {
+                        search = <script
+                        replace = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain"
+                    }
+                }
             }
-            layoutRootPath {
-                0 = EXT:dp_cookieconsent/Resources/Private/Layouts/
-                1 = {$plugin.tx_cookieconsent.view.layoutRootPath}
-            }
+        }
+        # Modify Google Tag-Manager & Piwiki from CS_SEO
+        90 = COA
+        90 {
+            wrap = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain">|</script>
 
-            settings  {
-                url = {$plugin.tx_cookieconsent.settings.url}
-                theme = {$plugin.tx_cookieconsent.settings.theme}
-                position = {$plugin.tx_cookieconsent.settings.position}
-                type = {$plugin.tx_cookieconsent.settings.type}
-                dismissOnScroll = {$plugin.tx_cookieconsent.settings.dismissOnScroll}
-                barBg = {$plugin.tx_cookieconsent.settings.palette.popup.background}
-                barColor = {$plugin.tx_cookieconsent.settings.palette.popup.text}
-                btnBg = {$plugin.tx_cookieconsent.settings.palette.button.background}
-                btnColor = {$plugin.tx_cookieconsent.settings.palette.button.text}
-                layout = {$plugin.tx_cookieconsent.settings.layout}
-                revokable = {$plugin.tx_cookieconsent.settings.revokable}
-                statistics = {$plugin.tx_cookieconsent.settings.statistics}
-                marketing = {$plugin.tx_cookieconsent.settings.marketing}
-
-                # Overlay def
-                overlay = {$plugin.tx_cookieconsent.settings.overlay.notice}
-                overlayBG = {$plugin.tx_cookieconsent.settings.overlay.box.background}
-                overlayText = {$plugin.tx_cookieconsent.settings.overlay.box.text}
-
-                overlayBtnBG = {$plugin.tx_cookieconsent.settings.overlay.button.background}
-                overlayBtnText = {$plugin.tx_cookieconsent.settings.overlay.button.text}
-            }
+            10 < page.jsInline.654
         }
     }
 }
 
-# Modify Google Analytics from CS_SEO
-page.headerData.657.10 {
-    stdWrap.replacement  {
-        10 {
-            search = <script
-            replace = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain"
-        }
-        20 {
-            search = src=
-            replace = data-src=
-        }
-    }
-}
-# Modify Google Analytics from CS_SEO
-page.headerData.657.20 {
-    stdWrap.replacement  {
-        10 {
-            search = <script
-            replace = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain"
-        }
-    }
-}
-# Modify Google Tag-Manager & Piwiki from CS_SEO
-page.headerData.90 = COA
-page.headerData.90 {
-    wrap = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain">|</script>
-
-    10 < page.jsInline.654
-}
 # Remove Original Google Tag-Manager & Piwiki from CS_SEO
 page.jsInline.654 >

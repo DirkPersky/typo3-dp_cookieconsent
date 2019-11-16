@@ -10,86 +10,55 @@ I extended it with Script and iFrame helper, so it works with the ePrivacy law.
 Though don't care about the latest EU laws and handle you Cookies with this Plugins.
 
 ## Config
-### TS-Constant
-```
-plugin.tx_cookieconsent.settings {
-    # PID to Data Protection
-    url =
-    # Layout
-    theme = edgeless
-    # Position
-    position = bottom-right
-    # dismiss on scroll (in PX)
-    dismissOnScroll =
-    # Type (info, opt-out)
-    type = opt-out
-    # extend layout with checkboxes (basic,dpextend)
-    layout = dpextend
+### TS-Constant 
 
-    #  pre check statistics in checkboxes layout
-    statistics = true
-    # pre check statistics in checkboxes layout
-    marketing = false
+**plugin.tx_cookieconsent.settings.** *([example config](Documentation/constant.md))*
 
-    # show Iframe overlay
-    overlay {
-        # Enable Iframe overlay
-        notice = true
+| Property                  | Description                                   | Options                                   | Default |
+| ------------------------- | --------------------------------------------- | ----------------------------------------- | -------:|
+| url                       | PID to Data Protection                        | PID                                       | |
+| theme                     | Layout of the consent                         | edgeless, block, wire, classic            | edgeless |
+| position                  | position of the consent                       | bottom, top, bottom-left, bottom-right    | bottom-right |
+| dismissOnScroll           | auto accecpt consent on scroll after XX px    |                                           | | 
+| type                      | consent types *([screenshot](#types))*        | info, opt-out, opt-in                     | info |
+| layout                    | consent layout                                | basic, dpextend                           | basic |
+| statistics                | pre check statistics in checkboxes layout     | true, false                               | false |
+| marketing                 | pre check marketing in checkboxes layout      | true, false                               | false |
+| overlay.notice            | enable or disable overlay                     | true, false                               | false |
+| overlay.box.background    | Overlay: Background color                     | rgba(), #hexa                             | rgba(0,0,0,.8) |
+| overlay.box.text          | Overlay: text color                           | rgb(), #hexa                              | #fff |
+| overlay.button.background | Overlay: Button Background color              | rgba(), #hexa                             | #b81839 |
+| overlay.button.text       | Overlay: Button text color                    | rgb(), #hexa                              | #fff |
+| palette.popup.background  | Consent Background color                      | rgba(), #hexa                             | #2473be |
+| palette.popup.text        | Consent Text color                            | rgb(), #hexa                              | #fff |
+| palette.button.background | Consent Button Background color               | rgba(), #hexa                             | #f96332 |
+| palette.button.text       | Consent Button Text color                     | rgb(), #hexa                              | #fff |
 
-        box {
-            # Overlay: Background
-            background = rgba(0,0,0,.8)
-            # Overlay: Text
-            text = #fff
-        }
-        button {
-            # Overlay Button: Background
-            background = #b81839
-            # Overlay Button: Text
-            text = #fff
-        }
-    }
+#### types
+the screenshots are basesd one the `plugin.tx_cookieconsent.settings.layout = dpextend`
 
-    # Cookiehint Style
-    palette {
-        popup {
-            # Bar: Background color
-            background = #2473be
-            # Bar: text color
-            text = #fff
-        }
-        button {
-            # Button: Background color
-            background = #f96332
-            # Button: text color
-            text = #fff
-        }
-    }
-}
-```
+| info                                 | opt-out                                 | opt-in                                 |
+| ------------------------------------ | --------------------------------------- | -------------------------------------- |
+| ![info](Documentation/type_info.png) | ![info](Documentation/type_opt-out.png) | ![info](Documentation/type_opt-in.png) |
 
 ### TypoScript
 set you own language values
-```
-plugin.tx_dp_cookieconsent._LOCAL_LANG {
-    de {
-        message = XXX
-        dismiss = XXX
-        link = XXX
-        deny = XXX
+**plugin.tx_dp_cookieconsent._LOCAL_LANG.{lng}.** *([example](Documentation/translation.md))*
 
-        # Checkbox labels
-        dpRequire = XXX
-        dpStatistik = XXX
-        dpMarketing = XXX
+| Property      | Description                   |
+| ------------- | ----------------------------- |
+| message       | the default consent message   |
+| dismiss       | allow cookie button           |
+| link          | read more link                |
+| deny          | decline button                |
+| allowall      | allow all cookie button       |
+| dpRequire     | checkbox required label       |
+| dpStatistik   | checkbox statistic label      |
+| dpMarketing   | checkbox marketing label      |
+| media.notice  | overlay notice headline       |
+| media.desc    | overlay notice text           |
+| media.btn     | overlay button text           |
 
-        # Iframe Overlay text
-        media.notice = XXX
-        media.desc = XXX
-        media.btn = XXX
-    }
-}
-```
 **If you are from a country other than Germany, let me know your legal text and I will mark it for the next version**
 
 ## Features
@@ -114,29 +83,16 @@ If you want to load Inline JavaScript after the Cookie is accepted use this snip
 The `data-ignore="1"` attribute ist to cover the (Scriptmerger)[https://extensions.typo3.org/extension/scriptmerger/] engine to not Combine this parts.
 
 ### Checkboxe mode
-You can extend the default cookie message with checkboxes.
-Now your customer can choose what types of script he want to allow.
-You can enable this option with the TYPO3 constant `plugin.tx_cookieconsent.settings.layout = dpextend`.
+You can extend the default cookie message with checkboxes, by activiating the layout in the TYPO3 constants  `plugin.tx_cookieconsent.settings.layout = dpextend`.
+Now your customer can choose what types of scripts/cookies he want to allow.
 
-This 3 types are possible:
+This 3 types are possible and handled by the consent:
 
-**required**: 
-this checkbox cant be disabled
-```
-<script data-cookieconsent="required" ...
-```
-
-**statistics**:
-this checkbox is enabled by default
-```
-<script data-cookieconsent="statistics"...
-```
-
-**marketing**:
-this checkbox is disabled by default
-```
-<script data-cookieconsent="marketing"...
-```
+| Type       | Description                                          | example | 
+| ---------- | ---------------------------------------------------- | --------- |
+| required   | all normal script, will always called                | `<script type="text/javascript" ...`
+| statistics | scripts that will only run after consent handling    | `<script data-cookieconsent="statistics" type="text/plain"...`
+| marketing  | scripts that will only run after consent handling    | `<script data-cookieconsent="marketing" type="text/plain"...`
 
 ### load iframe after accepting
 If you want to load iFrame's (YouTube, GMap, ..) after the Cookie is accepted you can use this snipped

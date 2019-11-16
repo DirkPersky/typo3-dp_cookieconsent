@@ -12,6 +12,10 @@
 				<source>allow cookies</source>
                 <target>tillad cookies</target>
 			</trans-unit>
+            <trans-unit id="allowall">
+                <source>allow all!</source>
+                <target>alle accepterer</target>
+            </trans-unit>
 			<trans-unit id="deny">
 				<source>decline</source>
                 <target>afvis</target>
