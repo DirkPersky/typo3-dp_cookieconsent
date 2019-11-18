@@ -4,7 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/dirkpersky/typo3-dp_cookieconsent/v/stable)](https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent)
 [![License](https://poser.pugx.org/dirkpersky/typo3-dp_cookieconsent/license)](https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent)
 
-This Plugin includes the most popular solution to the EU Cookie law JavaScript Plugin (Cookie Consent)[https://cookieconsent.insites.com/].
+This Plugin includes the most popular solution to the EU Cookie law JavaScript Plugin [Cookie Consent](https://cookieconsent.insites.com/).
 I extended it with Script and iFrame helper, so it works with the ePrivacy law.
 
 Though don't care about the latest EU laws and handle you Cookies with this Plugins.
@@ -63,7 +63,7 @@ set you own language values
 
 ## Features
 ### CS_SEO
-This Plugin extends the Config from (CS_SEO)[https://extensions.typo3.org/extension/cs_seo/] so that the Google analytics script, tag manager and piwiki will fire after the Cookie is accepted.
+This Plugin extends the Config from [CS_SEO](https://extensions.typo3.org/extension/cs_seo/) so that the Google analytics script, tag manager and piwiki will fire after the Cookie is accepted.
 
 ### load scripts after accepting
 **load script sources**
@@ -80,7 +80,7 @@ If you want to load Inline JavaScript after the Cookie is accepted use this snip
 </script>
 ```
 
-The `data-ignore="1"` attribute ist to cover the (Scriptmerger)[https://extensions.typo3.org/extension/scriptmerger/] engine to not Combine this parts.
+The `data-ignore="1"` attribute ist to cover the [Scriptmerger](https://extensions.typo3.org/extension/scriptmerger/) engine to not Combine this parts.
 
 ### Checkboxe mode
 You can extend the default cookie message with checkboxes, by activiating the layout in the TYPO3 constants  `plugin.tx_cookieconsent.settings.layout = dpextend`.
