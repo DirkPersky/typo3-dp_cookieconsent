@@ -1,4 +1,10 @@
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<script type="text/plain" data-ignore="1" data-dp-cookieDesc="layout">
+    <f:render partial="CookieDescription" arguments="{_all}" />
+</script>
+<script type="text/plain" data-ignore="1" data-dp-cookieSelect="layout">
+    <f:render partial="CookieSelection" arguments="{_all}" />
+</script>
 <script type="text/javascript" data-ignore="1">
     window.cookieconsent_options = {
         js:'<f:uri.resource absolute="1" path="JavaScript/cookieconsent.min.js?v=3.1.1" extensionName="dp_cookieconsent" />',
@@ -16,8 +22,6 @@
             }
         },
         content: {
-            cookieDesc: `<f:render partial="CookieDescription" arguments="{_all}" />`,
-            cookieSelect: `<f:render partial="CookieSelection" arguments="{_all}" />`,
             message:'<f:translate key="message" extensionName="dp_cookieconsent" />',
             dismiss:'<f:translate key="dismiss" extensionName="dp_cookieconsent" />',
             allow:'<f:translate key="dismiss" extensionName="dp_cookieconsent" />',

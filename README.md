@@ -145,11 +145,25 @@ or accept/deny cookies outside of the cookie hin, you can use the followed examp
 ### Events
 | Event                     | Description                                   | Options                                   |
 | ------------------------- | --------------------------------------------- | ----------------------------------------- |
-| xxx                       |xxx                        | xxx                                       |
-| xxx                     | xxx                        | xxxx            |
-| xxx                  | xxx                     | xxxx    |
-| xxx           | xxxx   |          xxx                           |
+| dp--cookie-fire           | fire after a consent script/iframe is loaded  | event.detail.$el                          |
+| dp--cookie-accept         | fire when the consent is accepted             |                                           |
+| dp--cookie-deny           | fire when the consend is denied               |                                           |
+| dp--cookie-revoke         | fire when the consent is revoked              |                                           |
 
+```javascript
+document.addEventListener('dp--cookie-fire', function (e) {
+    console.log('dp--cookie-fire', e.detail.$el);
+});
+document.addEventListener('dp--cookie-accept', function (e) {
+    console.log('dp--cookie-accept', e);
+});
+document.addEventListener('dp--cookie-deny', function (e) {
+    console.log('dp--cookie-deny', e);
+});
+document.addEventListener('dp--cookie-revoke', function (e) {
+    console.log('dp--cookie-deny', e);
+});
+```
 
 ## Please give me feedback
 I would appreciate any kind of feedback or ideas for further developments to keep improving the extension for your needs.
