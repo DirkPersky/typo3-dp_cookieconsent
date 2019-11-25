@@ -1,0 +1,13 @@
+<f:translate key="message" extensionName="dp_cookieconsent" />
+
+<f:if condition="{settings.url}">
+    <a aria-label="learn more about cookies"
+       role=button tabindex="0"
+       class="cc-link"
+       href="{f:uri.page(pageUid:'{settings.url}')}"
+       rel="noopener noreferrer nofollow"
+       target="{settings.target}"
+    >
+        <f:translate key="link" extensionName="dp_cookieconsent" />
+    </a>
+</f:if>

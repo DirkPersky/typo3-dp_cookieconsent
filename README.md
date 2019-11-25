@@ -17,6 +17,7 @@ Though don't care about the latest EU laws and handle you Cookies with this Plug
 | Property                  | Description                                   | Options                                   | Default |
 | ------------------------- | --------------------------------------------- | ----------------------------------------- | -------:|
 | url                       | PID to Data Protection                        | PID                                       | |
+| target                    | Link target of read more link                 |                                           | _blank |
 | theme                     | Layout of the consent                         | edgeless, block, wire, classic            | edgeless |
 | position                  | position of the consent                       | bottom, top, bottom-left, bottom-right    | bottom-right |
 | dismissOnScroll           | auto accecpt consent on scroll after XX px    |                                           | | 
