@@ -147,6 +147,7 @@ or accept/deny cookies outside of the cookie hin, you can use the followed examp
 | ------------------------- | --------------------------------------------- | ----------------------------------------- |
 | dp--cookie-fire           | fire after a consent script/iframe is loaded  | event.detail.$el                          |
 | dp--cookie-accept         | fire when the consent is accepted             |                                           |
+| dp--cookie-accept-init    | fire accepted event on revisited              |                                           |
 | dp--cookie-deny           | fire when the consend is denied               |                                           |
 | dp--cookie-revoke         | fire when the consent is revoked              |                                           |
 

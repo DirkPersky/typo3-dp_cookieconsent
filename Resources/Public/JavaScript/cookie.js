@@ -58,18 +58,19 @@ window.addEventListener("load", function () {
         this.asyncLoad(u, 'link');
     };
     /** fallback: getElementsByTagName **/
-    CookieConsent.prototype.getCookieElementsByTag = function (tag) {
+    CookieConsent.prototype.getCookieElementsByTag = function (tag, selector) {
+        if(typeof selector == 'undefined') selector = 'data-cookieconsent';
         // element holder
         var elements = [];
         // check browser function
         if (typeof document.querySelectorAll == 'undefined') {
-            elements = document.querySelectorAll(tag + '[data-cookieconsent]');
+            elements = document.querySelectorAll(tag + '['+selector+']');
         } else {
             // fallback
             var temp = document.getElementsByTagName(tag);
             for (var key in temp) {
                 var element = temp[key];
-                if (typeof element.getAttribute != 'undefined' && element.getAttribute('data-cookieconsent')) {
+                if (typeof element.getAttribute != 'undefined' && element.getAttribute(selector)) {
                     elements.push(element);
                 }
             }
@@ -268,6 +269,11 @@ window.addEventListener("load", function () {
     /** Init Cookie Plugin **/
     CookieConsent.prototype.init = function () {
         var me = this;
+        /**
+         * Add Content HTML
+         */
+        window.cookieconsent_options.content.cookieDesc = DPCookieConsent.getCookieElementsByTag('script', 'data-dp-cookieDesc')[0].innerHTML;
+        window.cookieconsent_options.content.cookieSelect = DPCookieConsent.getCookieElementsByTag('script', 'data-dp-cookieSelect')[0].innerHTML;
         /** Bind Self to Handler Class Funktions **/
         var options = {
             content: window.cookieconsent_options.content,
@@ -308,7 +314,7 @@ window.addEventListener("load", function () {
             onInitialise: function (status) {
                 if (this.hasConsented() && (status == 'dismiss' || status == 'allow')){
                     window.DPCookieConsent.loadCookies();
-                    window.DPCookieConsent.fireEvent('dp--cookie-accept');
+                    window.DPCookieConsent.fireEvent('dp--cookie-accept-init');
                 }
             },
             onStatusChange: function (status) {
@@ -463,3 +469,5 @@ window.addEventListener("load", function () {
     /** Start Script Handling **/
     window.DPCookieConsent.load();
 });
+
+
