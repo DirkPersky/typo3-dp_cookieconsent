@@ -273,6 +273,7 @@ window.addEventListener("load", function () {
                 dpextend: "{{dpmessagelink}}{{compliance}}",
             },
             elements: {
+                messagelink: '<span id="cookieconsent:desc" class="cc-message">{{cookieDesc}}</span>',
                 dpmessagelink: '<span id="cookieconsent:desc" class="cc-message">' +
                     '{{cookieDesc}}' +
                     '{{cookieSelect}}' +
