@@ -141,6 +141,15 @@ or accept/deny cookies outside of the cookie hin, you can use the followed examp
 **deny cookies**<br/>
 `window.DPCookieConsent.forceDeny(this)`
 
+### Events
+| Event                     | Description                                   | Options                                   |
+| ------------------------- | --------------------------------------------- | ----------------------------------------- |
+| xxx                       |xxx                        | xxx                                       |
+| xxx                     | xxx                        | xxxx            |
+| xxx                  | xxx                     | xxxx    |
+| xxx           | xxxx   |          xxx                           |
+
+
 ## Please give me feedback
 I would appreciate any kind of feedback or ideas for further developments to keep improving the extension for your needs.
 
