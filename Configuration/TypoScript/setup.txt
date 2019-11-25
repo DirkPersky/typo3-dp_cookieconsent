@@ -7,11 +7,11 @@ plugin.dp_cookieconsent {
             0 = EXT:dp_cookieconsent/Resources/Private/Templates/
             1 = {$plugin.tx_cookieconsent.view.templateRootPath}
         }
-         partialRootPath {
+         partialRootPaths {
             0 = EXT:dp_cookieconsent/Resources/Private/Partials/
             1 = {$plugin.tx_cookieconsent.view.partialRootPath}
         }
-        layoutRootPath {
+        layoutRootPaths {
             0 = EXT:dp_cookieconsent/Resources/Private/Layouts/
             1 = {$plugin.tx_cookieconsent.view.layoutRootPath}
         }
@@ -19,6 +19,7 @@ plugin.dp_cookieconsent {
 
     settings {
         url = {$plugin.tx_cookieconsent.settings.url}
+        target = {$plugin.tx_cookieconsent.settings.target}
 
         theme = {$plugin.tx_cookieconsent.settings.theme}
         position = {$plugin.tx_cookieconsent.settings.position}
@@ -61,9 +62,9 @@ lib.dp_cookieconsent = FLUIDTEMPLATE
 lib.dp_cookieconsent {
     file = EXT:dp_cookieconsent/Resources/Private/Layouts/Cookie.html
 
-    templateRootPaths =< plugin.dp_cookieconsent.view.templateRootPaths
-    partialRootPath =< plugin.dp_cookieconsent.view.partialRootPath
-    layoutRootPath =< plugin.dp_cookieconsent.view.layoutRootPath
+    templateRootPaths < plugin.dp_cookieconsent.view.templateRootPaths
+    partialRootPaths < plugin.dp_cookieconsent.view.partialRootPaths
+    layoutRootPaths < plugin.dp_cookieconsent.view.layoutRootPaths
 
     settings < plugin.dp_cookieconsent.settings
 }
