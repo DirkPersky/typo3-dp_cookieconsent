@@ -350,7 +350,7 @@ window.addEventListener("load", function () {
             window.DPCookieConsent.setPopup(popup);
             // init overlays
             window.DPCookieConsent.overlays();
-            //fire event when initialize process is done
+            // fire event when the initialization process is completed
             window.DPCookieConsent.fireEvent('dp--cookie-init');
         };
         // init Consent
