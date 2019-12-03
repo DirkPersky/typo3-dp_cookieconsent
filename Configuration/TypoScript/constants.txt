@@ -30,7 +30,7 @@ plugin.tx_cookieconsent {
         # cat=plugin.cookieconsent; type=options[true,false]; label = pre check statistics in checkboxes layout
         marketing = false
         # cat=plugin.cookieconsent; type=options[true,false]; label = should the cookie popup appear automatically
-        autoOpen = false
+        autoOpen = true
 
         overlay {
             # cat=plugin.cookieconsent/overlay; type=options[true,false]; label = display iframe overlay
