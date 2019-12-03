@@ -20,7 +20,7 @@ plugin.dp_cookieconsent {
     settings {
         url = {$plugin.tx_cookieconsent.settings.url}
         target = {$plugin.tx_cookieconsent.settings.target}
-
+        autoOpen = {$plugin.tx_cookieconsent.settings.autoOpen}
         theme = {$plugin.tx_cookieconsent.settings.theme}
         position = {$plugin.tx_cookieconsent.settings.position}
         dismissOnScroll = {$plugin.tx_cookieconsent.settings.dismissOnScroll}
