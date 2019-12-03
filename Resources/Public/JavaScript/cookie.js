@@ -183,8 +183,11 @@ window.addEventListener("load", function () {
     CookieConsent.prototype.load = function () {
         /** Start Loading Scripts & CSS **/
         this.asyncCSS(window.cookieconsent_options.css);
-        /** Lood own CSS extends **/
-        if (window.cookieconsent_options.layout == 'dpextend') this.asyncCSS(window.cookieconsent_options.dpCSS);
+        /** Load own CSS extends and init checkbox configuration **/
+        if (window.cookieconsent_options.layout == 'dpextend') {
+            this.asyncCSS(window.cookieconsent_options.dpCSS);
+            this.initCheckboxes();
+        }
         /** Load Javascript **/
         this.asyncJS(window.cookieconsent_options.js, this.init);
     };
@@ -196,6 +199,19 @@ window.addEventListener("load", function () {
             document.querySelector('body').classList.add('dp--cookie-consent');
         }
     };
+
+    /** Load initial checkbox types from configuration **/
+    CookieConsent.prototype.initCheckboxes = function () {
+        if (typeof window.cookieconsent_options.checkboxes !== "object") return;
+
+        var me = this;
+
+        me.checkboxes = [];
+        for (var key in window.cookieconsent_options.checkboxes) {
+            me.checkboxes.push(key)
+        }
+    };
+
     /** Checkbox Handling **/
     CookieConsent.prototype.setCheckboxes = function () {
         if (window.cookieconsent_options.layout != 'dpextend') return;
@@ -350,7 +366,7 @@ window.addEventListener("load", function () {
             window.DPCookieConsent.setPopup(popup);
             // init overlays
             window.DPCookieConsent.overlays();
-            //fire event when initialize process is done
+            // fire event when the initialization process is completed
             window.DPCookieConsent.fireEvent('dp--cookie-init');
         };
         // init Consent
