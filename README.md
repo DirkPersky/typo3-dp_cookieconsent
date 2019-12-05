@@ -167,6 +167,27 @@ document.addEventListener('dp--cookie-revoke', function (e) {
 });
 ```
 
+### Dynamic Checkboxes
+With this feature you can add or modify the checkbox types by configuration.
+All you have to do is setting your new checkbox in TS and add it to the partial template:
+
+Configuration/TypoScript/setup.txt:
+```
+checkboxes {
+    statistics = {$plugin.tx_cookieconsent.settings.statistics}
+    marketing = {$plugin.tx_cookieconsent.settings.marketing}
+    thirdparty = {$plugin.tx_cookieconsent.settings.thirdparty}
+}
+```
+
+Resources/Private/Partials/CookieSelection.html:
+```
+<label for="dp--cookie-thirdparty">
+    <f:form.checkbox id="dp--cookie-thirdparty" class="dp--check-box" checked="{settings.checkboxes.thirdparty}" value="" />
+    <f:translate key="dpThirdparty" extensionName="dp_cookieconsent" />
+</label>
+```
+
 ## Please give me feedback
 I would appreciate any kind of feedback or ideas for further developments to keep improving the extension for your needs.
 
