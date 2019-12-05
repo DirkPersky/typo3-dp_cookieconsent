@@ -292,6 +292,7 @@ window.addEventListener("load", function () {
         window.cookieconsent_options.content.cookieSelect = DPCookieConsent.getCookieElementsByTag('script', 'data-dp-cookieSelect')[0].innerHTML;
         /** Bind Self to Handler Class Funktions **/
         var options = {
+            autoOpen: window.cookieconsent_options.autoOpen,
             content: window.cookieconsent_options.content,
             theme: window.cookieconsent_options.theme,
             position: window.cookieconsent_options.position,
