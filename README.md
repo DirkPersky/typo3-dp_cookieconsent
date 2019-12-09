@@ -21,6 +21,8 @@ Though don't care about the latest EU laws and handle you Cookies with this Plug
 | theme                     | Layout of the consent                         | edgeless, block, wire, classic            | edgeless |
 | position                  | position of the consent                       | bottom, top, bottom-left, bottom-right    | bottom-right |
 | dismissOnScroll           | auto accecpt consent on scroll after XX px    |                                           | | 
+| autoOpen                  | The application automatically decide whether the popup should open | true, false          | true | 
+| revokable                 | Some countries REQUIRE that a user can change their mind | true, false                    | true | 
 | type                      | consent types *([screenshot](#types))*        | info, opt-out, opt-in                     | info |
 | layout                    | consent layout                                | basic, dpextend                           | basic |
 | statistics                | pre check statistics in checkboxes layout     | true, false                               | false |
