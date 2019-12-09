@@ -1,5 +1,4 @@
 <?php
-
 namespace DirkPersky\DpCookieconsent\ViewHelpers;
 
 /**
@@ -14,7 +13,6 @@ namespace DirkPersky\DpCookieconsent\ViewHelpers;
  *
  * The TYPO3 project - inspiring people to share!
  */
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class JsonViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
     /**

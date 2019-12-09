@@ -34,6 +34,11 @@
     "vendor-dir": ".Build/vendor",
     "bin-dir": ".Build/bin"
   },
+  "autoload": {
+    "psr-4": {
+      "DirkPersky\\DpCookieconsent\\": "Classes/"
+    }
+  },
   "extra": {
     "typo3/cms": {
       "extension-key": "dp_cookieconsent",
