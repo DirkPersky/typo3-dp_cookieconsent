@@ -8,4 +8,10 @@ call_user_func(function () {
         'CookieConsent',
         'CookieConsent'
     );
+
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'DirkPersky.' . 'dp_cookieconsent',
+        'CookieConsent',
+        []
+    );
 });
