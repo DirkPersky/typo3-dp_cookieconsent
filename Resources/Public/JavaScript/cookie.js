@@ -183,9 +183,12 @@ window.addEventListener("load", function () {
     CookieConsent.prototype.load = function () {
         /** Start Loading Scripts & CSS **/
         this.asyncCSS(window.cookieconsent_options.css);
-        /** Load own CSS extends and init checkbox configuration **/
-        if (window.cookieconsent_options.layout == 'dpextend') {
+        /** Load own CSS extends **/
+        if (window.cookieconsent_options.layout == 'dpextend' || window.cookieconsent_options.overlay.notice) {
             this.asyncCSS(window.cookieconsent_options.dpCSS);
+        }
+        /** init checkbox configuration **/
+        if (window.cookieconsent_options.layout == 'dpextend') {
             this.initCheckboxes();
         }
         /** Load Javascript **/
