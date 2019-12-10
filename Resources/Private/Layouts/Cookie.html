@@ -1,3 +1,5 @@
+{namespace dp=DirkPersky\DpCookieconsent\ViewHelpers}
+
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 <script type="text/plain" data-ignore="1" data-dp-cookieDesc="layout">
     <f:render partial="CookieDescription" arguments="{_all}" />
@@ -49,7 +51,7 @@
         position: '<f:format.raw>{settings.position}</f:format.raw>',
         type: '<f:format.raw>{settings.type}</f:format.raw>',
         revokable: <f:format.raw>{settings.revokable}</f:format.raw>,
-        checkboxes: <f:format.raw>{settings.checkboxes -> f:format.json()}</f:format.raw>,
+        checkboxes: <f:format.raw><dp:Json>{settings.checkboxes}</dp:Json></f:format.raw>,
         dismissOnScroll: parseInt('<f:format.raw>{settings.dismissOnScroll}</f:format.raw>')||false,
         palette: {
             popup: {
