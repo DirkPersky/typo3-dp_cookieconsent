@@ -63,3 +63,79 @@
 .dp--iframe.dp--loaded + .dp--overlay {
     display: none;
 }
+
+/** Revoke Button **/
+.cc-revoke.dp--revoke {
+    transform: none !important;
+    text-decoration: none !important;
+
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50% !important;
+
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+.cc-revoke.dp--revoke i {
+    font-size: 24px;
+    pointer-events: none;
+}
+.cc-revoke.dp--revoke:hover {
+    opacity: .7;
+}
+.cc-revoke.dp--revoke.cc-top,
+.cc-revoke.dp--revoke.cc-bottom {
+    left: 0;
+}
+.cc-revoke.dp--revoke.cc-right {
+    right: 0;
+    left: unset;
+}
+
+.dp--sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+@font-face {
+    font-family: 'dp-icomoon';
+    src:  url('../fonts/icomoon.eot?rqal3l');
+    src:  url('../fonts/icomoon.eot?rqal3l#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?rqal3l') format('truetype'),
+    url('../fonts/icomoon.woff?rqal3l') format('woff'),
+    url('../fonts/icomoon.svg?rqal3l#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="dp--icon-"], [class*=" dp--icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'dp-icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.dp--icon-fingerprint:before {
+    content: "\e900";
+}

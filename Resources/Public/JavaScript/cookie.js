@@ -293,6 +293,7 @@ window.addEventListener("load", function () {
          */
         window.cookieconsent_options.content.cookieDesc = DPCookieConsent.getCookieElementsByTag('script', 'data-dp-cookieDesc')[0].innerHTML;
         window.cookieconsent_options.content.cookieSelect = DPCookieConsent.getCookieElementsByTag('script', 'data-dp-cookieSelect')[0].innerHTML;
+        window.cookieconsent_options.content.revokeBtn = DPCookieConsent.getCookieElementsByTag('script', 'data-dp-cookieRevoke')[0].innerHTML;
         /** Bind Self to Handler Class Funktions **/
         var options = {
             autoOpen: window.cookieconsent_options.autoOpen,
@@ -316,6 +317,7 @@ window.addEventListener("load", function () {
                     '</span>',
                 'allow-all': '<a aria-label="dismiss cookies" role=button tabindex="0"  class="cc-btn cc-dismiss">{{allow-all}}</a>',
             },
+            revokeBtn: window.cookieconsent_options.content.revokeBtn,
             compliance: {
                 'opt-in':
                     '<div class="cc-compliance cc-highlight">{{allow}}{{allow-all}}</div>',

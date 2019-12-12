@@ -7,6 +7,9 @@
 <script type="text/plain" data-ignore="1" data-dp-cookieSelect="layout">
     <f:render partial="CookieSelection" arguments="{_all}" />
 </script>
+<script type="text/plain" data-ignore="1" data-dp-cookieRevoke="layout">
+    <f:render partial="CookieRevoke" arguments="{_all}" />
+</script>
 <script type="text/javascript" data-ignore="1">
     window.cookieconsent_options = {
         js:'<f:uri.resource absolute="1" path="JavaScript/cookieconsent.min.js?v=3.1.1" extensionName="dp_cookieconsent" />',
@@ -31,7 +34,6 @@
             link:'<f:translate key="link" extensionName="dp_cookieconsent" />',
             href:'<f:uri.page pageUid="{settings.url}" />',
             target:'<f:format.raw>{settings.target}</f:format.raw>',
-            policy: '<f:translate key="policy" extensionName="dp_cookieconsent" />',
 
             dpRequire: '<f:translate key="dpRequire" extensionName="dp_cookieconsent" />',
             dpStatistik: '<f:translate key="dpStatistik" extensionName="dp_cookieconsent" />',
