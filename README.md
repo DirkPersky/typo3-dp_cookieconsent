@@ -202,3 +202,4 @@ You like this extension? Get something for me (surprise!) from my wishlist on [A
 - [Homepage](http:/dp-dvelop.de)
 - [TYPO3.org](https://extensions.typo3.org/extension/dp_cookieconsent/)
 - [Packagist.org (composer)](https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent)
+- [NPM - Version](https://github.com/DirkPersky/npm-dp_cookieconsent)
