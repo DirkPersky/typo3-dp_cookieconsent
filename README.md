@@ -4,6 +4,7 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/dirkpersky/typo3-dp_cookieconsent?style=for-the-badge)](https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent)
 [![License](https://img.shields.io/packagist/l/dirkpersky/typo3-dp_cookieconsent?style=for-the-badge)](https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent)
 
+
 This Plugin includes the most popular solution to the EU Cookie law JavaScript Plugin [Cookie Consent](https://cookieconsent.insites.com/).
 I extended it with Script and iFrame helper, so it works with the ePrivacy law.
 
