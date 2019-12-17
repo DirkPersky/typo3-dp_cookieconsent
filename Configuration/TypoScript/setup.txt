@@ -118,5 +118,3 @@ page {
 
 # Remove Original Google Tag-Manager & Piwiki from CS_SEO
 page.jsInline.654 >
-
-page.
