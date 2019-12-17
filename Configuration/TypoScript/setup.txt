@@ -70,6 +70,14 @@ lib.dp_cookieconsent {
 }
 
 page {
+    includeCSS {
+        dp_cookieconsent = EXT:dp_cookieconsent/Resources/Public/css/dp_cookieconsent.css?v=10.2.0
+    }
+
+    includeJSFooter {
+        dp_cookieconsent = EXT:dp_cookieconsent/Resources/Public/JavaScript/dp_cookieconsent.js?v=10.2.0
+    }
+
     headerData {
         998 =< lib.dp_cookieconsent
 
@@ -110,3 +118,5 @@ page {
 
 # Remove Original Google Tag-Manager & Piwiki from CS_SEO
 page.jsInline.654 >
+
+page.
