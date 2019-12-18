@@ -193,6 +193,8 @@ Resources/Private/Partials/CookieSelection.html:
 </label>
 ```
 
+[F.A.Q. How to remove unneccesary checkboxes](https://github.com/DirkPersky/typo3-dp_cookieconsent/wiki/How-to-remove-unneccesary-checkboxes)
+
 ## Please give me feedback
 I would appreciate any kind of feedback or ideas for further developments to keep improving the extension for your needs.
 
