@@ -9,6 +9,9 @@ I extended it with Script and iFrame helper, so it works with the ePrivacy law.
 
 Though don't care about the latest EU laws and handle you Cookies with this Plugins.
 
+## F.A.Q.
+Some F.A.Q. can be found [here](https://github.com/DirkPersky/typo3-dp_cookieconsent/wiki)
+
 ## Config
 ### TS-Constant 
 
