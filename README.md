@@ -2,6 +2,7 @@
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg?style=for-the-badge)](https://www.paypal.me/dirkpersky)
 [![Latest Stable Version](https://img.shields.io/packagist/v/dirkpersky/typo3-dp_cookieconsent?style=for-the-badge)](https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent)
+[![TYPO3](https://img.shields.io/badge/TYPO3-dp__cookieconsent-%23f49700?style=for-the-badge)](https://extensions.typo3.org/extension/dp_cookieconsent/)
 [![License](https://img.shields.io/packagist/l/dirkpersky/typo3-dp_cookieconsent?style=for-the-badge)](https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent)
 
 This Plugin includes the most popular solution to the EU Cookie law JavaScript Plugin [Cookie Consent](https://cookieconsent.insites.com/).
