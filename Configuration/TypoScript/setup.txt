@@ -71,11 +71,11 @@ lib.dp_cookieconsent {
 
 page {
     includeCSS {
-        dp_cookieconsent = EXT:dp_cookieconsent/Resources/Public/css/dp_cookieconsent.css?v=10.2.0
+        dp_cookieconsent = EXT:dp_cookieconsent/Resources/Public/css/dp_cookieconsent.css
     }
 
     includeJSFooter {
-        dp_cookieconsent = EXT:dp_cookieconsent/Resources/Public/JavaScript/dp_cookieconsent.js?v=10.2.0
+        dp_cookieconsent = EXT:dp_cookieconsent/Resources/Public/JavaScript/dp_cookieconsent.js
     }
 
     headerData {
