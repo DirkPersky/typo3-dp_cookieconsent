@@ -79,7 +79,19 @@ page {
     }
 
     headerData {
-        998 =< lib.dp_cookieconsent
+        998 = COA
+        998 {
+            # Modify Google Tag-Manager & Piwiki from CS_SEO
+            10 = COA
+            10 {
+                wrap = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain">|</script>
+                required = 1
+
+                10 < page.jsInline.654
+            }
+            # Add Consent Config to Script
+            20 < lib.dp_cookieconsent
+        }
 
         # cs_seo hook
         657 {
@@ -106,13 +118,7 @@ page {
                 }
             }
         }
-        # Modify Google Tag-Manager & Piwiki from CS_SEO
-        90 = COA
-        90 {
-            wrap = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain">|</script>
 
-            10 < page.jsInline.654
-        }
     }
 }
 
