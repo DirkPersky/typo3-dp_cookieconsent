@@ -27,6 +27,7 @@ Some F.A.Q. can be found [here](https://github.com/DirkPersky/typo3-dp_cookiecon
 | dismissOnScroll           | auto accecpt consent on scroll after XX px    |                                           | | 
 | autoOpen                  | The application automatically decide whether the popup should open | true, false          | true | 
 | revokable                 | Some countries REQUIRE that a user can change their mind | true, false                    | true | 
+| reloadOnRevoke            | force page reload after revoke                | true, false                            | false |
 | type                      | consent types *([screenshot](#types))*        | info, opt-out, opt-in                     | info |
 | layout                    | consent layout                                | basic, dpextend                           | basic |
 | statistics                | pre check statistics in checkboxes layout     | true, false                               | false |

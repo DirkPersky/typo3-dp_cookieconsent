@@ -31,6 +31,8 @@ plugin.tx_cookieconsent {
         marketing = false
         # cat=plugin.cookieconsent; type=options[true,false]; label = should the cookie popup appear automatically
         autoOpen = true
+        # cat=plugin.cookieconsent; type=options[true,false]; label = force page reload after revoke
+        reloadOnRevoke = false
 
         overlay {
             # cat=plugin.cookieconsent/overlay; type=options[true,false]; label = display iframe overlay

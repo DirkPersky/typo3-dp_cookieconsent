@@ -27,6 +27,7 @@ plugin.dp_cookieconsent {
         type = {$plugin.tx_cookieconsent.settings.type}
         layout = {$plugin.tx_cookieconsent.settings.layout}
         revokable = {$plugin.tx_cookieconsent.settings.revokable}
+        reloadOnRevoke = {$plugin.tx_cookieconsent.settings.reloadOnRevoke}
 
         checkboxes {
             statistics = {$plugin.tx_cookieconsent.settings.statistics}
