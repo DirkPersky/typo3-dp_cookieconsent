@@ -13,8 +13,7 @@ namespace DirkPersky\DpCookieconsent\ViewHelpers;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
-class JsonViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class JsonViewHelper extends AbstractViewHelper {
     /**
      * Replaces newline characters by HTML line breaks.
      *
