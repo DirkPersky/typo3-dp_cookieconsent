@@ -61,7 +61,7 @@ plugin.dp_cookieconsent {
 
 lib.dp_cookieconsent = FLUIDTEMPLATE
 lib.dp_cookieconsent {
-    file = EXT:dp_cookieconsent/Resources/Private/Layouts/Cookie.html # typo3 6LTS Support
+    file = EXT:dp_cookieconsent/Resources/Private/Layouts/Cookie.html
     templateName = Cookie
 
     templateRootPaths < plugin.dp_cookieconsent.view.templateRootPaths
