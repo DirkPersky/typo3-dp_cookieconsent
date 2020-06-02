@@ -27,7 +27,7 @@ plugin.tx_cookieconsent {
         revokable = true
         # cat=plugin.cookieconsent; type=options[true,false]; label = pre check statistics in checkboxes layout
         statistics = true
-        # cat=plugin.cookieconsent; type=options[true,false]; label = pre check statistics in checkboxes layout
+        # cat=plugin.cookieconsent; type=options[true,false]; label = pre check marketing in checkboxes layout
         marketing = false
         # cat=plugin.cookieconsent; type=options[true,false]; label = should the cookie popup appear automatically
         autoOpen = true
