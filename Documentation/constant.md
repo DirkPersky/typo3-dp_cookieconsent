@@ -13,7 +13,7 @@ plugin.tx_cookieconsent.settings {
     # extend layout with checkboxes (basic,dpextend)
     layout = dpextend
     #  pre check statistics in checkboxes layout
-    statistics = true
+    statistics = false
     # pre check statistics in checkboxes layout
     marketing = false
 
