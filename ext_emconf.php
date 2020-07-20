@@ -1,4 +1,14 @@
 <?php
+/**
+ * Copyright (c) 2020.
+ *
+ * @category   TYPO3
+ *
+ * @copyright  2020 Dirk Persky
+ * @author     Dirk Persky <info@dp-dvelop.de>
+ * @license    MIT
+ */
+
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Cookie Consent',
     'description' => 'Include Cookie Consent, a lightweight JavaScript plugin for alerting users about the use of cookies on your website.',
