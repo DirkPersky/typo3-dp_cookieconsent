@@ -22,7 +22,7 @@
     }
   ],
   "license": [
-    "GPL-3.0-or-later"
+    "AGPL-3.0-or-later"
   ],
   "require": {
     "typo3/cms-core": "~6.2.0||~7.6.0||~8.7.0||~9.5.0||~10.4.0||dev-master"
