@@ -8,7 +8,7 @@
 This Plugin includes the most popular solution to the EU Cookie law JavaScript Plugin [Cookie Consent](https://cookieconsent.insites.com/).
 I extended it with Script and iFrame helper, so it works with the ePrivacy law.
 
-Though don't care about the latest EU laws and handle you Cookies with this Plugins.
+Though don't care about the latest EU laws and handle your Cookies with this Plugins.
 
 ## F.A.Q.
 Some F.A.Q. can be found [here](https://github.com/DirkPersky/typo3-dp_cookieconsent/wiki)
@@ -24,9 +24,9 @@ Some F.A.Q. can be found [here](https://github.com/DirkPersky/typo3-dp_cookiecon
 | target                    | Link target of read more link                 |                                           | _blank |
 | theme                     | Layout of the consent                         | edgeless, block, wire, classic            | edgeless |
 | position                  | position of the consent                       | bottom, top, bottom-left, bottom-right    | bottom-right |
-| dismissOnScroll           | auto accecpt consent on scroll after XX px    |                                           | | 
-| autoOpen                  | The application automatically decide whether the popup should open | true, false          | true | 
-| revokable                 | Some countries REQUIRE that a user can change their mind | true, false                    | true | 
+| dismissOnScroll           | auto accept consent on scroll after XX px     |                                           | | 
+| autoOpen                  | The application automatically decides whether the popup should open | true, false          | true | 
+| revokable                 | Some countries REQUIRE that users can change their mind | true, false                    | true | 
 | reloadOnRevoke            | force page reload after revoke                | true, false                            | false |
 | type                      | consent types *([screenshot](#types))*        | info, opt-out, opt-in                     | info |
 | layout                    | consent layout                                | basic, dpextend                           | basic |
@@ -43,7 +43,7 @@ Some F.A.Q. can be found [here](https://github.com/DirkPersky/typo3-dp_cookiecon
 | palette.button.text       | Consent Button Text color                     | rgb(), #hexa                              | #fff |
 
 #### types
-the screenshots are basesd one the `plugin.tx_cookieconsent.settings.layout = dpextend`
+the screenshots are based one the `plugin.tx_cookieconsent.settings.layout = dpextend`
 
 | info                                 | opt-out                                 | opt-in                                 |
 | ------------------------------------ | --------------------------------------- | -------------------------------------- |
@@ -75,35 +75,35 @@ This Plugin extends the Config from [CS_SEO](https://extensions.typo3.org/extens
 
 ### load scripts after accepting
 **load script sources**
-If you want to load JavaScript resources after the Cookie is accepted you can use this snipped
+If you want to load JavaScript resources after the Cookie is accepted you can use this snippet
 ```
 <script data-ignore="1" data-cookieconsent="statistics" type="text/plain" data-src="{YOUR_LINK_TO_JS}"></script>
 ```
 
 **load inline script**
-If you want to load Inline JavaScript after the Cookie is accepted use this snipped.
+If you want to load Inline JavaScript after the Cookie is accepted use this snippet.
 ```
 <script data-ignore="1" data-cookieconsent="statistics" type="text/plain">
 {YOUT_DYN_JS_CODE}
 </script>
 ```
 
-The `data-ignore="1"` attribute ist to cover the [Scriptmerger](https://extensions.typo3.org/extension/scriptmerger/) engine to not Combine this parts.
+The `data-ignore="1"` attribute is to cover the [Scriptmerger](https://extensions.typo3.org/extension/scriptmerger/) engine to not combine these parts.
 
-### Checkboxe mode
+### Checkbox mode
 You can extend the default cookie message with checkboxes, by activiating the layout in the TYPO3 constants  `plugin.tx_cookieconsent.settings.layout = dpextend`.
-Now your customer can choose what types of scripts/cookies he want to allow.
+Now your customer can choose what types of scripts/cookies he wants to allow.
 
-This 3 types are possible and handled by the consent:
+These 3 types are possible and handled by the consent:
 
 | Type       | Description                                          | example | 
 | ---------- | ---------------------------------------------------- | --------- |
-| required   | all normal script, will always called                | `<script type="text/javascript" ...`
+| required   | all normal scripts, will always called                | `<script type="text/javascript" ...`
 | statistics | scripts that will only run after consent handling    | `<script data-cookieconsent="statistics" type="text/plain"...`
 | marketing  | scripts that will only run after consent handling    | `<script data-cookieconsent="marketing" type="text/plain"...`
 
 ### load iframe after accepting
-If you want to load iFrame's (YouTube, GMap, ..) after the Cookie is accepted you can use this snipped
+If you want to load iFrames (YouTube, GMap, ..) after the Cookie is accepted you can use this snippet
 ```
 <iframe width="560" height="315" 
     data-cookieconsent="statistics" 
@@ -112,15 +112,15 @@ If you want to load iFrame's (YouTube, GMap, ..) after the Cookie is accepted yo
     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreenn >
 </iframe>
 ```
-With the `class="dp--iframe"` the iFrame is hidden in default and would be shown after the cookie acceptioning.
+With the `class="dp--iframe"` the iFrame is hidden by default and would be shown after the cookie acceptioning.
 
 #### iframe overlay
-**if you want to add an overlay to accept Cookies outside from the cookie hint**
+**if you want to add an overlay to accept Cookies outside of the cookie hint**
 ![iframe overlay](Documentation/iframe-overlay.png)
 you can enable this feature in the TYPO3-constants<br/>
 `plugin.tx_cookieconsent.settings.overlay.notice = true`
 
-you also can modify the text in this hint individuel per iframe
+you also can modify the text in this hint individually per iframe
 ```
 <iframe
     data-cookieconsent="statistics" 
@@ -135,7 +135,7 @@ you also can modify the text in this hint individuel per iframe
 ```
 
 #### build your own overlay
-or accept/deny cookies outside of the cookie hin, you can use the followed example
+or accept/deny cookies outside of the cookie hint, you can use the followed example
 ```
 <button 
     onclick="window.DPCookieConsent.forceAccept(this)" 
