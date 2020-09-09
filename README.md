@@ -91,7 +91,7 @@ If you want to load Inline JavaScript after the Cookie is accepted use this snip
 The `data-ignore="1"` attribute is to cover the [Scriptmerger](https://extensions.typo3.org/extension/scriptmerger/) engine to not combine these parts.
 
 ### Checkbox mode
-You can extend the default cookie message with checkboxes, by activiating the layout in the TYPO3 constants  `plugin.tx_cookieconsent.settings.layout = dpextend`.
+You can extend the default cookie message with checkboxes, by activating the layout in the TYPO3 constants  `plugin.tx_cookieconsent.settings.layout = dpextend`.
 Now your customer can choose what types of scripts/cookies he wants to allow.
 
 These 3 types are possible and handled by the consent:
@@ -112,7 +112,7 @@ If you want to load iFrames (YouTube, GMap, ..) after the Cookie is accepted you
     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreenn >
 </iframe>
 ```
-With the `class="dp--iframe"` the iFrame is hidden by default and would be shown after the cookie acceptioning.
+With the `class="dp--iframe"` the iFrame is hidden by default and would be shown after accepting of the cookie.
 
 #### iframe overlay
 **if you want to add an overlay to accept Cookies outside of the cookie hint**
