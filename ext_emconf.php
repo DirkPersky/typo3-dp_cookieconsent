@@ -5,7 +5,7 @@
  * @category   TYPO3
  *
  * @copyright  2020 Dirk Persky
- * @author     Dirk Persky <info@dp-dvelop.de>
+ * @author     Dirk Persky <info@dp-wired.de>
  * @license    MIT
  */
 
@@ -18,7 +18,7 @@ $EM_CONF[$_EXTKEY] = [
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
     'author' => 'Dirk Persky',
-    'author_email' => 'infoy@dp-dvelop.de',
+    'author_email' => 'infoy@dp-wired.de',
     'version' => '10.5.7',
     'constraints' => [
         'depends' => [

@@ -200,9 +200,9 @@ I would appreciate any kind of feedback or ideas for further developments to kee
 You like this extension? Get something for me (surprise!) from my wishlist on [Amazon](https://www.amazon.de/hz/wishlist/ls/15L17XDFBEYFL/r) or [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/dirkpersky) the next pizza. Thanks a lot!
 
 ### Contact us
-- [E-Mail](mailto:info@dp-dvelop.de)
+- [E-Mail](mailto:info@dp-wired.de)
 - [GitHub](https://github.com/DirkPersky/typo3-dp_cookieconsent)
-- [Homepage](http:/dp-dvelop.de)
+- [Homepage](http:/dp-wired.de)
 - [TYPO3.org](https://extensions.typo3.org/extension/dp_cookieconsent/)
 - [Packagist.org (composer)](https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent)
 - [NPM - Version](https://github.com/DirkPersky/npm-dp_cookieconsent)

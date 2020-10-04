@@ -5,14 +5,14 @@
  * @category   TYPO3
  *
  * @copyright  2020 Dirk Persky
- * @author     Dirk Persky <info@dp-dvelop.de>
+ * @author     Dirk Persky <info@dp-wired.de>
  * @license    MIT
  */
 
 namespace DirkPersky\DpCookieconsent\ViewHelpers;
 
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper AS FluidAbstractViewHelper;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper AS LegacyAbstractViewHelper;
+use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper as LegacyAbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper as FluidAbstractViewHelper;
 
 /*
  * https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/9.5.x/Deprecation-87277-FluidClassAliases.html
@@ -22,7 +22,7 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper AS LegacyAbstractViewHelp
  *
  * Support Older TYPO3 Versions
  */
-if(class_exists(FluidAbstractViewHelper::class) === true) {
+if (class_exists(FluidAbstractViewHelper::class) === true) {
     /**
      * TYPO3 8.6+
      * Class TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper

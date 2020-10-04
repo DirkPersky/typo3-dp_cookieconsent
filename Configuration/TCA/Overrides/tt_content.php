@@ -5,7 +5,7 @@
  * @category   TYPO3
  *
  * @copyright  2020 Dirk Persky
- * @author     Dirk Persky <info@dp-dvelop.de>
+ * @author     Dirk Persky <info@dp-wired.de>
  * @license    MIT
  */
 
