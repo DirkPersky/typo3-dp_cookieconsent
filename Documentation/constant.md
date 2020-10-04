@@ -40,13 +40,13 @@ plugin.tx_cookieconsent.settings {
     palette {
         popup {
             # Bar: Background color
-            background = #2473be
+            background = rgba(0,0,0,.8)
             # Bar: text color
             text = #fff
         }
         button {
             # Button: Background color
-            background = #f96332
+            background = #b81839
             # Button: text color
             text = #fff
         }
