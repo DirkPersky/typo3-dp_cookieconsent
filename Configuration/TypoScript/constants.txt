@@ -13,7 +13,7 @@ plugin.tx_cookieconsent {
         url =
         # cat=plugin.cookieconsent; type=string; label= target for link tag
         target = _blank
-        # cat=plugin.cookieconsent; type=options[edgeless,classic,basic]; label=Layout
+        # cat=plugin.cookieconsent; type=options[edgeless,classic,basic,wire]; label=Layout
         theme = edgeless
         # cat=plugin.cookieconsent; type=options[top,top-left,top-right,bottom,bottom-left,bottom-right]; label= Position
         position = bottom-right
