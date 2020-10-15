@@ -35,5 +35,5 @@ jobs:
             composer global require helhum/ter-client
             # Upload
             echo "Uploading release ${TRAVIS_TAG} to TER\n"
-            $HOME/.config/composer/vendor/bin/ter-client upload dp_cookieconsent . -u "$TYPO3_ORG_USERNAME" -p "$TYPO3_ORG_PASSWORD" -m "More information on https://github.com/DirkPersky/typo3-dp_cookieconsent/releases"
+            $HOME/.config/composer/vendor/bin/ter-client upload dp_cookieconsent . -u "$TYPO3_ORG_USERNAME" -p "$TYPO3_ORG_PASSWORD" -m "https://github.com/DirkPersky/typo3-dp_cookieconsent/releases/tag/${TRAVIS_TAG}"
           fi;
