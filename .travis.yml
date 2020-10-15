@@ -6,7 +6,7 @@ language: php
 branches:
   only:
     - master
-    - /^?([0-9]+\.){1,2}(x|[0-9]+)-?[a-z]*[1-9]*$/
+    - /^([0-9]+\.){1,2}(x|[0-9]+)-?[a-z]*[1-9]*$/
 
 notifications:
   email:
@@ -20,7 +20,7 @@ before_install:
 # https://github.com/dwyl/learn-travis/blob/master/encrypted-ssh-keys-deployment.md
 jobs:
   allow_failures:
-    - env: TYPO3_VERSION="dev-master"
+    - env: TYPO3_VERSION=dev-master
   include:
     - stage: ship to TER
       if: tag IS present
@@ -29,11 +29,11 @@ jobs:
       before_script: skip
       script:
         - |
-          if [[ "$TRAVIS_TAG" =~ ^?([0-9]+\.)([0-9]+\.)([0-9]+)$ ]] && [ -n "$TYPO3_ORG_USERNAME" ] && [ -n "$TYPO3_ORG_PASSWORD" ]; then
+          if [[ "$TRAVIS_TAG" =~ ^([0-9]+\.)([0-9]+\.)([0-9]+)$ ]] && [ -n "$TYPO3_ORG_USERNAME" ] && [ -n "$TYPO3_ORG_PASSWORD" ]; then
             echo -e "Preparing upload of release ${TRAVIS_TAG} to TER\n";
             # Install ter client
             composer global require helhum/ter-client
             # Upload
             echo "Uploading release ${TRAVIS_TAG} to TER\n"
-            $HOME/.composer/vendor/bin/ter-client upload dp_cookieconsent . -u "$TYPO3_ORG_USERNAME" -p "$TYPO3_ORG_PASSWORD" -m "More information on https://github.com/DirkPersky/typo3-dp_cookieconsent/releases"
+            $HOME/.config/composer/vendor/bin/ter-client upload dp_cookieconsent . -u "$TYPO3_ORG_USERNAME" -p "$TYPO3_ORG_PASSWORD" -m "More information on https://github.com/DirkPersky/typo3-dp_cookieconsent/releases"
           fi;
