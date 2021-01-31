@@ -80,7 +80,7 @@ page {
         dp_cookieconsent = EXT:dp_cookieconsent/Resources/Public/JavaScript/dp_cookieconsent.js
     }
 
-    headerData {
+    footerData {
         998 = COA
         998 {
             # Modify Google Tag-Manager & Piwiki from CS_SEO
