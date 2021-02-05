@@ -80,21 +80,7 @@ page {
         dp_cookieconsent = EXT:dp_cookieconsent/Resources/Public/JavaScript/dp_cookieconsent.js
     }
 
-    footerData {
-        998 = COA
-        998 {
-            # Modify Google Tag-Manager & Piwiki from CS_SEO
-            10 = COA
-            10 {
-                wrap = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain">|</script>
-                required = 1
-
-                10 < page.jsInline.654
-            }
-            # Add Consent Config to Script
-            20 < lib.dp_cookieconsent
-        }
-
+    headerData {
         # cs_seo hook
         657 {
             # Modify Google Analytics from CS_SEO
@@ -110,17 +96,25 @@ page {
                     }
                 }
             }
-            # Modify Google Analytics from CS_SEO
-            20 {
-                stdWrap.replacement  {
-                    10 {
-                        search = <script
-                        replace = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain"
-                    }
-                }
+        }
+        998 = COA
+        998 {
+            # Modify Google Tag-Manager & Piwiki from CS_SEO
+            10 = COA
+            10 {
+                wrap = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain">|</script>
+                required = 1
+
+                10 < page.jsInline.654
             }
         }
-
+    }
+    footerData {
+        998 = COA
+        998 {
+            # Add Consent Config to Script
+            20 < lib.dp_cookieconsent
+        }
     }
 }
 
