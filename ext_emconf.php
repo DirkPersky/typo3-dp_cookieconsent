@@ -13,21 +13,18 @@ $EM_CONF[$_EXTKEY] = [
     'title' => 'Cookie Consent',
     'description' => 'Include Cookie Consent, a lightweight JavaScript plugin for alerting users about the use of cookies on your website.',
     'category' => 'fe',
-    'state' => 'stable',
-    'uploadfolder' => 0,
-    'createDirs' => '',
-    'clearCacheOnLoad' => 0,
+    'clearCacheOnLoad' => true,
     'author' => 'Dirk Persky',
+    'author_company' => '',
     'author_email' => 'infoy@dp-wired.de',
-    'version' => '10.7.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '6.2.0-10.4.99'
+            'typo3' => '6.2.0-11.1.99'
         ],
         'conflicts' => [],
-        'suggests' => [
-            'setup' => '',
-        ],
+        'suggests' => [],
     ],
+    'state' => 'stable',
+    'version' => '11.0.0'
 ];
 

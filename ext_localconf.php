@@ -10,14 +10,3 @@
  */
 
 defined('TYPO3_MODE') or die();
-$boot = function () {
-    // Register FE namespace
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'DpCookieconsent',
-        'CookieConsent',
-        []
-    );
-};
-
-$boot();
-unset($boot);

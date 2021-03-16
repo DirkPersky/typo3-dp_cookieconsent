@@ -9,13 +9,4 @@
  * @license    MIT
  */
 
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
-
 defined('TYPO3_MODE') || die();
-
-// Register Plugin and name SPaces
-ExtensionUtility::registerPlugin(
-    'DpCookieconsent',
-    'CookieConsent',
-    'CookieConsent'
-);
