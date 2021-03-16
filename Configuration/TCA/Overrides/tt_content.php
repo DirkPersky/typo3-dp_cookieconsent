@@ -15,7 +15,7 @@ defined('TYPO3_MODE') || die();
 
 // Register Plugin and name SPaces
 ExtensionUtility::registerPlugin(
-    'DirkPersky.' . 'dp_cookieconsent',
+    'DpCookieconsent',
     'CookieConsent',
     'CookieConsent'
 );
