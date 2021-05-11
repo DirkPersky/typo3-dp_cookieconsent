@@ -180,7 +180,7 @@ All you have to do is setting your new checkbox in TS and add it to the partial 
 
 Configuration/TypoScript/setup.txt:
 ```
-page.headerData.998.20.settings.checkboxes.thirdparty = {$plugin.tx_cookieconsent.settings.thirdparty}
+page.footerData.998.20.settings.checkboxes.thirdparty = {$plugin.tx_cookieconsent.settings.thirdparty}
 ```
 
 Resources/Private/Partials/CookieSelection.html:
