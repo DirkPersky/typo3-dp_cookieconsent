@@ -149,6 +149,25 @@ or accept/deny cookies outside of the cookie hint, you can use the followed exam
 **deny cookies**<br/>
 `window.DPCookieConsent.forceDeny(this)`
 
+### load content after accepting
+**if you want to add contents that will only be visible if the consent hint is accepted**
+you can enable this feature in the TYPO3-constants<br/>
+`plugin.tx_cookieconsent.settings.overlay.notice = true`
+
+Your HTML markup for this is
+```html
+<dp-content
+    data-cookieconsent="statistics" 
+    class="dp--iframe"
+
+    data-cookieconsent-notice="Cookie Notice"
+    data-cookieconsent-description="Loading this...."
+    data-cookieconsent-btn="allow cookies and load this ...."
+>
+    YOUR CONTENT
+</dp-content>
+```
+
 ### Events
 | Event                     | Description                                   | Options                                   |
 | ------------------------- | --------------------------------------------- | ----------------------------------------- |
