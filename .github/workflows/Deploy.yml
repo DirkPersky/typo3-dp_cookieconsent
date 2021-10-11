@@ -5,27 +5,27 @@ on: [push]
 jobs:
   Ship-to-TER:
     name: 'Ship to TER'
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-        - name: Set up PHP
-          uses: shivammathur/setup-php@v2
-          with:
-            php-version: 7.4
-            coverage: none
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          coverage: none
 
-        - name: "Extract tag, version from GITHUB_REF"
-          id: "github-ref"
-          run: |
-            echo "::set-output name=tag::$(echo $GITHUB_REF | sed -E -n 's#^refs/tags/(.*)$#\1#p')"
-            echo "::set-output name=version::$(echo $GITHUB_REF | sed -E -n 's#^refs/tags/v?([0-9]+\.)([0-9]+\.)([0-9]+)#\1\2\3#p')"
+      - name: "Extract tag, version from GITHUB_REF"
+        id: "github-ref"
+        run: |
+          echo "::set-output name=tag::$(echo $GITHUB_REF | sed -E -n 's#^refs/tags/(.*)$#\1#p')"
+          echo "::set-output name=version::$(echo $GITHUB_REF | sed -E -n 's#^refs/tags/v?([0-9]+\.)([0-9]+\.)([0-9]+)#\1\2\3#p')"
 
-        - name: Deploy to TER
-          run: |
-            if [ -n "${{ secrets.TYPO3_ORG_USERNAME }}" ] && [ -n "${{ secrets.TYPO3_ORG_PASSWORD }}" ]; then
-              echo -e "Preparing upload of release ${{ steps.github-ref.outputs.version }} to TER\n";
-              # Install ter client
-              composer global require helhum/ter-client
-            fi;
+      - name: Deploy to TER
+        run: |
+          if [ -n "${{ secrets.TYPO3_ORG_USERNAME }}" ] && [ -n "${{ secrets.TYPO3_ORG_PASSWORD }}" ]; then
+            echo -e "Preparing upload of release ${{ steps.github-ref.outputs.version }} to TER\n";
+            # Install ter client
+            composer global require helhum/ter-client
+          fi;
