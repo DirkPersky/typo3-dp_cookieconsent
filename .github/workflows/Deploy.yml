@@ -1,6 +1,9 @@
 name: Deploy
 
-on: [push]
+on:
+  push:
+    tags:
+      - "v?[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
   Ship-to-TER:
@@ -26,6 +29,6 @@ jobs:
         run: |
           if [ -n "${{ secrets.TYPO3_ORG_USERNAME }}" ] && [ -n "${{ secrets.TYPO3_ORG_PASSWORD }}" ]; then
             echo -e "Preparing upload of release ${{ steps.github-ref.outputs.version }} to TER\n";
-            # Install ter client
-            composer global require helhum/ter-client
+            # Upload
+            echo "Uploading release ${{ steps.github-ref.outputs.tag }} to TER\n"
           fi;
