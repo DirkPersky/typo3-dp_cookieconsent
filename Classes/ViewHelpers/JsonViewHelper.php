@@ -11,6 +11,8 @@
 
 namespace DirkPersky\DpCookieconsent\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  * This file is part of the TYPO3 CMS project.
  *

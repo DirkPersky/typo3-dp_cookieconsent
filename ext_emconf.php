@@ -19,12 +19,12 @@ $EM_CONF[$_EXTKEY] = [
     'author_email' => 'infoy@dp-wired.de',
     'constraints' => [
         'depends' => [
-            'typo3' => '6.2.0-11.5.99'
+            'typo3' => '8.7.0-11.5.99'
         ],
         'conflicts' => [],
         'suggests' => [],
     ],
     'state' => 'stable',
-    'version' => '11.1.1'
+    'version' => '11.2.0'
 ];
 
