@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-09-02T10:25:16Z" product-name="wacon_cookie_management">
+		<header/>
+		<body>
+			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie">
+				<source>DP Cookie Consent</source>
+			</trans-unit>
+			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.name">
+				<source>Cookies</source>
+			</trans-unit>
+
+			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.category.required">
+				<source>Required</source>
+			</trans-unit>
+			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.category.statistics">
+				<source>Statistics</source>
+			</trans-unit>
+			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.category.marketing">
+				<source>Marketing</source>
+			</trans-unit>
+
+			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.description">
+				<source>Description</source>
+			</trans-unit>
+            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.duration">
+                <source>Duration</source>
+            </trans-unit>
+            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.vendor">
+                <source>Vendor</source>
+            </trans-unit>
+            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.vendor_link">
+                <source>Vendor Link</source>
+            </trans-unit>
+            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.hidden">
+                <source>Hidden</source>
+            </trans-unit>
+
+		</body>
+	</file>
+</xliff>
