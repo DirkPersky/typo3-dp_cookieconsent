@@ -63,6 +63,29 @@
                 <source>JavaScript file (optional)</source>
             </trans-unit>
 
+
+            <trans-unit id="tx_dpcookieconsent_ajax.title">
+                <source>Dynamic Ajax Content</source>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.consent">
+                <source>Consent box</source>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.description">
+                <source>load content after consent submit</source>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.notice">
+                <source>Consent Headline</source>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.desc">
+                <source>Consent description</source>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.btn">
+                <source>Button text</source>
+            </trans-unit>
+			<trans-unit id="tx_dpcookieconsent_ajax.consentscript">
+				<source>Dynamic Content</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

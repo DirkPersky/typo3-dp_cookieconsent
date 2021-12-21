@@ -9,4 +9,21 @@
  * @license    MIT
  */
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
 defined('TYPO3_MODE') || die();
+
+ExtensionUtility::registerPlugin(
+    'dp_cookieconsent',
+    'Pi1',
+    'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.title'
+);
+//
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['dpcookieconsent_pi1'] = 'recursive,select_key,pages';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['dpcookieconsent_pi1'] = 'pi_flexform';
+
+ExtensionManagementUtility::addPiFlexFormValue(
+    'dpcookieconsent_pi1',
+    'FILE:EXT:dp_cookieconsent/Configuration/FlexForms/ConsentAjax.xml'
+);
