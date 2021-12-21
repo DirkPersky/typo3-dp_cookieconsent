@@ -17,6 +17,21 @@ class Cookie extends AbstractEntity
     /**
      * @var string
      */
+    protected $duration_time;
+
+    /**
+     * @var string
+     */
+    protected $script_src;
+
+    /**
+     * @var string
+     */
+    protected $script;
+
+    /**
+     * @var string
+     */
     protected $category = '';
 
     /**
@@ -332,5 +347,53 @@ class Cookie extends AbstractEntity
     public function setSorting($sorting): void
     {
         $this->sorting = $sorting;
+    }
+
+    /**
+     * @return string
+     */
+    public function getScriptSrc(): string
+    {
+        return $this->script_src;
+    }
+
+    /**
+     * @param string $script_src
+     */
+    public function setScriptSrc(string $script_src): void
+    {
+        $this->script_src = $script_src;
+    }
+
+    /**
+     * @return string
+     */
+    public function getScript(): string
+    {
+        return $this->script;
+    }
+
+    /**
+     * @param string $script
+     */
+    public function setScript(string $script): void
+    {
+        $this->script = $script;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDurationTime(): string
+    {
+        return $this->duration_time;
+    }
+
+    /**
+     * @param string $duration_time
+     */
+    public function setDurationTime(string $duration_time): void
+    {
+        $this->duration_time = $duration_time;
     }
 }

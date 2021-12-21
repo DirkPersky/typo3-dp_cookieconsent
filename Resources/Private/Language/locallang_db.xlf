@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2019-09-02T10:25:16Z" product-name="wacon_cookie_management">
+	<file source-language="en" datatype="plaintext" original="messages" date="2021-21-12T13:55:16Z" product-name="cookieconsent">
 		<header/>
 		<body>
 			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie">
@@ -24,8 +24,25 @@
 			</trans-unit>
 
 			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.description">
-				<source>Description</source>
+				<source>Domain</source>
 			</trans-unit>
+			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.description.info">
+				<source>Empty to get Site Root</source>
+			</trans-unit>
+
+			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.duration_time">
+                <source>Duration Type</source>
+            </trans-unit>
+            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.duration_time.day">
+                <source>Day(s)</source>
+            </trans-unit>
+            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.duration_time.year">
+                <source>Year(s)</source>
+            </trans-unit>
+            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.duration_time.none">
+                <source>-</source>
+            </trans-unit>
+
             <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.duration">
                 <source>Duration</source>
             </trans-unit>
@@ -36,7 +53,14 @@
                 <source>Vendor Link</source>
             </trans-unit>
             <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.hidden">
-                <source>Hidden</source>
+                <source>Active</source>
+            </trans-unit>
+
+            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.script">
+                <source>JavaScript Code</source>
+            </trans-unit>
+            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.script_src">
+                <source>JavaScript file</source>
             </trans-unit>
 
 		</body>
