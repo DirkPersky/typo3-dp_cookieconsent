@@ -1,10 +1,10 @@
 <?php
-/**
- * Copyright (c) 2020.
+/*
+ * Copyright (c) 2021.
  *
  * @category   TYPO3
  *
- * @copyright  2020 Dirk Persky
+ * @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
  * @author     Dirk Persky <info@dp-wired.de>
  * @license    MIT
  */
@@ -19,12 +19,12 @@ $EM_CONF[$_EXTKEY] = [
     'author_email' => 'infoy@dp-wired.de',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.7.0-11.5.99'
+            'typo3' => '10.4.0-11.5.99'
         ],
         'conflicts' => [],
         'suggests' => [],
     ],
     'state' => 'stable',
-    'version' => '11.2.0'
+    'version' => '11.3.0'
 ];
 
