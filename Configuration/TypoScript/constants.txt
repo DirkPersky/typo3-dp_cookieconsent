@@ -9,6 +9,8 @@ plugin.tx_cookieconsent {
     }
 
     settings {
+        # cat=plugin.cookieconsent; type=int+; label= PID of Cookie Storage
+        storagePid =
         # cat=plugin.cookieconsent; type=int+; label= PID to Data Protection
         url =
         # cat=plugin.cookieconsent; type=string; label= target for link tag

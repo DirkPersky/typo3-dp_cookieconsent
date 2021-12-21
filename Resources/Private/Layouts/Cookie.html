@@ -1,11 +1,25 @@
-{namespace dp=DirkPersky\DpCookieconsent\ViewHelpers}
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category   TYPO3
+  ~
+  ~ @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <info@dp-wired.de>
+  ~ @license    MIT
+  -->
+
+<html data-namespace-typo3-fluid="true"
+      xmlns:dp="http://typo3.org/ns/DirkPersky/DpCookieconsent/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
 <!-- Begin Cookie Consent plugin by Dirk Persky - https://github.com/DirkPersky/typo3-dp_cookieconsent -->
 <script type="text/plain" data-ignore="1" data-dp-cookieDesc="layout">
     <f:render partial="CookieDescription" arguments="{_all}" />
+
 </script>
 <script type="text/plain" data-ignore="1" data-dp-cookieSelect="layout">
     <f:render partial="CookieSelection" arguments="{_all}" />
+
 </script>
 <script type="text/plain" data-ignore="1" data-dp-cookieRevoke="layout">
     <f:render partial="CookieRevoke" arguments="{_all}" />
@@ -65,3 +79,7 @@
     };
 </script>
 <!-- End Cookie Consent plugin -->
+<f:for as="script" each="{dp_cookie_scripts}" iteration="script_iteration">
+    <f:render arguments="{script:script, settings:settings}" partial="Script"/>
+</f:for>
+</html>

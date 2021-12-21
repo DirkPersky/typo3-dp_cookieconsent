@@ -3,64 +3,64 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2021-21-12T13:55:16Z" product-name="cookieconsent">
 		<header/>
 		<body>
-			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie">
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie">
 				<source>DP Cookie Consent</source>
 			</trans-unit>
-			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.name">
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.name">
 				<source>Cookies</source>
 			</trans-unit>
 
-			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.category">
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.category">
 				<source>Category</source>
 			</trans-unit>
-			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.category.required">
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.category.0">
 				<source>Required</source>
 			</trans-unit>
-			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.category.statistics">
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.category.1">
 				<source>Statistics</source>
 			</trans-unit>
-			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.category.marketing">
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.category.2">
 				<source>Marketing</source>
 			</trans-unit>
 
-			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.description">
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.description">
 				<source>Domain</source>
 			</trans-unit>
-			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.description.info">
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.description.info">
 				<source>Empty to get Site Root</source>
 			</trans-unit>
 
-			<trans-unit id="tx_dp_cookieconsent_domain_model_cookie.duration_time">
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.duration_time">
                 <source>Duration Type</source>
             </trans-unit>
-            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.duration_time.day">
-                <source>Day(s)</source>
-            </trans-unit>
-            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.duration_time.year">
-                <source>Year(s)</source>
-            </trans-unit>
-            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.duration_time.none">
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.duration_time.0">
                 <source>-</source>
             </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.duration_time.1">
+                <source>Day(s)</source>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.duration_time.2">
+                <source>Year(s)</source>
+            </trans-unit>
 
-            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.duration">
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.duration">
                 <source>Duration</source>
             </trans-unit>
-            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.vendor">
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.vendor">
                 <source>Vendor</source>
             </trans-unit>
-            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.vendor_link">
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.vendor_link">
                 <source>Vendor Link</source>
             </trans-unit>
-            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.hidden">
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.hidden">
                 <source>Active</source>
             </trans-unit>
 
-            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.script">
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.script">
                 <source>JavaScript Code</source>
             </trans-unit>
-            <trans-unit id="tx_dp_cookieconsent_domain_model_cookie.script_src">
-                <source>JavaScript file</source>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.script_src">
+                <source>JavaScript file (optional)</source>
             </trans-unit>
 
 		</body>

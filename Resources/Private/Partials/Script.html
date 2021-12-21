@@ -1,0 +1,25 @@
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category   TYPO3
+  ~
+  ~ @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <info@dp-wired.de>
+  ~ @license    MIT
+  -->
+
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:if condition="{script.scriptSrc}!=''">
+    <script data-cookieconsent="{script.type}" data-ignore="1"
+            data-src="{f:uri.typolink(parameter: '{script.scriptSrc}')}" type="text/plain"></script>
+</f:if>
+<f:if condition="{script.script}!=''">
+    <script data-cookieconsent="{script.type}" data-ignore="1" type="text/plain">
+        <f:format.raw>{script.script}</f:format.raw>
+
+    </script>
+</f:if>
+
+</html>

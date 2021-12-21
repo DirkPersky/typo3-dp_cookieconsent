@@ -1,10 +1,10 @@
 <?php
-/**
- * Copyright (c) 2020.
+/*
+ * Copyright (c) 2021.
  *
  * @category   TYPO3
  *
- * @copyright  2020 Dirk Persky
+ * @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
  * @author     Dirk Persky <info@dp-wired.de>
  * @license    MIT
  */

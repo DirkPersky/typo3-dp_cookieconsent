@@ -69,6 +69,14 @@ lib.dp_cookieconsent {
     layoutRootPaths < plugin.dp_cookieconsent.view.layoutRootPaths
 
     settings < plugin.dp_cookieconsent.settings
+
+    dataProcessing {
+        10 = DirkPersky\DpCookieconsent\DataProcessing\CookieScriptsProcessor
+        10 {
+            as = dp_cookie_scripts
+            pid = {$plugin.tx_cookieconsent.settings.storagePid}
+        }
+    }
 }
 
 page {

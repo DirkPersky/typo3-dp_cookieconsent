@@ -1,10 +1,19 @@
 <?php
+/*
+ * Copyright (c) 2021.
+ *
+ * @category   TYPO3
+ *
+ * @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <info@dp-wired.de>
+ * @license    MIT
+ */
 
 defined('TYPO3_MODE') or die();
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie',
+        'title' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie',
         'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -35,18 +44,18 @@ return [
         '0' => [
             'showitem' => '
                 hidden, 
-                    --palette--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.name; type,
+                    --palette--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.name; type,
                     description, 
-                    --palette--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.duration; dur,
-                    --palette--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.vendor; vend, 
-                --div--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.script, script, script_src,
+                    --palette--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.duration; dur,
+                    --palette--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.vendor; vend, 
+                --div--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.script, script_src, script,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'
         ],
     ],
     'columns' => [
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.hidden',
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.hidden',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
@@ -92,7 +101,7 @@ return [
 
         'name' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.name',
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.name',
             'config' => [
                 'type' => 'input',
                 'size' => 75,
@@ -101,22 +110,23 @@ return [
         ],
         'category' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.category',
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'default' => 0,
                 'items' => [
-                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.category.required', 0],
-                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.category.statistics', 1],
-                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.category.marketing', 2],
+                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category.0', 0],
+                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category.1', 1],
+                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category.2', 2],
                 ],
             ],
+            'onChange' => 'reload'
         ],
         'description' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.description',
-            'description' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.description.info',
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.description',
+            'description' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.description.info',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -125,7 +135,7 @@ return [
         ],
         'duration' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.duration',
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.duration',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -135,22 +145,22 @@ return [
 
         'duration_time' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.duration_time',
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.duration_time',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'default' => 0,
                 'items' => [
-                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.duration_time.none', 0],
-                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.duration_time.day', 1],
-                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.duration_time.year', 2],
+                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.duration_time.0', 0],
+                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.duration_time.1', 1],
+                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.duration_time.2', 2],
                 ],
             ],
         ],
 
         'vendor' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.vendor',
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.vendor',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -159,7 +169,7 @@ return [
         ],
         'vendor_link' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.vendor_link',
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.vendor_link',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -177,7 +187,7 @@ return [
 
         'script_src' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.script_src',
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.script_src',
             'config' => [
                 'type' => 'input',
                 'size' => 50,
@@ -191,11 +201,12 @@ return [
                     ]
                 ]
             ],
+            'displayCond' => 'FIELD:category:>:0'
         ],
 
         'script' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dp_cookieconsent_domain_model_cookie.script',
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.script',
             'config' => [
                 'type' => 'text',
                 'cols' => 50,
@@ -203,7 +214,8 @@ return [
                 'eval' => 'trim',
                 'renderType' => 't3editor',
                 'format' => 'javascript'
-            ]
+            ],
+            'displayCond' => 'FIELD:category:>:0'
         ],
     ]
 ];

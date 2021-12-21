@@ -1,4 +1,14 @@
-CREATE TABLE tx_dp_cookieconsent_domain_model_cookie
+/*
+ * Copyright (c) 2021.
+ *
+ * @category   TYPO3
+ *
+ * @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <info@dp-wired.de>
+ * @license    MIT
+ */
+
+CREATE TABLE tx_dpcookieconsent_domain_model_cookie
 (
     uid              int(11) NOT NULL auto_increment,
     pid              int(11) DEFAULT '0' NOT NULL,

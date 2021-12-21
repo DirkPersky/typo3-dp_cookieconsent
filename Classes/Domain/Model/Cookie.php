@@ -1,4 +1,13 @@
 <?php
+/*
+ * Copyright (c) 2021.
+ *
+ * @category   TYPO3
+ *
+ * @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
+ * @author     Dirk Persky <info@dp-wired.de>
+ * @license    MIT
+ */
 
 namespace DirkPersky\DpCookieconsent\Domain\Model;
 
@@ -17,12 +26,12 @@ class Cookie extends AbstractEntity
     /**
      * @var string
      */
-    protected $duration_time;
+    protected $durationTime;
 
     /**
      * @var string
      */
-    protected $script_src;
+    protected $scriptSrc;
 
     /**
      * @var string
@@ -57,7 +66,7 @@ class Cookie extends AbstractEntity
     /**
      * @var string
      */
-    protected $vendor_link = '';
+    protected $vendorLink = '';
 
     /**
      * @var DateTime
@@ -68,16 +77,6 @@ class Cookie extends AbstractEntity
      * @var DateTime
      */
     protected $tstamp;
-
-    /**
-     * @var int
-     */
-    protected $sysLanguageUid = 0;
-
-    /**
-     * @var int
-     */
-    protected $l10nParent = 0;
 
     /**
      * @var DateTime
@@ -102,6 +101,87 @@ class Cookie extends AbstractEntity
      * @var int
      */
     protected $sorting = 0;
+
+
+    /**
+     * @return bool
+     */
+    public function getHidden(): bool
+    {
+        return $this->hidden;
+    }
+
+    /**
+     * @param bool $hidden
+     */
+    public function setHidden(bool $hidden): void
+    {
+        $this->hidden = $hidden;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getDeleted(): bool
+    {
+        return $this->deleted;
+    }
+
+    /**
+     * @param bool $deleted
+     */
+    public function setDeleted(bool $deleted): void
+    {
+        $this->deleted = $deleted;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDurationTime(): string
+    {
+        return $this->durationTime;
+    }
+
+    /**
+     * @param string $durationTime
+     */
+    public function setDurationTime(string $durationTime): void
+    {
+        $this->durationTime = $durationTime;
+    }
+
+    /**
+     * @return string
+     */
+    public function getScriptSrc(): string
+    {
+        return $this->scriptSrc;
+    }
+
+    /**
+     * @param string $scriptSrc
+     */
+    public function setScriptSrc(string $scriptSrc): void
+    {
+        $this->scriptSrc = $scriptSrc;
+    }
+
+    /**
+     * @return string
+     */
+    public function getScript(): string
+    {
+        return $this->script;
+    }
+
+    /**
+     * @param string $script
+     */
+    public function setScript(string $script): void
+    {
+        $this->script = $script;
+    }
 
     /**
      * @return string
@@ -188,15 +268,15 @@ class Cookie extends AbstractEntity
      */
     public function getVendorLink(): string
     {
-        return $this->vendor_link;
+        return $this->vendorLink;
     }
 
     /**
-     * @param string $vendor_link
+     * @param string $vendorLink
      */
-    public function setVendorLink(string $vendor_link): void
+    public function setVendorLink(string $vendorLink): void
     {
-        $this->vendor_link = $vendor_link;
+        $this->vendorLink = $vendorLink;
     }
 
     /**
@@ -232,38 +312,6 @@ class Cookie extends AbstractEntity
     }
 
     /**
-     * @return int
-     */
-    public function getSysLanguageUid(): int
-    {
-        return $this->sysLanguageUid;
-    }
-
-    /**
-     * @param int $sysLanguageUid
-     */
-    public function setSysLanguageUid(int $sysLanguageUid): void
-    {
-        $this->sysLanguageUid = $sysLanguageUid;
-    }
-
-    /**
-     * @return int
-     */
-    public function getL10nParent(): int
-    {
-        return $this->l10nParent;
-    }
-
-    /**
-     * @param int $l10nParent
-     */
-    public function setL10nParent(int $l10nParent): void
-    {
-        $this->l10nParent = $l10nParent;
-    }
-
-    /**
      * @return DateTime
      */
     public function getStarttime(): DateTime
@@ -296,40 +344,6 @@ class Cookie extends AbstractEntity
     }
 
     /**
-     * @return bool
-     */
-    public function getHidden(): bool
-    {
-        return $this->hidden;
-    }
-
-    /**
-     * @param bool $hidden
-     */
-    public function setHidden(bool $hidden): void
-    {
-        $this->hidden = $hidden;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getDeleted(): bool
-    {
-        return $this->deleted;
-    }
-
-    /**
-     * @param bool $deleted
-     */
-    public function setDeleted(bool $deleted): void
-    {
-        $this->deleted = $deleted;
-    }
-
-    /**
-     * Get sorting
-     *
      * @return int
      */
     public function getSorting(): int
@@ -338,13 +352,9 @@ class Cookie extends AbstractEntity
     }
 
     /**
-     * Set sorting
-     *
-     * @param int $sorting sorting
-     *
-     * @return void
+     * @param int $sorting
      */
-    public function setSorting($sorting): void
+    public function setSorting(int $sorting): void
     {
         $this->sorting = $sorting;
     }
@@ -352,48 +362,20 @@ class Cookie extends AbstractEntity
     /**
      * @return string
      */
-    public function getScriptSrc(): string
+    public function getType(): string
     {
-        return $this->script_src;
+        switch ($this->category) {
+            case '1':
+                $type = 'statistics';
+                break;
+            case '2':
+                $type = 'marketing';
+                break;
+            default:
+                $type = 'required';
+        }
+
+        return $type;
     }
 
-    /**
-     * @param string $script_src
-     */
-    public function setScriptSrc(string $script_src): void
-    {
-        $this->script_src = $script_src;
-    }
-
-    /**
-     * @return string
-     */
-    public function getScript(): string
-    {
-        return $this->script;
-    }
-
-    /**
-     * @param string $script
-     */
-    public function setScript(string $script): void
-    {
-        $this->script = $script;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDurationTime(): string
-    {
-        return $this->duration_time;
-    }
-
-    /**
-     * @param string $duration_time
-     */
-    public function setDurationTime(string $duration_time): void
-    {
-        $this->duration_time = $duration_time;
-    }
 }
