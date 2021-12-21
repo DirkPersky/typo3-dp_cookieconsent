@@ -21,9 +21,3 @@ $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
 ];
 
 $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-dpcookie'] = 'apps-cookie-folder-contains';
-
-ExtensionManagementUtility::registerPageTSConfigFile(
-    'news',
-    'Configuration/TSconfig/Page/news_only.tsconfig',
-    'EXT:news :: Restrict pages to news records'
-);
