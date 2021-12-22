@@ -1,0 +1,24 @@
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category   TYPO3
+  ~
+  ~ @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <info@dp-wired.de>
+  ~ @license    MIT
+  -->
+
+<html data-namespace-typo3-fluid="true"
+      xmlns:dp="http://typo3.org/ns/DirkPersky/DpCookieconsent/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+    <dp-content
+            data-cookieconsent="{flexform.type}"
+            class="dp--iframe"
+            {f:if(condition:flexform.notice, then:'data-cookieconsent-notice="{flexform.notice}"')}
+            {f:if(condition:flexform.description, then:'data-cookieconsent-description="{flexform.description}"')}
+            {f:if(condition:flexform.btn, then:'data-cookieconsent-btn="{flexform.btn}"')}
+            data-src="{f:uri.action(action:"show", arguments:"{content: data.uid}")}"
+    >
+    </dp-content>
+</html>

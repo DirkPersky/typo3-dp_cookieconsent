@@ -67,7 +67,6 @@ $boot = static function (): void {
             }
        }'
     );
-
 };
 $boot();
 unset($boot);
