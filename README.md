@@ -16,7 +16,7 @@ Some F.A.Q. can be found [here](https://github.com/DirkPersky/typo3-dp_cookiecon
 ## Config
 ### TS-Constant 
 
-**plugin.tx_cookieconsent.settings.** *([example config](Documentation/constant.md))*
+**plugin.tx_cookieconsent.settings.** *([example config](Documentation/Images/constant.md))*
 
 | Property                  | Description                                   | Options                                   | Default |
 | ------------------------- | --------------------------------------------- | ----------------------------------------- | -------:|
@@ -45,13 +45,13 @@ Some F.A.Q. can be found [here](https://github.com/DirkPersky/typo3-dp_cookiecon
 #### types
 the screenshots are based one the `plugin.tx_cookieconsent.settings.layout = dpextend`
 
-| info                                 | opt-out                                 | opt-in                                 |
-| ------------------------------------ | --------------------------------------- | -------------------------------------- |
-| ![info](Documentation/type_info.png) | ![info](Documentation/type_opt-out.png) | ![info](Documentation/type_opt-in.png) |
+| info                                        | opt-out                                        | opt-in                                        |
+|---------------------------------------------|------------------------------------------------|-----------------------------------------------|
+| ![info](Documentation/Images/type_info.png) | ![info](Documentation/Images/type_opt-out.png) | ![info](Documentation/Images/type_opt-in.png) |
 
 ### TypoScript
 set you own language values
-**plugin.tx_dp_cookieconsent._LOCAL_LANG.{lng}.** *([example](Documentation/translation.md))*
+**plugin.tx_dp_cookieconsent._LOCAL_LANG.{lng}.** *([example](Documentation/Images/translation.md))*
 
 | Property      | Description                   |
 | ------------- | ----------------------------- |
@@ -116,7 +116,7 @@ With the `class="dp--iframe"` the iFrame is hidden by default and would be shown
 
 #### iframe overlay
 **if you want to add an overlay to accept Cookies outside of the cookie hint**
-![iframe overlay](Documentation/iframe-overlay.png)
+![iframe overlay](Documentation/Images/iframe-overlay.png)
 you can enable this feature in the TYPO3-constants<br/>
 `plugin.tx_cookieconsent.settings.overlay.notice = true`
 
