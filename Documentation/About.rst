@@ -20,6 +20,12 @@ You can see the `list of contributors on GitHub
 The content of this document is related to TYPO3,
 a GNU/GPL CMS/Framework available from `www.typo3.org <https://www.typo3.org/>`_.
 
+.. _feedback:
+
+Please give feedback
+=======
+
+I would appreciate any kind of feedback or ideas for further developments to keep improving the extension for your needs.
 
 .. _support:
 
