@@ -36,7 +36,18 @@ $boot = static function (): void {
             }
         }
     }
-
+    // add Controller
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'DirkPersky.DpCookieconsent',
+        'Pi1',
+        [
+            \DirkPersky\DpCookieconsent\Controller\ScriptController::class => 'list,show',
+        ],
+        // non-cacheable actions
+        [
+            \DirkPersky\DpCookieconsent\Controller\ScriptController::class => 'show',
+        ]
+    );
     // wizards
     ExtensionManagementUtility::addPageTSConfig(
         'mod {
