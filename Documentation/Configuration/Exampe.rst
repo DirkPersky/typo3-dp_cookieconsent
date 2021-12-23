@@ -1,3 +1,4 @@
+
 .. include:: /Includes.rst.txt
 
 .. _example:
@@ -63,4 +64,3 @@ This example configuration is based on the base TypoScript-Constants configurati
             }
         }
     }
-
