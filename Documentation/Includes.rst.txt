@@ -2,12 +2,9 @@
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
+
 .. This is 'Includes.txt'. It is included at the very top of each and
    every ReST source file in this documentation project (= manual).
-
-.. ----------
-.. text roles
-.. ----------
 
 .. role:: aspect(emphasis)
 .. role:: html(code)
@@ -24,5 +21,11 @@
 .. role:: yaml(code)
 
 .. default-role:: code
+
+.. ---------
+.. highlight
+.. ---------
+
+.. By default, code blocks are html
 
 .. highlight:: html
