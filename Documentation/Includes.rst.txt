@@ -24,7 +24,7 @@
 .. role:: yaml(code)
 
 .. default-role:: code
-4
+
 .. ---------
 .. highlight
 .. ---------
