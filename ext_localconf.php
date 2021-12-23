@@ -24,6 +24,7 @@ $boot = static function (): void {
     if (TYPO3_MODE === 'BE') {
         $icons = [
             'apps-cookie-folder-contains' => 'ext-dp-cookie-folder.svg',
+            'apps-cookie-content-item' => 'ext-dp-cookie-content.svg'
         ];
         $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
         foreach ($icons as $key => $file) {
@@ -54,7 +55,7 @@ $boot = static function (): void {
             wizards.newContentElement.wizardItems.plugins {
                 elements {
                     dpcookieconsent_pi1 {
-                        iconIdentifier = apps-cookie-folder-contains
+                        iconIdentifier = apps-cookie-content-item
                         title = LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.title
                         description = LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.description
                         tt_content_defValues {

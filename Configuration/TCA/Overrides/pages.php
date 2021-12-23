@@ -13,7 +13,7 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3_MODE') or die();
 
-// Override news icon
+// Override icon
 $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
     0 => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_be.xlf:cookie-folder',
     1 => 'dpcookie',
