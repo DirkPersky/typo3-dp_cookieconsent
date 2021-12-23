@@ -59,6 +59,7 @@ dp--cookie-revoke
     fire when the consent is revoked
 
 .. code-block:: js
+
     document.addEventListener('dp--cookie-fire', function (e) {
         console.log('dp--cookie-fire', e.detail.$el);
     });

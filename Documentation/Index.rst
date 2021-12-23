@@ -63,6 +63,7 @@ http://www.opencontent.org/opl.shtml
 
 .. toctree::
    :glob:
+   :hidden:
    :titlesonly:
 
    Introduction/*

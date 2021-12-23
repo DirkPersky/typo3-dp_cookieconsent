@@ -8,6 +8,8 @@ Example Configuration
 This example configuration is based on the base TypoScript-Constants configuration (see :ref:`installation`).
 
 .. code-block:: typoscript
+   :caption: TypoScript constants
+
     plugin.tx_cookieconsent.settings {
         # PID to Data Protection
         url =
