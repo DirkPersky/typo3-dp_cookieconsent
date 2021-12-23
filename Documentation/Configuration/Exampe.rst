@@ -63,4 +63,3 @@ This example configuration is based on the base TypoScript-Constants configurati
             }
         }
     }
-
