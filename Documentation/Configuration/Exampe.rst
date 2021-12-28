@@ -17,12 +17,8 @@ This example configuration is based on the base TypoScript-Constants configurati
         theme = edgeless
         # Position
         position = bottom-right
-        # dismiss on scroll (in PX)
-        dismissOnScroll =
         # Type (info, opt-out, opt-in)
         type = opt-in
-        # extend layout with checkboxes (basic,dpextend)
-        layout = dpextend
         #  pre check statistics in checkboxes layout
         statistics = false
         # pre check statistics in checkboxes layout
