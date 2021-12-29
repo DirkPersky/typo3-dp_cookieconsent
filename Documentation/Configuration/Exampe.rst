@@ -12,158 +12,158 @@ plugin.tx_cookieconsent.settings.
 
 url
 --------------------
-:aspect: Description
+:aspect:`Description`
    PID to Data Protection
 
 target
 --------------------
-:aspect: Description
+:aspect:`Description`
    Link target of read more link
-:aspect: Default
+:aspect:`Default`
    _bank
 
 theme
 --------------------
-:aspect: Description
+:aspect:`Description`
    Layout Class of the consent
-:aspect: Options
+:aspect:`Options`
    edgeless, ... following ..
-:aspect: Default
+:aspect:`Default`
    edgeless
 
 position
 --------------------
-:aspect: Description
+:aspect:`Description`
    position of the consent
-:aspect: Options
+:aspect:`Options`
    bottom, top, bottom-left, bottom-right
-:aspect: Default
+:aspect:`Default`
    bottom-right
 
 revokable
 --------------------
-:aspect: Description
+:aspect:`Description`
    Some countries REQUIRE that users can change their mind
-:aspect: Options
+:aspect:`Options`
    true, false
-:aspect: Default
+:aspect:`Default`
    true
 
 reloadOnRevoke
 --------------------
-:aspect: Description
+:aspect:`Description`
    force page reload after revoke
-:aspect: Options
+:aspect:`Options`
    true, false
-:aspect: Default
+:aspect:`Default`
    false
 
 type
 --------------------
-:aspect: Description
+:aspect:`Description`
    consent types
-:aspect: Options
+:aspect:`Options`
    opt-in, ... following ..
-:aspect: Default
+:aspect:`Default`
    opt-in
 
 statistics
 --------------------
-:aspect: Description
+:aspect:`Description`
    pre check statistics in checkboxes layout
-:aspect: Options
+:aspect:`Options`
    true, false
-:aspect: Default
+:aspect:`Default`
    false
 
 marketing
 --------------------
-:aspect: Description
+:aspect:`Description`
    pre check marketing in checkboxes layout
-:aspect: Options
+:aspect:`Options`
    true, false
-:aspect: Default
+:aspect:`Default`
    false
 
 overlay.notice
 --------------------
-:aspect: Description
+:aspect:`Description`
    enable or disable overlays (iframe, content)
-:aspect: Options
+:aspect:`Options`
    true, false
-:aspect: Default
+:aspect:`Default`
    true
 
 overlay.box.background
 --------------------
-:aspect: Description
+:aspect:`Description`
    Overlay: Background color
-:aspect: Options
+:aspect:`Options`
    rgba(), #hexa
-:aspect: Default
+:aspect:`Default`
    rgba(0,0,0,.8)
 
 overlay.box.text
 --------------------
-:aspect: Description
+:aspect:`Description`
    Overlay: text color
-:aspect: Options
+:aspect:`Options`
    rgba(), #hexa
-:aspect: Default
+:aspect:`Default`
    #fff
 
 overlay.button.background
 --------------------
-:aspect: Description
+:aspect:`Description`
    Overlay: Button Background color
-:aspect: Options
+:aspect:`Options`
    rgba(), #hexa
-:aspect: Default
+:aspect:`Default`
    #b81839
 
 overlay.button.text
 --------------------
-:aspect: Description
+:aspect:`Description`
    Overlay: Button text color
-:aspect: Options
+:aspect:`Options`
    rgba(), #hexa
-:aspect: Default
+:aspect:`Default`
    #fff
 
 palette.popup.background
 --------------------
-:aspect: Description
+:aspect:`Description`
    Consent Background color
-:aspect: Options
+:aspect:`Options`
    rgba(), #hexa
-:aspect: Default
+:aspect:`Default`
   rgba(0,0,0,.8)
 
 palette.popup.background
 --------------------
-:aspect: Description
+:aspect:`Description`
    Consent Text color
-:aspect: Options
+:aspect:`Options`
    rgba(), #hexa
-:aspect: Default
+:aspect:`Default`
   #fff
 
 palette.button.background
 --------------------
-:aspect: Description
+:aspect:`Description`
    Consent Button Background color
-:aspect: Options
+:aspect:`Options`
    rgba(), #hexa
-:aspect: Default
+:aspect:`Default`
   #b81839
 
 palette.button.text
 --------------------
-:aspect: Description
+:aspect:`Description`
    Consent Button Text color
-:aspect: Options
+:aspect:`Options`
    rgba(), #hexa
-:aspect: Default
+:aspect:`Default`
   #fff
 
 

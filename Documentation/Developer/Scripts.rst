@@ -35,7 +35,7 @@ These 2 types are possible and handled by the consent:
 
 statistics
 --------------------
-:aspect: data-cookieconsent
+:aspect:`data-cookieconsent`
    statistics
     .. code-block:: html
 
@@ -43,7 +43,7 @@ statistics
 
 marketing
 --------------------
-:aspect: data-cookieconsent
+:aspect:`data-cookieconsent`
    marketing
     .. code-block:: html
 
