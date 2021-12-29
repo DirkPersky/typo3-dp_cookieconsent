@@ -15,11 +15,13 @@ Consent Box
    :class: with-shadow
     :width: 400px
 
+
 Overlay Box
 
 .. figure:: ../Images/iframe-overlay.png
    :class: with-shadow
     :width: 400px
+
 
 Backend
 ^^^^^^^
@@ -30,17 +32,20 @@ Backend Cookie List
    :class: with-shadow
     :width: 400px
 
+
 Backend Cookie Detail
 
 .. figure:: ../Images/be-cookie-example.png
    :class: with-shadow
     :width: 400px
 
+
 Backend Cookie Detail - Script Tab
 
 .. figure:: ../Images/be-cookie-example-scripts.png
    :class: with-shadow
     :width: 400px
+
 
 Backend Content Element
 
