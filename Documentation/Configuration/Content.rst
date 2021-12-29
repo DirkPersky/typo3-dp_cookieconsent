@@ -3,7 +3,7 @@
 .. _content:
 
 ===========
-load content after accepting
+Content Loading
 ===========
 If you want to load a Youtube Video or any other HTMl Code after the consent is accepted take a loot to the new Content element.
 

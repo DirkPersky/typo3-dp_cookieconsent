@@ -74,7 +74,10 @@ This document is published under the Open Content License available from http://
    :titlesonly:
 
    Installation/*
-   Configuration/*
+   Configuration/Configuration
+   Configuration/Language
+   Configuration/Scripts
+   Configuration/Content
 
 .. toctree::
    :caption: For Developers
