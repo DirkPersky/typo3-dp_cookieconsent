@@ -65,7 +65,10 @@ http://www.opencontent.org/opl.shtml
    :glob:
    :titlesonly:
 
-   Introduction/*
+   Introduction/Index
+   Introduction/About
+   Introduction/Screenshot
+   Introduction/Links
 
 .. toctree::
    :caption: For Integrators
@@ -80,4 +83,9 @@ http://www.opencontent.org/opl.shtml
    :glob:
    :titlesonly:
 
-   Developer/*
+   Developer/JavaScript
+   Developer/Scripts
+   Developer/Iframe
+   Developer/Content
+   Developer/Checkboxes
+   Developer/More

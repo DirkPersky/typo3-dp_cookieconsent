@@ -27,6 +27,10 @@ Backend
    :class: with-shadow
    :width: 400px
 
+.. figure:: ../Images/be-cookie-example-scripts.png
+   :class: with-shadow
+   :width: 400px
+
 .. figure:: ../Images/be-element.png
    :class: with-shadow
    :width: 400px

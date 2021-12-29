@@ -32,7 +32,7 @@ plugin.tx_cookieconsent {
 
         overlay {
             # cat=plugin.cookieconsent/overlay; type=options[true,false]; label = display iframe overlay
-            notice = false
+            notice = true
             box {
                 # cat=plugin.cookieconsent/overlay; type=color; label= Overlay: Background
                 background = rgba(0,0,0,.8)
