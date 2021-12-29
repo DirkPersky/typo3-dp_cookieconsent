@@ -8,7 +8,7 @@ Palette
 
 Customizing the consent Window
 
-.. figure:: ../Images/consent-box.png
+.. figure:: ../../Images/consent-box.png
    :class: with-shadow
    :width: 400px
 

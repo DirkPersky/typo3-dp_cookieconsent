@@ -8,7 +8,7 @@ Overlay
 
 Customizing the Overlay Window
 
-.. figure:: ../Images/iframe-overlay.png
+.. figure:: ../../Images/iframe-overlay.png
    :class: with-shadow
    :width: 400px
 

@@ -21,6 +21,7 @@ or accept/deny cookies outside of the cookie hint, you can use the followed exam
     window.DPCookieConsent.forceAccept(this)
 
 **deny cookies**
+
 .. code-block:: js
 
     window.DPCookieConsent.forceDeny(this)

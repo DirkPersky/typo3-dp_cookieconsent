@@ -31,7 +31,7 @@ theme
 :aspect:`Description`
    Layout Class of the consent
 :aspect:`Options`
-   edgeless, ... following ..
+   edgeless, :guilabel:`... following ..`
 :aspect:`Default`
    edgeless
 
@@ -67,7 +67,7 @@ type
 :aspect:`Description`
    consent types
 :aspect:`Options`
-   opt-in, ... following ..
+   opt-in, :guilabel:`... following ..`
 :aspect:`Default`
    opt-in
 
