@@ -14,6 +14,11 @@ url
 :aspect:`Description`
    PID to Data Protection
 
+storagePid
+--------------------
+:aspect:`Description`
+   PID to Cookie Folder
+
 target
 --------------------
 :aspect:`Description`
