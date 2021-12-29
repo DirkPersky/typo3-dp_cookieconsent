@@ -18,31 +18,30 @@ Some F.A.Q. can be found [here](https://github.com/DirkPersky/typo3-dp_cookiecon
 
 **plugin.tx_cookieconsent.settings.** *([example config](Documentation/Images/constant.md))*
 
-| Property                  | Description                                   | Options                                   | Default |
-| ------------------------- | --------------------------------------------- | ----------------------------------------- | -------:|
-| url                       | PID to Data Protection                        | PID                                       | |
-| target                    | Link target of read more link                 |                                           | _blank |
-| theme                     | Layout of the consent                         | edgeless, block, wire, classic            | edgeless |
-| position                  | position of the consent                       | bottom, top, bottom-left, bottom-right    | bottom-right |
-| revokable                 | Some countries REQUIRE that users can change their mind | true, false                    | true | 
-| reloadOnRevoke            | force page reload after revoke                | true, false                            | false |
-| type                      | consent types *([screenshot](#types))*        | info, opt-out, opt-in                     | info |
-| statistics                | pre check statistics in checkboxes layout     | true, false                               | false |
-| marketing                 | pre check marketing in checkboxes layout      | true, false                               | false |
-| overlay.notice            | enable or disable overlay                     | true, false                               | false |
-| overlay.box.background    | Overlay: Background color                     | rgba(), #hexa                             | rgba(0,0,0,.8) |
-| overlay.box.text          | Overlay: text color                           | rgb(), #hexa                              | #fff |
-| overlay.button.background | Overlay: Button Background color              | rgba(), #hexa                             | #b81839 |
-| overlay.button.text       | Overlay: Button text color                    | rgb(), #hexa                              | #fff |
-| palette.popup.background  | Consent Background color                      | rgba(), #hexa                             | #2473be |
-| palette.popup.text        | Consent Text color                            | rgb(), #hexa                              | #fff |
-| palette.button.background | Consent Button Background color               | rgba(), #hexa                             | #f96332 |
-| palette.button.text       | Consent Button Text color                     | rgb(), #hexa                              | #fff |
+| Property                  | Description                                   | Options                                |        Default |
+| ------------------------- | --------------------------------------------- |----------------------------------------|---------------:|
+| url                       | PID to Data Protection                        | PID                                    |                |
+| target                    | Link target of read more link                 |                                        |         _blank |
+| theme                     | Layout of the consent                         | edgeless, block, wire, classic         |       edgeless |
+| position                  | position of the consent                       | bottom, top, bottom-left, bottom-right |   bottom-right |
+| revokable                 | Some countries REQUIRE that users can change their mind | true, false                            |           true | 
+| reloadOnRevoke            | force page reload after revoke                | true, false                            |          false |
+| type                      | consent types *([screenshot](#types))*        | opt-in                                 |         opt-in |
+| statistics                | pre check statistics in checkboxes layout     | true, false                            |          false |
+| marketing                 | pre check marketing in checkboxes layout      | true, false                            |          false |
+| overlay.notice            | enable or disable overlay                     | true, false                            |          false |
+| overlay.box.background    | Overlay: Background color                     | rgba(), #hexa                          | rgba(0,0,0,.8) |
+| overlay.box.text          | Overlay: text color                           | rgb(), #hexa                           |           #fff |
+| overlay.button.background | Overlay: Button Background color              | rgba(), #hexa                          |        #b81839 |
+| overlay.button.text       | Overlay: Button text color                    | rgb(), #hexa                           |           #fff |
+| palette.popup.background  | Consent Background color                      | rgba(), #hexa                          |        #2473be |
+| palette.popup.text        | Consent Text color                            | rgb(), #hexa                           |           #fff |
+| palette.button.background | Consent Button Background color               | rgba(), #hexa                          |        #f96332 |
+| palette.button.text       | Consent Button Text color                     | rgb(), #hexa                           |           #fff |
 
 #### types
-the screenshots are based one the `plugin.tx_cookieconsent.settings.layout = dpextend`
 
-| info                                        | opt-out                                        | opt-in                                        |
+| info (removed in 1.4.0)                     | opt-out (removed in 1.4.0)                     | opt-in                                        |
 |---------------------------------------------|------------------------------------------------|-----------------------------------------------|
 | ![info](Documentation/Images/type_info.png) | ![info](Documentation/Images/type_opt-out.png) | ![info](Documentation/Images/type_opt-in.png) |
 
