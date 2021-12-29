@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-05-19T20:54:14Z"
+	<file source-language="en" datatype="plaintext" original="messages" date="2021-12-28T20:54:14Z"
 		  product-name="cookieconsent">
 		<header/>
 		<body>
@@ -11,6 +11,10 @@
             <trans-unit id="dismiss">
                 <source>allow cookies</source>
                 <target>Cookies zulassen!</target>
+            </trans-unit>
+            <trans-unit id="allow">
+                <source>save</source>
+                <target>Speichern</target>
             </trans-unit>
             <trans-unit id="allowall">
                 <source>allow all!</source>

@@ -1,4 +1,16 @@
-{namespace dp=DirkPersky\DpCookieconsent\ViewHelpers}
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category   TYPO3
+  ~
+  ~ @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <info@dp-wired.de>
+  ~ @license    MIT
+  -->
+
+<html data-namespace-typo3-fluid="true"
+      xmlns:dp="http://typo3.org/ns/DirkPersky/DpCookieconsent/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
 <!-- Begin Cookie Consent plugin by Dirk Persky - https://github.com/DirkPersky/typo3-dp_cookieconsent -->
 <script type="text/plain" data-ignore="1" data-dp-cookieDesc="layout">
@@ -29,29 +41,25 @@
         content: {
             message:'<f:translate key="message" extensionName="dp_cookieconsent" />',
             dismiss:'<f:translate key="dismiss" extensionName="dp_cookieconsent" />',
-            allow:'<f:translate key="dismiss" extensionName="dp_cookieconsent" />',
+            allow:'<f:translate key="allow" extensionName="dp_cookieconsent" />',
             deny: '<f:translate key="deny" extensionName="dp_cookieconsent" />',
             link:'<f:translate key="link" extensionName="dp_cookieconsent" />',
             href:'<f:uri.page pageUid="{settings.url}" />',
             target:'<f:format.raw>{settings.target}</f:format.raw>',
+            'allow-all': '<f:translate key="allowall" extensionName="dp_cookieconsent" />',
 
             media: {
                 notice: '<f:translate key="media.notice" extensionName="dp_cookieconsent" />',
                 desc: '<f:translate key="media.desc" extensionName="dp_cookieconsent" />',
                 btn: '<f:translate key="media.btn" extensionName="dp_cookieconsent" />',
-            },
-
-            'allow-all': '<f:translate key="allowall" extensionName="dp_cookieconsent" />'
+            }
         },
-        autoOpen: <f:format.raw>{settings.autoOpen}</f:format.raw> || false,
-        layout: '<f:format.raw>{settings.layout}</f:format.raw>',
         theme: '<f:format.raw>{settings.theme}</f:format.raw>',
         position: '<f:format.raw>{settings.position}</f:format.raw>',
         type: '<f:format.raw>{settings.type}</f:format.raw>',
         revokable: <f:format.raw>{settings.revokable}</f:format.raw>,
         reloadOnRevoke: <f:format.raw>{settings.reloadOnRevoke}</f:format.raw>,
         checkboxes: <f:format.raw><dp:Json>{settings.checkboxes}</dp:Json></f:format.raw>,
-        dismissOnScroll: parseInt('<f:format.raw>{settings.dismissOnScroll}</f:format.raw>')||false,
         palette: {
             popup: {
                 background: '<f:format.raw>{settings.palette.popup.background}</f:format.raw>',

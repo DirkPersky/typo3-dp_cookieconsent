@@ -17,20 +17,14 @@ plugin.tx_cookieconsent {
         theme = edgeless
         # cat=plugin.cookieconsent; type=options[top,top-left,top-right,bottom,bottom-left,bottom-right]; label= Position
         position = bottom-right
-        # cat=plugin.cookieconsent; type=int+; label= dismiss on scroll (in PX)
-        dismissOnScroll =
         # cat=plugin.cookieconsent; type=options[info,opt-out,opt-in]; label = Type
         type = info
-        # cat=plugin.cookieconsent; type=options[basic,dpextend]; label = extend layout with checkboxes
-        layout = basic
         # cat=plugin.cookieconsent; type=options[true,false]; label = adds a button to review the consent window
         revokable = true
         # cat=plugin.cookieconsent; type=options[true,false]; label = pre check statistics in checkboxes layout
         statistics = false
         # cat=plugin.cookieconsent; type=options[true,false]; label = pre check marketing in checkboxes layout
         marketing = false
-        # cat=plugin.cookieconsent; type=options[true,false]; label = should the cookie popup appear automatically
-        autoOpen = true
         # cat=plugin.cookieconsent; type=options[true,false]; label = force page reload after revoke
         reloadOnRevoke = false
 
