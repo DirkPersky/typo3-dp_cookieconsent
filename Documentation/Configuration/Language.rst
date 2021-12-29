@@ -16,40 +16,40 @@ Arguments
 .. _language_arguments:
 plugin.tx_dp_cookieconsent._LOCAL_LANG.##LANG##.
 --------------------
-:aspect:` message
+:aspect: message
     the default consent message
 
-:aspect:` dismiss
+:aspect: dismiss
     allow cookie button
 
-:aspect:` link
+:aspect: link
     read more link
 
-:aspect:` deny
+:aspect: deny
     decline button
 
-:aspect:` allow
+:aspect: allow
     allow cookie button
 
-:aspect:` allowall
+:aspect: allowall
     allow all cookie button
 
-:aspect:` dpRequire
+:aspect: dpRequire
     checkbox required label
 
-:aspect:` dpStatistik
+:aspect: dpStatistik
     checkbox statistic label
 
-:aspect:` dpMarketing
+:aspect: dpMarketing
     checkbox marketing label
 
-:aspect:` media.notice
+:aspect: media.notice
     overlay notice headline
 
-:aspect:` media.desc
+:aspect: media.desc
     overlay notice text
 
-:aspect:` media.btn
+:aspect: media.btn
     overlay button text
 
 

@@ -9,11 +9,13 @@ With this feature you can add or modify the checkbox types by configuration.
 All you have to do is setting your new checkbox in TS and add it to the partial template:
 
 Configuration/TypoScript/setup.txt:
+
 .. code-block:: typoscript
 
     page.footerData.998.20.settings.checkboxes.thirdparty = {$plugin.tx_cookieconsent.settings.thirdparty}
 
 Resources/Private/Partials/CookieSelection.html:
+
 .. code-block:: html
 
     <label for="dp--cookie-thirdparty">

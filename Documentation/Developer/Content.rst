@@ -9,6 +9,7 @@ load content after accepting
 You can also handle this part from an :ref:`Content element <content>` if you want.
 
 Your HTML markup for this is
+
 .. code-block:: html
 
     <dp-content
