@@ -57,8 +57,7 @@ Cookie Consent
             JavaScript API Documentation
 
 
-This document is published under the Open Content License available from
-http://www.opencontent.org/opl.shtml
+This document is published under the Open Content License available from http://www.opencontent.org/opl.shtml
 
 .. toctree::
    :glob:
