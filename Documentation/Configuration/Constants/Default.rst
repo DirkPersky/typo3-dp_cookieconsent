@@ -3,7 +3,7 @@
 .. _config_basics:
 
 ===========
-Basic Configuration
+Basic
 ===========
 
 plugin.tx_cookieconsent.settings.

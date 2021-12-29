@@ -3,7 +3,7 @@
 .. _example:
 
 ===========
-Example Configuration
+Example
 ===========
 
 This example configuration is based on the base TypoScript-Constants configuration (see :ref:`installation`).

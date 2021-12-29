@@ -3,7 +3,7 @@
 .. _config_overlay:
 
 ===========
-Overlay Configuration
+Overlay
 ===========
 
 Customizing the Overlay Window

@@ -5,7 +5,7 @@
 ===========
 build your own overlay
 ===========
-or accept/deny cookies outside of the cookie hint, you can use the followed example
+or accept/deny cookies outside of the cookie hint, you can use the followed examples
 
 .. code-block:: html
 
@@ -15,7 +15,12 @@ or accept/deny cookies outside of the cookie hint, you can use the followed exam
     >allow cookies and play video</button>
 
 **allow cookies**
-:guilabel:`window.DPCookieConsent.forceAccept(this)`
+
+.. code-block:: js
+
+    window.DPCookieConsent.forceAccept(this)
 
 **deny cookies**
-:guilabel:`window.DPCookieConsent.forceDeny(this)`
+.. code-block:: js
+
+    window.DPCookieConsent.forceDeny(this)

@@ -3,7 +3,7 @@
 .. _config_palette:
 
 ===========
-Palette Configuration
+Palette
 ===========
 
 Customizing the consent Window
