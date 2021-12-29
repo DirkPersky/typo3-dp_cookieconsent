@@ -21,12 +21,3 @@ The popup is shown on every page load until the user saves the consent.
 CS_SEO
 ---------------------------------
 This Plugin extends the Config from `CS_SEO <https://extensions.typo3.org/extension/cs_seo/>`_ so that the Google analytics script, tag manager and piwiki will fire after the Cookie is accepted.
-
-.. _screenshots:
-
-Screenshots
-===========
-
-.. figure:: ../Images/consent-box.png
-   :class: with-shadow
-   :width: 400px
