@@ -24,12 +24,9 @@ Some F.A.Q. can be found [here](https://github.com/DirkPersky/typo3-dp_cookiecon
 | target                    | Link target of read more link                 |                                           | _blank |
 | theme                     | Layout of the consent                         | edgeless, block, wire, classic            | edgeless |
 | position                  | position of the consent                       | bottom, top, bottom-left, bottom-right    | bottom-right |
-| dismissOnScroll           | auto accept consent on scroll after XX px     |                                           | | 
-| autoOpen                  | The application automatically decides whether the popup should open | true, false          | true | 
 | revokable                 | Some countries REQUIRE that users can change their mind | true, false                    | true | 
 | reloadOnRevoke            | force page reload after revoke                | true, false                            | false |
 | type                      | consent types *([screenshot](#types))*        | info, opt-out, opt-in                     | info |
-| layout                    | consent layout                                | basic, dpextend                           | basic |
 | statistics                | pre check statistics in checkboxes layout     | true, false                               | false |
 | marketing                 | pre check marketing in checkboxes layout      | true, false                               | false |
 | overlay.notice            | enable or disable overlay                     | true, false                               | false |

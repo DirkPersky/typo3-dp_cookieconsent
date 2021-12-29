@@ -24,7 +24,7 @@ $EM_CONF[$_EXTKEY] = [
         'conflicts' => [],
         'suggests' => [],
     ],
-    'state' => 'stable',
-    'version' => '11.3.0'
+    'state' => 'beta', // stable
+    'version' => '11.4.0-beta'
 ];
 

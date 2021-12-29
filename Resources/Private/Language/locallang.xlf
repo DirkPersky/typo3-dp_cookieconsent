@@ -13,6 +13,9 @@
             <trans-unit id="allowall">
                 <source>allow all!</source>
             </trans-unit>
+            <trans-unit id="allow">
+                <source>save</source>
+            </trans-unit>
 			<trans-unit id="deny">
 				<source>decline</source>
 			</trans-unit>
