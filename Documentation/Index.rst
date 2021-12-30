@@ -61,6 +61,7 @@ This document is published under the Open Content License available from http://
 
 .. toctree::
    :glob:
+   :hidden:
    :titlesonly:
 
    Introduction/Index
@@ -71,9 +72,10 @@ This document is published under the Open Content License available from http://
 .. toctree::
    :caption: For Integrators
    :glob:
+   :hidden:
    :titlesonly:
 
-   Installation/*
+   Installation/Index
    Configuration/Configuration
    Configuration/Language
    Configuration/Scripts
@@ -82,6 +84,7 @@ This document is published under the Open Content License available from http://
 .. toctree::
    :caption: For Developers
    :glob:
+   :hidden:
    :titlesonly:
 
    Developer/JavaScript
