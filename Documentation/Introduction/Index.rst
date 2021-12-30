@@ -9,7 +9,7 @@ Introduction
 
 What does it do?
 ================
-This Plugin includes a solution for the EU Cookie law (`ePrivacy`, `TTDSG`). It extends some function to load Scripts, iFrame and content after the user accepted the consent.
+This Plugin includes a solution for the EU Cookie law (`ePrivacy`, `TTDSG`). It extends some function to load Scripts, iframe and content after the user accepted the consent.
 Though don't care about the latest EU laws and handle your Cookies with this Plugins.
 
 When is the popup shown to users?
