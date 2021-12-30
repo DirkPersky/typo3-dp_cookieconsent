@@ -47,4 +47,3 @@ Backend
    :width: 400px
 
    Backend Content Element
-
