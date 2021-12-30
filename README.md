@@ -7,11 +7,12 @@
 This Plugin includes a solution for the EU Cookie law (`ePrivacy`, `TTDSG`). It extends some function to load Scripts, iFrame and content after the user accepted the consent.
 Though don't care about the latest EU laws and handle your Cookies with this Plugins.
 
-| **Features / Documentation / Manual** | <https://docs.typo3.org/p/dirkpersky/typo3-dp_cookieconsent/11.4/en-us/> |
-| --- | --- |
-| Demo (example themes and languages) | <https://dp-wired.de/> |
-| TYPO3 extension repository |	<https://extensions.typo3.org/extension/dp_cookieconsent/> |
-| PHP composer package (Packagist) | <https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent> |
+
+| **Features / Documentation** | <https://docs.typo3.org/p/dirkpersky/typo3-dp_cookieconsent/main/en-us/> |
+|----------------------------|--------------------------------------------------------------------------|
+| Demo                       | <https://dp-wired.de/>                                                   |
+| TYPO3 extension repository | 	<https://extensions.typo3.org/extension/dp_cookieconsent/>              |
+| Packagist (composer)       | <https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent>       |
 
 ## F.A.Q.
 Some F.A.Q. can be found [here](https://github.com/DirkPersky/typo3-dp_cookieconsent/wiki)
