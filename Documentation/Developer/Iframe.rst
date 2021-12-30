@@ -3,13 +3,13 @@
 .. _iframe_code:
 
 ===========
-iFrame loading from HTML
+iframe loading from HTML
 ===========
 You can also handle this part from an :ref:`Content element <content>` if you want.
 
 load iframe after accepting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you want to load iFrames (YouTube, GMap, ..) after the Cookie is accepted you can use this snippet
+If you want to load iframes (YouTube, GMap, ..) after the Cookie is accepted you can use this snippet
 
 .. code-block:: html
 
@@ -20,7 +20,7 @@ If you want to load iFrames (YouTube, GMap, ..) after the Cookie is accepted you
         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreenn >
     </iframe>
 
-With the :guilabel:`class="dp--iframe"` the iFrame is hidden by default and would be shown after accepting of the cookie.
+With the :guilabel:`class="dp--iframe"` the iframe is hidden by default and would be shown after accepting of the cookie.
 
 iframe overlay
 ^^^^^^^^^^^^^^
