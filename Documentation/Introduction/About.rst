@@ -6,6 +6,24 @@
 About
 =============================================================
 
+.. container:: row m-0 p-0
+
+    .. figure:: https://img.shields.io/badge/Donate-PayPal-green.svg?style=for-the-badge
+      :alt: Donate
+      :target: https://www.paypal.me/dirkpersky
+
+    .. figure:: https://img.shields.io/packagist/v/dirkpersky/typo3-dp_cookieconsent?style=for-the-badge
+      :alt: Latest Stable Version
+      :target: https://packagist.org/packages/dirkpersky/typo3-dp_cookieconsent
+
+    .. figure:: https://img.shields.io/badge/TYPO3-dp__cookieconsent-%23f49700?style=for-the-badge
+      :alt: TYPO3
+      :target: https://extensions.typo3.org/extension/dp_cookieconsent/
+
+    .. figure:: https://img.shields.io/packagist/l/dirkpersky/typo3-dp_cookieconsent?style=for-the-badge
+      :alt: License
+      :target: https://github.com/DirkPersky/typo3-dp_cookieconsent
+
 .. _credits:
 
 Credits
