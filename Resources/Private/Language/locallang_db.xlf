@@ -86,6 +86,13 @@
 				<source>Dynamic Content</source>
 			</trans-unit>
 
+
+            <trans-unit id="tx_dpcookieconsent_cookie.title">
+                <source>Cookie Listing</source>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_cookie.description">
+                <source>List all defined cookies</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

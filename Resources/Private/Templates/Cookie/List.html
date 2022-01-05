@@ -1,0 +1,42 @@
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category   TYPO3
+  ~
+  ~ @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <info@dp-wired.de>
+  ~ @license    MIT
+  -->
+
+<html data-namespace-typo3-fluid="true"
+      xmlns:dp="http://typo3.org/ns/DirkPersky/DpCookieconsent/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:if condition="{cookies}">
+    <table class="table table-stripped">
+        <thead>
+        <tr>
+            <th>
+                <f:translate key="cookies"/>
+            </th>
+            <th>
+                <f:translate key="domain"/>
+            </th>
+            <th>
+                <f:translate key="duration"/>
+            </th>
+            <th>
+                <f:translate key="vendor"/>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <f:for as="cookieItem" each="{cookies}" iteration="iterator">
+            <f:render arguments="{cookieItem: cookieItem,settings:settings,iterator:iterator}"
+                      partial="Cookie/List/Item"/>
+        </f:for>
+        </tbody>
+    </table>
+</f:if>
+
+</html>

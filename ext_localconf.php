@@ -9,10 +9,13 @@
  * @license    MIT
  */
 
+use DirkPersky\DpCookieconsent\Controller\CookieController;
+use DirkPersky\DpCookieconsent\Controller\ScriptController;
 use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 use TYPO3\CMS\Core\Imaging\IconRegistry;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3_MODE') or die();
 
@@ -38,15 +41,26 @@ $boot = static function (): void {
         }
     }
     // add Controller
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    ExtensionUtility::configurePlugin(
         'DirkPersky.DpCookieconsent',
         'Pi1',
         [
-            \DirkPersky\DpCookieconsent\Controller\ScriptController::class => 'list,show',
+            ScriptController::class => 'list,show',
         ],
         // non-cacheable actions
         [
-            \DirkPersky\DpCookieconsent\Controller\ScriptController::class => 'show',
+            ScriptController::class => 'show',
+        ]
+    );
+    // add Controller
+    ExtensionUtility::configurePlugin(
+        'DirkPersky.DpCookieconsent',
+        'Pi2',
+        [
+            CookieController::class => 'list,ajax',
+        ],
+        // non-cacheable actions
+        [
         ]
     );
     // wizards
@@ -63,8 +77,19 @@ $boot = static function (): void {
                             list_type = dpcookieconsent_pi1
                         }
                     }
+                    
+                    dpcookieconsent_pi2 {
+                        iconIdentifier = apps-cookie-content-item
+                        title = LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_cookie.title
+                        description = LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_cookie.description
+                        tt_content_defValues {
+                            CType = list
+                            list_type = dpcookieconsent_pi2
+                        }
+                    }
                 }
-                show := addToList(dpcookieconsent_pi1)
+                
+                show := addToList(dpcookieconsent_pi1, dpcookieconsent_pi2)
             }
        }'
     );
