@@ -80,6 +80,7 @@ This document is published under the Open Content License available from http://
    Configuration/Language
    Configuration/Scripts
    Configuration/Content
+   Configuration/CookieList
 
 .. toctree::
    :caption: For Developers
