@@ -1,14 +1,27 @@
+<!--
+  ~ Copyright (c) 2021.
+  ~
+  ~ @category   TYPO3
+  ~
+  ~ @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
+  ~ @author     Dirk Persky <info@dp-wired.de>
+  ~ @license    MIT
+  -->
+
 <div class="dp--cookie-check" xmlns:f="http://www.w3.org/1999/html">
     <label for="dp--cookie-require">
-        <f:form.checkbox id="dp--cookie-require" class="dp--check-box" value="" disabled="disabled" checked="true" />
+        <f:form.checkbox checked="true" class="dp--check-box" disabled="disabled" id="dp--cookie-require" tabindex="-1"
+                         value=""/>
         <f:translate key="dpRequire" extensionName="dp_cookieconsent" />
     </label>
     <label for="dp--cookie-statistics">
-        <f:form.checkbox id="dp--cookie-statistics" class="dp--check-box" checked="{settings.checkboxes.statistics}" value="" />
+        <f:form.checkbox checked="{settings.checkboxes.statistics}" class="dp--check-box" id="dp--cookie-statistics"
+                         tabindex="1" value=""/>
         <f:translate key="dpStatistik" extensionName="dp_cookieconsent" />
     </label>
     <label for="dp--cookie-marketing">
-        <f:form.checkbox id="dp--cookie-marketing" class="dp--check-box" checked="{settings.checkboxes.marketing}" value="" />
+        <f:form.checkbox checked="{settings.checkboxes.marketing}" class="dp--check-box" id="dp--cookie-marketing"
+                         tabindex="1" value=""/>
         <f:translate key="dpMarketing" extensionName="dp_cookieconsent" />
     </label>
 </div>
