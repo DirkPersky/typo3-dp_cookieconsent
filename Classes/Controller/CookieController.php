@@ -11,6 +11,7 @@
 
 namespace DirkPersky\DpCookieconsent\Controller;
 
+use ArrayObject;
 use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Annotation\Inject;
@@ -46,24 +47,25 @@ class CookieController extends ActionController
         $flexFormData = GeneralUtility::makeInstance(FlexFormService::class)->convertFlexFormContentToArray($cObj->data['pi_flexform']);
         // get Cookies
         $cookies = $this->cookieRepository->findByPid($flexFormData['settings']['startingpoint']);
+        // group cookies
+        $grouped = new ArrayObject([]);
+        foreach ($cookies as $cookie) {
+            $category = $cookie->getCategory();
+            if (!isset($grouped[$category])) {
+                $grouped[$category] = new ArrayObject([
+                    'category' => $category,
+                    'items' => new ArrayObject([])
+                ]);
+            }
+            $grouped[$category]['items'][] = $cookie;
+        }
+
+        // update settings
+        $this->settings['base_uri'] = parse_url($this->request->getBaseUri());
+        $this->view->assign('settings', $this->settings);
         // add data to view
         $this->view->assign('data', $cObj->data);
         $this->view->assign('cookies', $cookies);
-    }
-
-    /**
-     * @param $content
-     * @return void
-     */
-    public function ajaxAction()
-    {
-        $cObj = $this->configurationManager->getContentObject();
-        // parse Flexform
-        $flexFormData = GeneralUtility::makeInstance(FlexFormService::class)->convertFlexFormContentToArray($cObj->data['pi_flexform']);
-        // remove duplicate Settings
-        unset($flexFormData['settings']);
-        // add data to view
-        $this->view->assign('flexform', $flexFormData);
-        $this->view->assign('data', $cObj->data);
+        $this->view->assign('grouped', $grouped);
     }
 }

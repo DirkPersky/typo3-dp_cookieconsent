@@ -13,30 +13,38 @@
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
 <f:if condition="{cookies}">
-    <table class="table table-stripped">
-        <thead>
-        <tr>
-            <th>
-                <f:translate key="cookies"/>
-            </th>
-            <th>
-                <f:translate key="domain"/>
-            </th>
-            <th>
-                <f:translate key="duration"/>
-            </th>
-            <th>
-                <f:translate key="vendor"/>
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <f:for as="cookieItem" each="{cookies}" iteration="iterator">
-            <f:render arguments="{cookieItem: cookieItem,settings:settings,iterator:iterator}"
-                      partial="Cookie/List/Item"/>
-        </f:for>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <f:for as="groupItem" each="{grouped}" iteration="groupIterator">
+                <thead class="border-top-0">
+                    <tr class="caption">
+                        <th colspan="4" class="{f:if(condition:groupIterator.isFirst, then:'', else:'pt-4')}">
+                            <f:translate key="cookie.category.{groupItem.category}"/>
+                        </th>
+                    </tr>
+                    <tr class="table-dark">
+                        <th width="*">
+                            <f:translate key="cookie.name"/>
+                        </th>
+                        <th width="20%">
+                            <f:translate key="cookie.description"/>
+                        </th>
+                        <th width="10%" class="text-end">
+                            <f:translate key="cookie.duration"/>
+                        </th>
+                        <th  width="20%">
+                            <f:translate key="cookie.vendor"/>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <f:for as="cookieItem" each="{groupItem.items}" iteration="iterator">
+                        <f:render arguments="{cookieItem: cookieItem, settings:settings, iterator:iterator}" partial="Cookie/List/Item"/>
+                    </f:for>
+                </tbody>
+            </f:for>
+        </table>
+    </div>
 </f:if>
 
 </html>

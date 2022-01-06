@@ -44,6 +44,41 @@
             <trans-unit id="media.btn">
                 <source>allow cookies and load this resource</source>
             </trans-unit>
+
+
+            <trans-unit id="cookie.name">
+                <source>Cookies</source>
+            </trans-unit>
+            <trans-unit id="cookie.category">
+                <source>Category</source>
+            </trans-unit>
+            <trans-unit id="cookie.category.1">
+                <source>Statistics</source>
+            </trans-unit>
+            <trans-unit id="cookie.category.0">
+                <source>Required</source>
+            </trans-unit>
+            <trans-unit id="cookie.category.1">
+                <source>Statistics</source>
+            </trans-unit>
+            <trans-unit id="cookie.category.2">
+                <source>Marketing</source>
+            </trans-unit>
+            <trans-unit id="cookie.description">
+                <source>Domain</source>
+            </trans-unit>
+            <trans-unit id="cookie.duration_time.1">
+                <source>Day(s)</source>
+            </trans-unit>
+            <trans-unit id="cookie.duration_time.2">
+                <source>Year(s)</source>
+            </trans-unit>
+            <trans-unit id="cookie.duration">
+                <source>Duration</source>
+            </trans-unit>
+            <trans-unit id="cookie.vendor">
+                <source>Vendor</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

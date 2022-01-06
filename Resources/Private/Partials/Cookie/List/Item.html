@@ -10,9 +10,34 @@
 <html data-namespace-typo3-fluid="true"
       xmlns:dp="http://typo3.org/ns/DirkPersky/DpCookieconsent/ViewHelpers"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-<f:comment>
-    <f:debug>{_all}</f:debug>
-    ITEM
-</f:comment>
-
+    <tr>
+        <td class="cc-no-wrap">
+            <f:format.raw>{cookieItem.name}</f:format.raw>
+        </td>
+        <td>
+            <f:if condition="{cookieItem.description}">
+                <f:then>
+                    <f:format.raw>{cookieItem.description}</f:format.raw>
+                </f:then>
+                <f:else>
+                    <f:format.raw>{settings.base_uri.host}</f:format.raw>
+                </f:else>
+            </f:if>
+        </td>
+        <td class="text-end cc-no-wrap">
+            <f:format.raw>{cookieItem.duration}</f:format.raw> <f:translate key="cookie.duration_time.{cookieItem.durationTime}"/>
+        </td>
+        <td class="cc-no-wrap">
+            <f:if condition="{cookieItem.vendorLink}">
+                <f:then>
+                    <f:link.typolink parameter="{cookieItem.vendorLink}" target="_blank">
+                        <f:format.raw>{cookieItem.vendor}</f:format.raw>
+                    </f:link.typolink>
+                </f:then>
+                <f:else>
+                    <f:format.raw>{cookieItem.vendor}</f:format.raw>
+                </f:else>
+            </f:if>
+        </td>
+    </tr>
 </html>

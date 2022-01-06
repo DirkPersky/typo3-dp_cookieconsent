@@ -57,7 +57,7 @@ $boot = static function (): void {
         'DirkPersky.DpCookieconsent',
         'Pi2',
         [
-            CookieController::class => 'list,ajax',
+            CookieController::class => 'list',
         ],
         // non-cacheable actions
         [
