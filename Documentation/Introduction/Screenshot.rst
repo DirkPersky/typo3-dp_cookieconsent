@@ -21,6 +21,12 @@ Fontend
 
    Overlay Box
 
+.. figure:: ../Images/data-privacy-cookie-list.png
+   :class: with-shadow
+   :width: 400px
+
+   Data Privacy cookie listing
+
 Backend
 ^^^^^^^
 
@@ -28,22 +34,28 @@ Backend
    :class: with-shadow
    :width: 400px
 
-   Backend Cookie List
+   Backend cookie list
 
 .. figure:: ../Images/be-cookie-example.png
    :class: with-shadow
    :width: 400px
 
-   Backend Cookie Detail
+   Backend cookie detail
 
 .. figure:: ../Images/be-cookie-example-scripts.png
    :class: with-shadow
    :width: 400px
 
-   Backend Cookie Detail - Script Tab
+   Backend cookie detail - Script Tab
 
 .. figure:: ../Images/be-element.png
    :class: with-shadow
    :width: 400px
 
-   Backend Content Element
+   Backend content element
+
+.. figure:: ../Images/be-element-cookie-list.png
+   :class: with-shadow
+   :width: 400px
+
+   Cookie listing element
