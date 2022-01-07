@@ -52,9 +52,6 @@
             <trans-unit id="cookie.category">
                 <source>Category</source>
             </trans-unit>
-            <trans-unit id="cookie.category.1">
-                <source>Statistics</source>
-            </trans-unit>
             <trans-unit id="cookie.category.0">
                 <source>Required</source>
             </trans-unit>
