@@ -1,7 +1,7 @@
 {
   "name": "dirkpersky/typo3-dp_cookieconsent",
   "type": "typo3-cms-extension",
-  "description": "Include Cookie Consent, a lightweight JavaScript plugin for alerting users about the use of cookies on your website.",
+  "description": "Enable a cookie consent box. Let you visitors control the usage of cookies and load script or content after a consent. (ePrivacy, TTDSG)",
   "keywords": [
     "TYPO3",
     "cookieconsent",

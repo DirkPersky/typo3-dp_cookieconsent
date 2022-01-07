@@ -11,7 +11,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Cookie Consent',
-    'description' => 'Include Cookie Consent, a lightweight JavaScript plugin for alerting users about the use of cookies on your website.',
+    'description' => 'Enable a cookie consent box. Let you visitors control the usage of cookies and load script or content after a consent. (ePrivacy, TTDSG)',
     'category' => 'fe',
     'clearCacheOnLoad' => true,
     'author' => 'Dirk Persky',
