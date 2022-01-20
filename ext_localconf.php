@@ -9,14 +9,6 @@
  * @license    MIT
  */
 
-use DirkPersky\DpCookieconsent\Controller\CookieController;
-use DirkPersky\DpCookieconsent\Controller\ScriptController;
-use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
-use TYPO3\CMS\Core\Imaging\IconRegistry;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
-
 defined('TYPO3_MODE') or die();
 
 $boot = static function (): void {
@@ -29,42 +21,42 @@ $boot = static function (): void {
             'apps-cookie-folder-contains' => 'ext-dp-cookie-folder.svg',
             'apps-cookie-content-item' => 'ext-dp-cookie-content.svg'
         ];
-        $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
+        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
         foreach ($icons as $key => $file) {
             if (!$iconRegistry->isRegistered($key)) {
                 $iconRegistry->registerIcon(
                     $key,
-                    SvgIconProvider::class,
+                    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
                     ['source' => 'EXT:dp_cookieconsent/Resources/Public/Icons/' . $file]
                 );
             }
         }
     }
     // add Controller
-    ExtensionUtility::configurePlugin(
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'DirkPersky.DpCookieconsent',
         'Pi1',
         [
-            ScriptController::class => 'list,show',
+            \DirkPersky\DpCookieconsent\Controller\ScriptController::class => 'list,show',
         ],
         // non-cacheable actions
         [
-            ScriptController::class => 'show',
+            \DirkPersky\DpCookieconsent\Controller\ScriptController::class => 'show',
         ]
     );
     // add Controller
-    ExtensionUtility::configurePlugin(
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'DirkPersky.DpCookieconsent',
         'Pi2',
         [
-            CookieController::class => 'list',
+            \DirkPersky\DpCookieconsent\Controller\CookieController::class => 'list',
         ],
         // non-cacheable actions
         [
         ]
     );
     // wizards
-    ExtensionManagementUtility::addPageTSConfig(
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
         'mod {
             wizards.newContentElement.wizardItems.plugins {
                 elements {
