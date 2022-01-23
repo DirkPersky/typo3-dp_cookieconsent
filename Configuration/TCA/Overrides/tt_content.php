@@ -9,15 +9,12 @@
  * @license    MIT
  */
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
-
 defined('TYPO3_MODE') || die();
 
 /**
  * add Content Loading obj
  */
-ExtensionUtility::registerPlugin(
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
     'dp_cookieconsent',
     'Pi1',
     'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.title'
@@ -25,14 +22,14 @@ ExtensionUtility::registerPlugin(
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['dpcookieconsent_pi1'] = 'recursive,select_key,pages';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['dpcookieconsent_pi1'] = 'pi_flexform';
 // set Flexform for content loading
-ExtensionManagementUtility::addPiFlexFormValue(
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     'dpcookieconsent_pi1',
     'FILE:EXT:dp_cookieconsent/Configuration/FlexForms/ConsentAjax.xml'
 );
 /**
  * add Cookie list ob
  */
-ExtensionUtility::registerPlugin(
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
     'dp_cookieconsent',
     'Pi2',
     'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_cookie.title'
@@ -40,7 +37,7 @@ ExtensionUtility::registerPlugin(
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['dpcookieconsent_pi2'] = 'recursive,select_key,pages';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['dpcookieconsent_pi2'] = 'pi_flexform';
 // set Flexform for Cookie List
-ExtensionManagementUtility::addPiFlexFormValue(
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     'dpcookieconsent_pi2',
     'FILE:EXT:dp_cookieconsent/Configuration/FlexForms/ConsentCookies.xml'
 );

@@ -9,8 +9,6 @@
  * @license    MIT
  */
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
 defined('TYPO3_MODE') or die();
 
 // Override icon
