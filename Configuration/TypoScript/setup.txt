@@ -1,7 +1,8 @@
 # ==============================================
 # FE-Plugin configuration for EXT:dp_cookieconsent
 # ==============================================
-plugin.dp_cookieconsent {
+
+plugin.tx_dpcookieconsent {
     view {
         templateRootPaths {
             0 = EXT:dp_cookieconsent/Resources/Private/Templates/
@@ -56,16 +57,17 @@ plugin.dp_cookieconsent {
     }
 }
 
+
 lib.dp_cookieconsent = FLUIDTEMPLATE
 lib.dp_cookieconsent {
     file = EXT:dp_cookieconsent/Resources/Private/Layouts/Cookie.html
     templateName = Cookie
 
-    templateRootPaths < plugin.dp_cookieconsent.view.templateRootPaths
-    partialRootPaths < plugin.dp_cookieconsent.view.partialRootPaths
-    layoutRootPaths < plugin.dp_cookieconsent.view.layoutRootPaths
+    templateRootPaths < plugin.tx_dpcookieconsent.view.templateRootPaths
+    partialRootPaths < plugin.tx_dpcookieconsent.view.partialRootPaths
+    layoutRootPaths < plugin.tx_dpcookieconsent.view.layoutRootPaths
 
-    settings < plugin.dp_cookieconsent.settings
+    settings < plugin.tx_dpcookieconsent.settings
 
     dataProcessing {
         10 = DirkPersky\DpCookieconsent\DataProcessing\CookieScriptsProcessor
