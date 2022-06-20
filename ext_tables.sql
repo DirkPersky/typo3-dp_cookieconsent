@@ -21,7 +21,7 @@ CREATE TABLE tx_dpcookieconsent_domain_model_cookie
     vendor           varchar(255) DEFAULT '' NOT NULL,
     vendor_link      varchar(255) DEFAULT '' NOT NULL,
 
-    script_src       varchar(255) DEFAULT NULL,
+    script_src       varchar(255) DEFAULT '' NOT NULL,
     script           text,
 
     tstamp           int(11) unsigned DEFAULT '0' NOT NULL,
