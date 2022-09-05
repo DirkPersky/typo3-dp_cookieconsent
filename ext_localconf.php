@@ -34,7 +34,7 @@ $boot = static function (): void {
     }
     // add Controller
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'DirkPersky.DpCookieconsent',
+        'DpCookieconsent',
         'Pi1',
         [
             \DirkPersky\DpCookieconsent\Controller\ScriptController::class => 'list,show',
@@ -46,7 +46,7 @@ $boot = static function (): void {
     );
     // add Controller
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'DirkPersky.DpCookieconsent',
+        'DpCookieconsent',
         'Pi2',
         [
             \DirkPersky\DpCookieconsent\Controller\CookieController::class => 'list',
