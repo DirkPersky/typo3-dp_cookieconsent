@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en"
+          datatype="plaintext"
+          original="EXT:cookieconsent/Resources/Private/Language/locallang_be.xlf"
+          date="2022-01-05T11:16:11Z"
+          product-name="cookieconsent"
+          target-language="fr">
+        <header/>
+        <body>
+            <trans-unit id="cookie-folder">
+                <source>DP Cookie Consent</source>
+                <target>DP Cookie Consent</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
