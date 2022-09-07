@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="es" datatype="plaintext" original="messages" date="2021-12-28T20:54:14Z"
+		  product-name="cookieconsent">
+		<header/>
+		<body>
+			<trans-unit id="message">
+                <source>We use cookies and other tracking technologies to personalize and improve your experience. By continuing to use our website you consent to this.</source>
+                <target>Utilizamos cookies y otras tecnologías de seguimiento para personalizar y mejorar su experiencia. Al seguir utilizando nuestro sitio web, usted da su consentimiento.</target>
+            </trans-unit>
+            <trans-unit id="dismiss">
+                <source>allow cookies</source>
+                <target>¡Aceptar las cookies!</target>
+            </trans-unit>
+            <trans-unit id="allow">
+                <source>save</source>
+                <target>guardar</target>
+            </trans-unit>
+            <trans-unit id="allowall">
+                <source>allow all!</source>
+                <target>¡Permitir todo!</target>
+            </trans-unit>
+            <trans-unit id="deny">
+                <source>decline</source>
+                <target>descenso</target>
+            </trans-unit>
+            <trans-unit id="policy">
+                <source>Cookie Policy</source>
+                <target>Política de cookies</target>
+            </trans-unit>
+            <trans-unit id="link">
+                <source>More info</source>
+                <target>Más información</target>
+            </trans-unit>
+            <trans-unit id="dpRequire">
+                <source>necessary</source>
+                <target>necesario</target>
+            </trans-unit>
+            <trans-unit id="dpStatistik">
+                <source>statistics</source>
+                <target>estadísticas</target>
+            </trans-unit>
+            <trans-unit id="dpMarketing">
+                <source>marketing</source>
+                <target>marketing</target>
+            </trans-unit>
+
+            <trans-unit id="media.notice">
+                <source>Cookie Notice</source>
+                <target>Aviso de cookies</target>
+            </trans-unit>
+            <trans-unit id="media.desc">
+                <source>Loading this resource will connect to external servers which use cookies and other tracking technologies to personalize and improve experience. Further information can be found in our privacy policy.</source>
+                <target>Al cargar este recurso se conectará a servidores externos que utilizan cookies y otras tecnologías de seguimiento para personalizar y mejorar la experiencia. Puede encontrar más información en nuestra política de privacidad.</target>
+            </trans-unit>
+            <trans-unit id="media.btn">
+                <source>Allow Cookies and load this resource</source>
+                <target>Permitir las cookies y cargar este recurso</target>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>

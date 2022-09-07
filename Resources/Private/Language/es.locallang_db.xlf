@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en"
+          datatype="plaintext"
+          original="EXT:cookieconsent/Resources/Private/Language/locallang_db.xlf"
+          date="2022-01-05T11:16:11Z"
+          product-name="cookieconsent"
+          target-language="es">
+        <header/>
+        <body>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie">
+                <source>DP Cookie Consent</source>
+                <target>DP Cookie Consent</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.name">
+                <source>Cookies</source>
+                <target>Cookies</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.category">
+                <source>Category</source>
+                <target>Categoría</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.category.0">
+                <source>Required</source>
+                <target>Necesario</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.category.1">
+                <source>Statistics</source>
+                <target>Estadísticas</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.category.2">
+                <source>Marketing</source>
+                <target>Marketing</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.description">
+                <source>Domain</source>
+                <target>Dominio</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.description.info">
+                <source>Empty to get Site Root</source>
+                <target>Vacío para obtener la base del sitio</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.duration_time">
+                <source>Duration Type</source>
+                <target>Tipo de duración</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.duration_time.0">
+                <source>-</source>
+                <target>-</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.duration_time.1">
+                <source>Day(s)</source>
+                <target>Día(s)</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.duration_time.2">
+                <source>Year(s)</source>
+                <target>Año(s)</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.duration">
+                <source>Duration</source>
+                <target>Duración</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.vendor">
+                <source>Vendor</source>
+                <target>Vendedor</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.vendor_link">
+                <source>Vendor Link</source>
+                <target>Vínculo con el proveedor</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.hidden">
+                <source>Active</source>
+                <target>Activo</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.script">
+                <source>JavaScript Code</source>
+                <target>Código JavaScript</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.script_src">
+                <source>JavaScript file (optional)</source>
+                <target>Fichero JavaScript (opcional)</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.title">
+                <source>Dynamic Ajax Content</source>
+                <target>Contenido dinámico de Ajax</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.consent">
+                <source>Consent box</source>
+                <target>Caja de consentimiento</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.description">
+                <source>load content after consent submit</source>
+                <target>cargar el contenido después de consentir el envío</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.notice">
+                <source>Consent Headline</source>
+                <target>Titular de Consentimiento</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.desc">
+                <source>Consent description</source>
+                <target>Descripción del consentimiento</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.btn">
+                <source>Button text</source>
+                <target>Texto del botón</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_ajax.consentscript">
+                <source>Dynamic Content</source>
+                <target>Contenido dinámico</target>
+            </trans-unit>
+
+            <trans-unit id="tx_dpcookieconsent_cookie.title">
+                <source>Cookie Listing</source>
+                <target>Lista de cookies</target>
+            </trans-unit>
+            <trans-unit id="tx_dpcookieconsent_cookie.description">
+                <source>List all defined cookies</source>
+                <target>Lista de todas las cookies definidas</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
