@@ -24,7 +24,7 @@ popup.background
 :aspect:`Default`
   rgba(0,0,0,.8)
 
-popup.background
+popup.text
 --------------------
 :aspect:`Description`
    Consent Text color
