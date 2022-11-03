@@ -9,29 +9,33 @@ jobs:
   Ship-to-TER:
     name: 'Ship to TER'
     runs-on: ubuntu-latest
+    env:
+      TYPO3_API_TOKEN: ${{ secrets.TYPO3_API_TOKEN }}
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: 7.4
+          extensions: intl, mbstring, json, zip, curl
+          tools: composer:v2
           coverage: none
 
       - name: "Extract tag, version from GITHUB_REF"
-        id: "github-ref"
+        id: get-version
         run: |
-          echo "::set-output name=tag::$(echo $GITHUB_REF | sed -E -n 's#^refs/tags/(.*)$#\1#p')"
-          echo "::set-output name=version::$(echo $GITHUB_REF | sed -E -n 's#^refs/tags/v?([0-9]+\.)([0-9]+\.)([0-9]+)#\1\2\3#p')"
+          echo "version=$(echo $GITHUB_REF | sed -E -n 's#^refs/tags/v?([0-9]+\.)([0-9]+\.)([0-9]+)#\1\2\3#p')" >> $GITHUB_ENV
 
       - name: Deploy to TER
         run: |
-          if [ -n "${{ secrets.TYPO3_ORG_USERNAME }}" ] && [ -n "${{ secrets.TYPO3_ORG_PASSWORD }}" ]; then
-            echo -e "Preparing upload of release ${{ steps.github-ref.outputs.version }} to TER\n";
-            # Install ter client
-            composer global require helhum/ter-client
+          if [ -n "${{ secrets.TYPO3_API_TOKEN  }}" ]; then
+            echo -e "Preparing upload of release ${{ env.version }} to TER\n";
+            # Install tailor
+            composer global require typo3/tailor --prefer-dist --no-progress
             # Upload
-            echo "Uploading release ${{ steps.github-ref.outputs.version }} to TER\n"
-            $HOME/.composer/vendor/helhum/ter-client/ter-client upload dp_cookieconsent . -u "${{ secrets.TYPO3_ORG_USERNAME }}" -p "${{ secrets.TYPO3_ORG_PASSWORD }}" -m "https://github.com/DirkPersky/typo3-dp_cookieconsent/releases/tag/${{ steps.github-ref.outputs.tag }}"
+            echo "Uploading release ${{ env.version }} to TER\n"
+            php ~/.composer/vendor/bin/tailor ter:publish --comment "More information on\n https://github.com/DirkPersky/typo3-dp_cookieconsent/releases" ${{ env.version }}
           fi;
