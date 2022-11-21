@@ -43,6 +43,18 @@
                             </config>
                         </TCEforms>
                     </consentscript>
+
+                    <records type="array">
+                        <TCEforms type="array">
+                            <label>LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:records</label>
+                            <config type="array">
+                                <type>group</type>
+                                <allowed>tt_content</allowed>
+                                <size>5</size>
+                                <maxitems>200</maxitems>
+                            </config>
+                        </TCEforms>
+                    </records>
                 </el>
             </ROOT>
         </general>

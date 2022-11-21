@@ -78,6 +78,15 @@ lib.dp_cookieconsent {
     }
 }
 
+# Rendering of content elements in detail view
+lib.dp_cookieconsent_content = RECORDS
+lib.dp_cookieconsent_content {
+	tables = {$styles.content.shortcut.tables}
+	source.current = 1
+	source.interval = 1
+	dontCheckPid = 1
+}
+
 page {
     includeCSS {
         dp_cookieconsent = EXT:dp_cookieconsent/Resources/Public/css/dp_cookieconsent.css

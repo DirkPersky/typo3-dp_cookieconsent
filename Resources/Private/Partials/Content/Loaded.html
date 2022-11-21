@@ -1,15 +1,5 @@
-<!--
-  ~ Copyright (c) 2021.
-  ~
-  ~ @category   TYPO3
-  ~
-  ~ @copyright  2021 Dirk Persky (https://github.com/DirkPersky)
-  ~ @author     Dirk Persky <info@dp-wired.de>
-  ~ @license    MIT
-  -->
+<f:format.raw>{flexform.consentscript}</f:format.raw>
 
-<html data-namespace-typo3-fluid="true"
-      xmlns:dp="http://typo3.org/ns/DirkPersky/DpCookieconsent/ViewHelpers"
-      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
-    <f:format.raw>{flexform.consentscript}</f:format.raw>
-</html>
+<f:if condition="{flexform.records} != ''">
+    <f:cObject typoscriptObjectPath="lib.dp_cookieconsent_content">{flexform.records}</f:cObject>
+</f:if>
