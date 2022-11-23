@@ -1,0 +1,62 @@
+page.headerData.998 {
+    20 = COA
+    20 {
+        if {
+            value = {$plugin.tx_cookieconsent.settings.tracking.googleTagManager.id}
+            equals =
+            negate = 1
+        }
+
+        10 = COA
+        10 {
+            wrap = <script data-ignore="1" >function DPInitTagManager(){|}</script>
+
+            15 = TEXT
+            15.value = {$plugin.tx_cookieconsent.settings.tracking.googleTagManager.id}
+            15.wrap (
+/* Google Tag Manager */
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','#');
+/* End Google Tag Manager */
+            )
+            15.wrap.splitChar = #
+            15.required = 1
+        }
+
+        20 = TEXT
+        20.value = /* Init DP Tag Manager */ DPInitTagManager(); /* End Init DP Tag Manager*/
+        20.wrap = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain">|</script>
+
+        25 < .20
+        25.wrap = <script data-ignore="1" data-cookieconsent="marketing" type="text/plain">|</script>
+
+        30 = TEXT
+        30.value (
+/* DP publisch Events to Tag Manager */
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({ 'event': 'dp-cookie-statistics-accept' });
+/* End DP publisch Events to Tag Manager */
+        )
+        30.wrap = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain">|</script>
+        30.if {
+            isInList = statistics
+            value = {$plugin.tx_cookieconsent.settings.tracking.googleTagManager.on}
+        }
+
+        40 = TEXT
+        40.value (
+/* DP publisch Events to Tag Manager */
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({ 'event': 'dp-cookie-marketing-accept' });
+/* End DP publisch Events to Tag Manager */
+        )
+        40.wrap = <script data-ignore="1" data-cookieconsent="marketing" type="text/plain">|</script>
+        40.if {
+            isInList = marketing
+            value = {$plugin.tx_cookieconsent.settings.tracking.googleTagManager.on}
+        }
+    }
+}

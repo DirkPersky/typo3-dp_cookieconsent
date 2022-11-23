@@ -65,4 +65,5 @@ Configuration
    Constants/Default
    Constants/Palette
    Constants/Overlay
+   Constants/Tracking
    Constants/Example

@@ -1,63 +1,71 @@
 plugin.tx_cookieconsent {
     view {
-        # cat=plugin.cookieconsent/file; type=string; label=templateRootPath
+        # cat=plugin.tx_cookieconsent/file; type=string; label=templateRootPath
         templateRootPath =
-        # cat=plugin.cookieconsent/file; type=string; label=partialRootPath
+        # cat=plugin.tx_cookieconsent/file; type=string; label=partialRootPath
         partialRootPath =
-        # cat=plugin.cookieconsent/file; type=string; label=layoutRootPath
+        # cat=plugin.tx_cookieconsent/file; type=string; label=layoutRootPath
         layoutRootPath =
     }
 
     settings {
-        # cat=plugin.cookieconsent; type=int+; label= PID of Cookie Storage
+        # cat=plugin.tx_cookieconsent; type=int+; label= PID of Cookie Storage
         storagePid =
-        # cat=plugin.cookieconsent; type=int+; label= PID to Data Protection
+        # cat=plugin.tx_cookieconsent; type=int+; label= PID to Data Protection
         url =
-        # cat=plugin.cookieconsent; type=string; label= target for link tag
+        # cat=plugin.tx_cookieconsent; type=string; label= target for link tag
         target = _blank
-        # cat=plugin.cookieconsent; type=options[edgeless,classic,basic,wire]; label=Layout
+        # cat=plugin.tx_cookieconsent; type=options[edgeless,classic,basic,wire]; label=Layout
         theme = edgeless
-        # cat=plugin.cookieconsent; type=options[top,top-left,top-right,bottom,bottom-left,bottom-right]; label= Position
+        # cat=plugin.tx_cookieconsent; type=options[top,top-left,top-right,bottom,bottom-left,bottom-right]; label= Position
         position = bottom-right
-        # cat=plugin.cookieconsent; type=options[info,opt-out,opt-in]; label = Type
+        # cat=plugin.tx_cookieconsent; type=options[info,opt-out,opt-in]; label = Type
         type = info
-        # cat=plugin.cookieconsent; type=options[true,false]; label = adds a button to review the consent window
+        # cat=plugin.tx_cookieconsent; type=options[true,false]; label = adds a button to review the consent window
         revokable = true
-        # cat=plugin.cookieconsent; type=options[true,false]; label = pre check statistics in checkboxes layout
+        # cat=plugin.tx_cookieconsent; type=options[true,false]; label = pre check statistics in checkboxes layout
         statistics = false
-        # cat=plugin.cookieconsent; type=options[true,false]; label = pre check marketing in checkboxes layout
+        # cat=plugin.tx_cookieconsent; type=options[true,false]; label = pre check marketing in checkboxes layout
         marketing = false
-        # cat=plugin.cookieconsent; type=options[true,false]; label = force page reload after revoke
+        # cat=plugin.tx_cookieconsent; type=options[true,false]; label = force page reload after revoke
         reloadOnRevoke = false
 
+
+        tracking.googleTagManager {
+            # cat=plugin.tx_cookieconsent/tracking; type=string; label= Google Tag Manager ID
+            id =
+            # cat=plugin.tx_cookieconsent/tracking; type=string; label= Init on Checkboxes
+            on = statistics,marketing
+        }
+
         overlay {
-            # cat=plugin.cookieconsent/overlay; type=options[true,false]; label = display iframe overlay
+            # cat=plugin.tx_cookieconsent/overlay; type=options[true,false]; label = display iframe overlay
             notice = true
             box {
-                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay: Background
+                # cat=plugin.tx_cookieconsent/overlay; type=color; label= Overlay: Background
                 background = rgba(0,0,0,.8)
-                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay: Text
+                # cat=plugin.tx_cookieconsent/overlay; type=color; label= Overlay: Text
                 text = #fff
             }
             button {
-                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay Button: Background
+                # cat=plugin.tx_cookieconsent/overlay; type=color; label= Overlay Button: Background
                 background = #b81839
-                # cat=plugin.cookieconsent/overlay; type=color; label= Overlay Button: Text
+                # cat=plugin.tx_cookieconsent/overlay; type=color; label= Overlay Button: Text
                 text = #fff
             }
         }
 
         palette {
             popup {
-                # cat=plugin.cookieconsent/popup; type=color; label= Bar: Background
+                # cat=plugin.tx_cookieconsent/popup; type=color; label= Bar: Background
                 background = rgba(0,0,0,.8)
-                # cat=plugin.cookieconsent/popup; type=color; label= Bar: Text
+                # cat=plugin.tx_cookieconsent/popup; type=color; label= Bar: Text
                 text = #fff
             }
             button {
-                # cat=plugin.cookieconsent/button; type=color; label= Button: Background
+                # cat=plugin.tx_cookieconsent/button; type=color; label= Button: Background
                 background = #b81839
-                # cat=plugin.cookieconsent/button; type=color; label= Button: Text
+                # cat=plugin.tx_cookieconsent/button; type=color; label= Button: Text
                 text = #fff
             }
         }
