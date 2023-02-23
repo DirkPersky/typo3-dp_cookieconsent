@@ -24,7 +24,7 @@ target
 :aspect:`Description`
    Link target of read more link
 :aspect:`Default`
-   _bank
+   _blank
 
 theme
 --------------------
