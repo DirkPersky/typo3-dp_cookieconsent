@@ -18,7 +18,7 @@
             </trans-unit>
             <trans-unit id="allowall">
                 <source>allow all!</source>
-                <target>alle akzeptieren!</target>
+                <target>Alle akzeptieren!</target>
             </trans-unit>
             <trans-unit id="deny">
                 <source>decline</source>
