@@ -9,7 +9,7 @@
  * @license    MIT
  */
 
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
 
 // Add Plugin Configs
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('dp_cookieconsent', 'Configuration/TypoScript', 'CookieConsent');

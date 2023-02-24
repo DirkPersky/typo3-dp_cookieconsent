@@ -16,6 +16,10 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\Query\QueryHelper;
+use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
+use TYPO3\CMS\Core\Database\Connection;
 
 
 class CookieRepository extends Repository
@@ -35,24 +39,65 @@ class CookieRepository extends Repository
         $this->setDefaultQuerySettings($querySettings);
     }
 
+    public function getTreeList($id, $depth, $begin = 0, $permClause = '')
+    {
+        $depth = (int)$depth;
+        $begin = (int)$begin;
+        $id = (int)$id;
+        if ($id < 0) {
+            $id = abs($id);
+        }
+        if ($begin === 0) {
+            $theList = $id;
+        } else {
+            $theList = '';
+        }
+        if ($id && $depth > 0) {
+            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
+            $queryBuilder->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
+            $queryBuilder->select('uid')
+                ->from('pages')
+                ->where(
+                    $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter($id, Connection::PARAM_INT)),
+                    $queryBuilder->expr()->eq('sys_language_uid', 0)
+                )
+                ->orderBy('uid');
+            if ($permClause !== '') {
+                $queryBuilder->andWhere(QueryHelper::stripLogicalOperatorPrefix($permClause));
+            }
+            $statement = $queryBuilder->execute();
+            while ($row = $statement->fetchAssociative()) {
+                if ($begin <= 0) {
+                    $theList .= ',' . $row['uid'];
+                }
+                if ($depth > 1) {
+                    $theSubList = $this->getTreeList($row['uid'], $depth - 1, $begin - 1, $permClause);
+                    if (!empty($theList) && !empty($theSubList) && ($theSubList[0] !== ',')) {
+                        $theList .= ',';
+                    }
+                    $theList .= $theSubList;
+                }
+            }
+        }
+        return $theList;
+    }
+
     protected function getPidList($pidList, $recursive = '')
     {
         $recursive = (int)$recursive;
         // if no recursiv return pidList
         if ($recursive <= 0) return GeneralUtility::intExplode(',', $pidList);
-        // get DB query for getting pids
-        $queryGenerator = GeneralUtility::makeInstance(QueryGenerator::class);
         // explode list
-        $storagePids = GeneralUtility::intExplode(',', $pidList);
+        $storagePids = GeneralUtility::intExplode(',', (string)$pidList);
         // build PID list
         $recursiveStoragePids = $storagePids;
         // loop pids and get tree
         foreach ($storagePids as $startPid) {
             if ($startPid >= 0) {
-                // get tree
-                $pids = $queryGenerator->getTreeList($startPid, $recursive);
+                // get DB query for getting pids
+                $pids = $this->getTreeList($startPid, $recursive);
                 // explode to array
-                $pids = GeneralUtility::intExplode(',', $pids);
+                $pids = GeneralUtility::intExplode(',', (string)$pids);
                 // if not empty add to list
                 if (!empty($pids)) $recursiveStoragePids = array_merge($recursiveStoragePids, $pids);
             }

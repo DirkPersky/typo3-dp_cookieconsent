@@ -8,20 +8,17 @@
   ~ @license    MIT
   -->
 
-<div class="dp--cookie-check" xmlns:f="http://www.w3.org/1999/html">
+<div class="dp--cookie-check">
     <label for="dp--cookie-require">
-        <f:form.checkbox checked="true" class="dp--check-box" disabled="disabled" id="dp--cookie-require" tabindex="-1"
-                         value=""/>
-        <f:translate key="dpRequire" extensionName="dp_cookieconsent" />
+        <input class="dp--check-box" id="dp--cookie-require" tabindex="-1" type="checkbox" name="" value="" checked disabled>
+        <f:translate key="dpRequire" extensionName="dp_cookieconsent"/>
     </label>
     <label for="dp--cookie-statistics">
-        <f:form.checkbox checked="{settings.checkboxes.statistics}" class="dp--check-box" id="dp--cookie-statistics"
-                         tabindex="1" value=""/>
-        <f:translate key="dpStatistik" extensionName="dp_cookieconsent" />
+        <input class="dp--check-box" id="dp--cookie-statistics" tabindex="1" type="checkbox" name="" value="">
+        <f:translate key="dpStatistik" extensionName="dp_cookieconsent"/>
     </label>
     <label for="dp--cookie-marketing">
-        <f:form.checkbox checked="{settings.checkboxes.marketing}" class="dp--check-box" id="dp--cookie-marketing"
-                         tabindex="1" value=""/>
-        <f:translate key="dpMarketing" extensionName="dp_cookieconsent" />
+        <input class="dp--check-box" id="dp--cookie-marketing" tabindex="1" type="checkbox" name="" value="">
+        <f:translate key="dpMarketing" extensionName="dp_cookieconsent"/>
     </label>
 </div>

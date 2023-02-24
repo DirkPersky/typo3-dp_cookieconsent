@@ -9,14 +9,14 @@
  * @license    MIT
  */
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 $boot = static function (): void {
 
     /**
      * Add Icons for BE Module
      */
-    if (TYPO3_MODE === 'BE') {
+    if (TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('adminpanel')) {
         $icons = [
             'apps-cookie-folder-contains' => 'ext-dp-cookie-folder.svg',
             'apps-cookie-content-item' => 'ext-dp-cookie-content.svg'
@@ -34,7 +34,7 @@ $boot = static function (): void {
     }
     // add Controller
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'DpCookieconsent',
+        'DirkPersky.DpCookieconsent',
         'Pi1',
         [
             \DirkPersky\DpCookieconsent\Controller\ScriptController::class => 'list,show',
@@ -46,7 +46,7 @@ $boot = static function (): void {
     );
     // add Controller
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'DpCookieconsent',
+        'DirkPersky.DpCookieconsent',
         'Pi2',
         [
             \DirkPersky\DpCookieconsent\Controller\CookieController::class => 'list',
