@@ -14,13 +14,14 @@ namespace DirkPersky\DpCookieconsent\Controller;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Service\FlexFormService;
+use Psr\Http\Message\ResponseInterface;
 
 class ScriptController extends ActionController{
 
     /**
      * @return void
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
         $cObj = $this->configurationManager->getContentObject();
         // parse Flexform
@@ -30,13 +31,16 @@ class ScriptController extends ActionController{
         // add data to view
         $this->view->assign('flexform',$flexFormData);
         $this->view->assign('data', $cObj->data);
+
+
+        return $this->htmlResponse();
     }
 
     /**
      * @param $content
      * @return void
      */
-    public function showAction()
+    public function showAction(): ResponseInterface
     {
         $cObj = $this->configurationManager->getContentObject();
         // parse Flexform
@@ -46,5 +50,8 @@ class ScriptController extends ActionController{
         // add data to view
         $this->view->assign('flexform',$flexFormData);
         $this->view->assign('data', $cObj->data);
+
+
+        return $this->htmlResponse();
     }
 }

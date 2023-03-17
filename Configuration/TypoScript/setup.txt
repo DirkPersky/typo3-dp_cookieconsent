@@ -138,5 +138,4 @@ page {
 # Remove Original Google Tag-Manager & Piwiki from CS_SEO
 page.jsInline.654 >
 
-
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:dp_cookieconsent/Configuration/TypoScript/Tracking/googleTagManager.typoscript">

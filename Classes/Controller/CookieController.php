@@ -19,6 +19,7 @@ use TYPO3\CMS\Extbase\Annotation\Inject;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
+use Psr\Http\Message\ResponseInterface;
 
 class CookieController extends ActionController
 {
@@ -39,7 +40,7 @@ class CookieController extends ActionController
     /**
      * @return void
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
         $cObj = $this->configurationManager->getContentObject();
         // parse Flexform
@@ -60,11 +61,13 @@ class CookieController extends ActionController
         }
 
         // update settings
-        $this->settings['base_uri'] = parse_url($this->request->getBaseUri());
+        $this->settings['base_uri'] = parse_url($this->request->getAttribute('normalizedParams')->getSiteUrl());
         $this->view->assign('settings', $this->settings);
         // add data to view
         $this->view->assign('data', $cObj->data);
         $this->view->assign('cookies', $cookies);
         $this->view->assign('grouped', $grouped);
+
+        return $this->htmlResponse();
     }
 }
