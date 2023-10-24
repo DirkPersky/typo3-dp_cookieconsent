@@ -1,0 +1,60 @@
+/** Revoke Button **/
+.dp--revoke {
+  line-height: 1;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  display: flex;
+
+  overflow: hidden;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+  box-sizing: border-box;
+  min-width: 40px;
+  height: 40px;
+  margin: 5px;
+  padding: 0.5em;
+  cursor: pointer;
+
+  transition: all .3s ease-in-out;
+  transform: none;
+  text-decoration: none;
+  color: #fff;
+
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  i {
+	font-size: 24px;
+	pointer-events: none;
+  }
+
+  &.cc-top-right,
+  &.cc-bottom-right {
+	right: 0;
+	left: auto;
+  }
+
+  &.cc-bottom,
+  &.cc-bottom-left,
+  &.cc-bottom-right {
+	top: auto;
+	bottom: 0;
+  }
+
+  .dp--hover {
+	display: none;
+	pointer-events: none;
+  }
+
+  &:hover {
+	opacity: .7;
+
+	.dp--hover {
+	  display: inline-block;
+	}
+  }
+}

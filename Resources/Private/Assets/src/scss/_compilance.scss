@@ -1,0 +1,51 @@
+.cc-compliance {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  min-width: 300px;
+  max-width: 100% !important;
+
+  .cc-top &,
+  .cc-bottom & {
+	padding-top: .5rem;
+	padding-right: 1.5rem;
+	padding-bottom: .5rem;
+  }
+
+  .cc-btn {
+	font-size: .9em;
+	font-weight: 700;
+
+	display: block;
+	width: 50%;
+	margin: 0;
+	padding: 0.4em 0.8em;
+	cursor: pointer;
+	text-align: center;
+	white-space: nowrap;
+	border-width: 2px;
+	border-style: solid;
+
+	border-color: transparent;
+	background-color: transparent;
+	color: inherit;
+	font-family: inherit;
+	line-height: inherit;
+
+	.cc-top &,
+	.cc-bottom & {
+	  width: 100%;
+
+	  + .cc-btn {
+		margin-top: .25rem;
+	  }
+	}
+  }
+
+  .cc-w-100 {
+	width: 100%;
+  }
+
+}

@@ -1,0 +1,45 @@
+/**
+ * Iframes
+ */
+.dp--iframe {
+  display: none;
+
+  &.dp--loaded {
+	display: block;
+  }
+}
+
+/**
+ * Iframe Overlay
+ */
+.dp--overlay {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+
+  text-align: center;
+}
+
+.dp--overlay-description {
+  margin-top: .8rem;
+}
+
+.dp--overlay-button {
+  margin-top: .8rem;
+}
+
+.db--overlay-submit {
+  font-weight: 700;
+
+  display: inline-block;
+  padding: .4em .8em;
+  text-align: center;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.dp--iframe.dp--loaded + .dp--overlay {
+  display: none;
+}

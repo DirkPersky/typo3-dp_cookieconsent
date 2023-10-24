@@ -92,8 +92,14 @@ page {
         dp_cookieconsent = EXT:dp_cookieconsent/Resources/Public/css/dp_cookieconsent.css
     }
 
+
     includeJSFooter {
         dp_cookieconsent = EXT:dp_cookieconsent/Resources/Public/JavaScript/dp_cookieconsent.js
+        dp_cookieconsent.overwrite = EXT:dp_cookieconsent/Resources/Public/JavaScript/dp_cookieconsent-legacy.js
+        dp_cookieconsent.overwrite.if {
+           value =  {$plugin.tx_cookieconsent.settings.javaScript}
+           equals = IE11
+        }
     }
 
     headerData {

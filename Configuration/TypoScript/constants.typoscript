@@ -29,6 +29,8 @@ plugin.tx_cookieconsent {
         marketing = false
         # cat=plugin.tx_cookieconsent; type=options[true,false]; label = force page reload after revoke
         reloadOnRevoke = false
+        # cat=plugin.tx_cookieconsent; type=options[Modern,IE11]; label = Browser Support
+        javaScript = Modern
 
 
         tracking.googleTagManager {
