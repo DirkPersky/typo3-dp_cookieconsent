@@ -1,7 +1,4 @@
 // vite.config.js
-import legacy from '@vitejs/plugin-legacy'
-import babel from '@rollup/plugin-babel';
-import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import { defineConfig } from 'vite'
 import path from 'path'
 

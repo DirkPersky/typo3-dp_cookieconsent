@@ -22,10 +22,10 @@
   transition: all .3s ease-in-out;
   transform: none;
   text-decoration: none;
-  color: #fff;
-
   border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
+
+  background-color: var(--dp-cookie-palette-popup-background);
+  color: var(--dp-cookie-palette-popup-text);
 
   i {
 	font-size: 24px;

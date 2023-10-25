@@ -11,6 +11,7 @@
 
 defined('TYPO3') or die();
 
+// https://www.cookieyes.com/
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie',
@@ -25,7 +26,7 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'name,description,vendor,duration,category',
+        'searchFields' => 'name,description,description_long,vendor,duration,category',
         'iconfile' => 'EXT:dp_cookieconsent/Resources/Public/Icons/ext-dp-cookie-icon.png'
     ],
     'palettes' => [
@@ -45,7 +46,7 @@ return [
             'showitem' => '
                 hidden, 
                     --palette--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.name; type,
-                    description, 
+                    description, description_long,
                     --palette--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.duration; dur,
                     --palette--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.vendor; vend, 
                 --div--;LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.script, script_src, script,
@@ -131,6 +132,19 @@ return [
                 'type' => 'input',
                 'size' => 50,
                 'eval' => 'trim'
+            ],
+        ],
+
+        'description_long' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.description_long',
+            'description' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.description_long.info',
+            'config' => [
+                'type' => 'text',
+                'cols' => 30,
+                'rows' => 5,
+                'eval' => 'trim',
+                'enableRichtext' => true,
             ],
         ],
         'duration' => [

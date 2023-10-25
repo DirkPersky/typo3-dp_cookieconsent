@@ -3,7 +3,7 @@
 	<file source-language="en"
 		datatype="plaintext"
 		original="EXT:cookieconsent/Resources/Private/Language/locallang.xlf"
-		date="2022-01-05T11:16:11Z"
+		date="2023-10-25T11:16:11Z"
 		product-name="cookieconsent"
 		target-language="it">
 		<header/>
@@ -24,6 +24,10 @@
 				<source>allow all!</source>
 				<target>consenti tutto!</target>
 			</trans-unit>
+            <trans-unit id="config">
+                <source>customize</source>
+                <target>personalizza</target>
+            </trans-unit>
 			<trans-unit id="deny">
 				<source>decline</source>
 				<target>declina</target>

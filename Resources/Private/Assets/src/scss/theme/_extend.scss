@@ -1,0 +1,24 @@
+.cc-type-extend {
+
+  &.cc-window {
+	.cc-compliance {
+	  --dp-cookie-extend-gap: 4px;
+	  padding: 0 var(--dp-cookie-extend-gap) var(--dp-cookie-extend-gap) var(--dp-cookie-extend-gap);
+
+	  .cc-btn{
+		&.cc-allow-all {
+		  margin-left: calc(var(--dp-cookie-extend-gap) * -1);
+		  margin-right: calc(var(--dp-cookie-extend-gap) * -1);
+		  margin-bottom: var(--dp-cookie-extend-gap);
+		  width: calc(100% + (var(--dp-cookie-extend-gap) * 2))
+		}
+		&:not(.cc-allow-all) {
+		  border: 2px solid var(--dp-cookie-palette-button-background);
+
+		  width: calc(50% - (var(--dp-cookie-extend-gap) / 2));
+		}
+	  }
+
+	}
+  }
+}

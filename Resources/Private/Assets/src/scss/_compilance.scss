@@ -30,6 +30,7 @@
 
 	border-color: transparent;
 	background-color: transparent;
+	transition: all .3s ease-in-out;
 	color: inherit;
 	font-family: inherit;
 	line-height: inherit;
@@ -42,10 +43,18 @@
 		margin-top: .25rem;
 	  }
 	}
+
+	&.cc-allow-all {
+	  background-color: var(--dp-cookie-palette-button-background);
+	  color: var(--dp-cookie-palette-button-text);
+	}
+
+	&:hover {
+	  opacity: .8;
+	}
   }
 
   .cc-w-100 {
 	width: 100%;
   }
-
 }

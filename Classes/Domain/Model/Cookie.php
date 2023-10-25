@@ -56,6 +56,12 @@ class Cookie extends AbstractEntity
     /**
      * @var string
      */
+    protected $descriptionLong;
+
+
+    /**
+     * @var string
+     */
     protected $duration = '';
 
     /**
@@ -229,6 +235,23 @@ class Cookie extends AbstractEntity
     public function setDescription(string $description): void
     {
         $this->description = $description;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getDescriptionLong(): mixed
+    {
+        return $this->descriptionLong;
+    }
+
+    /**
+     * @param string $descriptionLong
+     */
+    public function setDescriptionLong(string $descriptionLong): void
+    {
+        $this->descriptionLong = $descriptionLong;
     }
 
     /**

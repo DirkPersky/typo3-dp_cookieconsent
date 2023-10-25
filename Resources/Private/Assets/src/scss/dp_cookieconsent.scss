@@ -1,3 +1,10 @@
+:root {
+  --dp-cookie-palette-popup-background: rgba(0, 0, 0, 0.8);
+  --dp-cookie-palette-popup-text: rgb(255, 255, 255);
+  --dp-cookie-palette-button-background: rgb(249, 99, 50);
+  --dp-cookie-palette-button-text: #fff;
+}
+
 @import "icon";
 @import "revoke";
 @import "window";
@@ -5,3 +12,4 @@
 @import "overlay";
 @import "cookie";
 
+@import "theme/extend";

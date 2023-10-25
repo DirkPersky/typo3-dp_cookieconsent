@@ -1,5 +1,6 @@
 // Compilance Templates
 import optIn from './html/compilance/opt-in.html?raw';
+import extend from './html/compilance/extend.html?raw';
 // Element Templates
 import selections from './html/elements/selection.html?raw';
 import description from './html/elements/descripton.html?raw';
@@ -7,11 +8,13 @@ import allowAllBtn from './html/elements/allow-all.html?raw';
 import allowBtn from './html/elements/allow.html?raw';
 import dismissBtn from './html/elements/dismiss.html?raw';
 import denyBtn from './html/elements/deny.html?raw';
+import configBtn from './html/elements/config.html?raw';
 // Other Templates
 import revokebutton from './html/revoke.html?raw';
 import iframeoverlay from './html/overlay.html?raw';
 // wrap
 import windowWrap from './html/window.html?raw';
+
 
 /*!
   * Cookie Consent
@@ -25,11 +28,11 @@ import windowWrap from './html/window.html?raw';
      * IE 11 POLYFILLS
      */
     // source: https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
-    (function() {
+    (function () {
         if (typeof window.CustomEvent === "function") return false
 
         function CustomEvent(event, params) {
-            params = params || { bubbles: false, cancelable: false, detail: undefined }
+            params = params || {bubbles: false, cancelable: false, detail: undefined}
             var evt = document.createEvent("CustomEvent")
             evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail)
             return evt
@@ -39,11 +42,11 @@ import windowWrap from './html/window.html?raw';
         window.CustomEvent = CustomEvent;
     })();
     // EVENT POLY
-    (function() {
+    (function () {
         if (typeof window.Event === "function") return false
 
         function Event(event, params) {
-            params = params || { bubbles: true, cancelable: true, detail: undefined }
+            params = params || {bubbles: true, cancelable: true, detail: undefined}
             var evt = document.createEvent('Event');
             evt.initEvent(event, params.bubbles, params.cancelable, params.detail);
             return evt
@@ -57,18 +60,18 @@ import windowWrap from './html/window.html?raw';
      */
     var util = {
 
-        detectRobot : function(userAgent) {
+        detectRobot: function (userAgent) {
             const robots = new RegExp([
                 /Chrome-Lighthouse/,
-                /bot/,/spider/,/crawl/,                            // GENERAL TERMS
-                /APIs-Google/,/AdsBot/,/Googlebot/,                // GOOGLE ROBOTS
-                /mediapartners/,/Google Favicon/,
-                /FeedFetcher/,/Google-Read-Aloud/,
-                /DuplexWeb-Google/,/googleweblight/,
-                /bing/,/yandex/,/baidu/,/duckduck/,/yahoo/,        // OTHER ENGINES
-                /ecosia/,/ia_archiver/,
+                /bot/, /spider/, /crawl/,                            // GENERAL TERMS
+                /APIs-Google/, /AdsBot/, /Googlebot/,                // GOOGLE ROBOTS
+                /mediapartners/, /Google Favicon/,
+                /FeedFetcher/, /Google-Read-Aloud/,
+                /DuplexWeb-Google/, /googleweblight/,
+                /bing/, /yandex/, /baidu/, /duckduck/, /yahoo/,        // OTHER ENGINES
+                /ecosia/, /ia_archiver/,
                 /semrush/,                                         // OTHER
-            ].map((r) => r.source).join("|"),"i");               // BUILD REGEXP + "i" FLAG
+            ].map((r) => r.source).join("|"), "i");               // BUILD REGEXP + "i" FLAG
 
             return robots.test(userAgent);
         },
@@ -78,8 +81,8 @@ import windowWrap from './html/window.html?raw';
          * @param options
          * @returns {{name: string, checked: boolean}[]}
          */
-        reformatCheckboxOptions: function (options){
-            var reformated = Object.entries(options).map( item => {
+        reformatCheckboxOptions: function (options) {
+            var reformated = Object.entries(options).map(item => {
                 var status = String(item[1]).toLowerCase() == 'true' ? true : false;
                 return {
                     name: item[0],
@@ -155,7 +158,7 @@ import windowWrap from './html/window.html?raw';
             this.deepExtend(merged, obj);
             // merge with given values
             return {
-                exists: (typeof cookie != 'undefined') ? true: false,
+                exists: (typeof cookie != 'undefined') ? true : false,
                 config: merged
             };
         },
@@ -209,18 +212,13 @@ import windowWrap from './html/window.html?raw';
          * @param group
          * @param type
          */
-        applyStyle: function (el, group, type) {
+        applyStyle: function (group) {
             // check if element exist
-            if (el.length <= 0 || typeof this.options[group] == 'undefined' || typeof this.options[group][type] == 'undefined') return;
-            // change style
-            for (const [key, value] of Object.entries(this.options[group][type])) {
-                switch (key) {
-                    case 'background':
-                        el.style.backgroundColor = value;
-                        break;
-                    case 'text':
-                        el.style.color = value;
-                        break;
+            if (typeof this.options[group] == 'undefined' ) return;
+
+            for (const [type, _colors] of Object.entries(this.options[group])) {
+                for (const [key, value] of Object.entries(_colors)) {
+                    document.documentElement.style.setProperty(`--dp-cookie-${group}-${type}-${key}`, value);
                 }
             }
         },
@@ -263,7 +261,7 @@ import windowWrap from './html/window.html?raw';
             // position of the consent window
             position: 'bottom-right',
             // each item defines the inner text for the element that it references
-            content: (new window.DPCookieConsentL10N()).getLang(),
+            content: {},
             // Available styles
             //    -edgeless
             theme: 'edgeless',
@@ -319,7 +317,8 @@ import windowWrap from './html/window.html?raw';
             },
             // templates
             compilance: {
-                'opt-in': optIn
+                'opt-in': optIn,
+                'extend': extend
             },
             // revoke button
             revokeBtn: revokebutton,
@@ -333,6 +332,7 @@ import windowWrap from './html/window.html?raw';
                 'allow': allowBtn,
                 'dismiss': dismissBtn,
                 'deny': denyBtn,
+                'config': configBtn,
                 'selection': selections,
                 'description': description
             }
@@ -401,7 +401,7 @@ import windowWrap from './html/window.html?raw';
             // set options back to default options
             util.deepExtend((this.options = {}), defaultOptions);
             // reformat checkboxes
-            if(typeof options.checkboxes === 'object') options.checkboxes = util.reformatCheckboxOptions(options.checkboxes);
+            if (typeof options.checkboxes === 'object') options.checkboxes = util.reformatCheckboxOptions(options.checkboxes);
             // merge in user options
             if (typeof options === 'object') util.deepExtend(this.options, options);
             // bind callback function
@@ -412,13 +412,12 @@ import windowWrap from './html/window.html?raw';
             if (this.options.revokable) {
                 // generate template
                 this.revokeBtn = cc.utils.appendElement.call(this, this.options.revokeBtn);
-                // change styles
-                cc.utils.applyStyle.call(this, this.revokeBtn, 'palette', 'popup');
             }
             // create window
             this.window = cc.utils.appendElement.call(this, this.options.wrap);
             // change style
-            cc.utils.applyStyle.call(this, this.window, 'palette', 'popup');
+            cc.utils.applyStyle.call(this, 'palette');
+            cc.utils.applyStyle.call(this, 'overlay');
             // add compilance
             this.addCompilance(this.window);
             // run callback
@@ -470,9 +469,6 @@ import windowWrap from './html/window.html?raw';
             this.allowBtn = this.compilance.getElementsByClassName('cc-allow');
             this.denyBtn = this.compilance.getElementsByClassName('cc-deny');
             this.dismissBtn = this.compilance.getElementsByClassName('cc-dismiss');
-            // change button style
-            if (this.allowAllBtn.length > 0) cc.utils.applyStyle.call(this, this.allowAllBtn[0], 'palette', 'button');
-            else if (this.allowBtn.length > 0) cc.utils.applyStyle.call(this, this.allowBtn[0], 'palette', 'button');
         }
         /**
          * Button buttons to Click handler
@@ -553,7 +549,7 @@ import windowWrap from './html/window.html?raw';
         /**
          * save Checkboxes to variables
          */
-        CookiePopup.prototype.saveCheckboxes = function (id, value){
+        CookiePopup.prototype.saveCheckboxes = function (id, value) {
             this.options.checkboxes.map((preset, index) => {
                 if (preset.name == id) {
                     this.options.checkboxes[index].checked = value;
@@ -629,7 +625,7 @@ import windowWrap from './html/window.html?raw';
             // prepare Cookie Options
             var cookieOptions = cc.utils.prepareCookie(obj, this.options.cookie.name);
             // check status for first init
-            if(!cookieOptions.exists && cookieOptions.config.status == 'open') return;
+            if (!cookieOptions.exists && cookieOptions.config.status == 'open') return;
             // save cookie
             cc.utils.setCookie(
                 this.options.cookie.name,
@@ -700,7 +696,7 @@ import windowWrap from './html/window.html?raw';
         /**
          * execute handler
          */
-        CookiePopup.prototype.execute = function (){
+        CookiePopup.prototype.execute = function () {
             // call Cookie Handler do execute
             cc.Handler.execute(this.options.checkboxes);
             // call Contetn Handler
@@ -763,8 +759,6 @@ import windowWrap from './html/window.html?raw';
                 // create overlay
                 var div = document.createElement('div');
                 div.classList.add("dp--overlay");
-                // change box Styles
-                cc.utils.applyStyle.call(cc.popup, div, 'overlay', 'box');
                 // create HTML
                 var iframeoverlayHtml = cc.popup.options.overlayLayout
                     .replace('{{notice}}', notice)
@@ -775,7 +769,6 @@ import windowWrap from './html/window.html?raw';
                 iframeoverlayHtml = cc.utils.appendElement.call(cc.popup, iframeoverlayHtml, div);
                 // get button and restyle
                 var allowBtn = iframeoverlayHtml.getElementsByClassName('db--overlay-submit');
-                if (allowBtn.length > 0) cc.utils.applyStyle.call(cc.popup, allowBtn[0], 'overlay', 'btn');
                 // add Element to DOM
                 element.parentNode.insertBefore(div, element.nextSibling);
             });
@@ -1026,9 +1019,9 @@ import windowWrap from './html/window.html?raw';
                 // get key
                 id = id.replace('dp--cookie-', '');
                 // has no consent unmark other
-                if(!cc.popup.hasConsent()) e.checked = false;
+                if (!cc.popup.hasConsent()) e.checked = false;
                 // set checkbox status
-                if(id == type) e.checked = true;
+                if (id == type) e.checked = true;
             });
             // fire accept event
             cc.utils.fireEvent('dp--cookie-accept');
@@ -1050,9 +1043,9 @@ import windowWrap from './html/window.html?raw';
                 // get key
                 id = id.replace('dp--cookie-', '');
                 // has no consent unmark other
-                if(!cc.popup.hasConsent()) e.checked = false;
+                if (!cc.popup.hasConsent()) e.checked = false;
                 // set checkbox status
-                if(id == type) e.checked = false;
+                if (id == type) e.checked = false;
             });
         }
         // run save method

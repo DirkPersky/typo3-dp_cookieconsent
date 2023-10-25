@@ -8,8 +8,8 @@
   left: 0;
   width: 100%;
 
-  color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--dp-cookie-palette-popup-background);
+  color: var(--dp-cookie-palette-popup-text);
 
   &.cc-bottom {
 	top: auto;

@@ -8,6 +8,7 @@
     "build-js": "vite build --config js.config.js --emptyOutDir "
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
     "@vitejs/plugin-legacy": "^4.1.1",
     "sass": "^1.69.4",
     "terser": "^5.22.0",

@@ -16,6 +16,7 @@ CREATE TABLE tx_dpcookieconsent_domain_model_cookie
     category         varchar(255) DEFAULT '' NOT NULL,
     name             varchar(255) DEFAULT '' NOT NULL,
     description      varchar(255) DEFAULT '' NOT NULL,
+    description_long text,
     duration         varchar(255) DEFAULT '' NOT NULL,
     duration_time    varchar(255) DEFAULT '' NOT NULL,
     vendor           varchar(255) DEFAULT '' NOT NULL,
