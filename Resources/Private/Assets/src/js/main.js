@@ -325,7 +325,7 @@ import windowWrap from './html/window.html?raw';
             // overlay
             overlayLayout: iframeoverlay,
             // wrap
-            wrap: windowWrap,
+            wrap:  windowWrap,
             //  elements
             elements: {
                 'allow-all': allowAllBtn,

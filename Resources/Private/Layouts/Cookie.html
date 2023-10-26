@@ -73,6 +73,9 @@
         }
     };
 </script>
+<f:if condition="{settings.type} == 'extend'">
+    <f:render arguments="{_all}" partial="Theme/DPExtend"/>
+</f:if>
 <!-- End Cookie Consent plugin -->
 <f:for as="script" each="{dp_cookie_scripts}" iteration="script_iteration">
     <f:render arguments="{script:script, settings:settings}" partial="Script"/>

@@ -11,7 +11,6 @@ const k=`<div class="cc-body" id="cookieconsent:body">\r
 </div>`,v=`<div class="cc-body" id="cookieconsent:body">\r
     <span class="cc-message" id="cookieconsent:desc">\r
         {{description}}\r
-        {{selection}}\r
     </span>\r
     <div class="cc-compliance cc-highlight">\r
         {{allow-all}}\r

@@ -3,7 +3,7 @@
 	<file source-language="en"
 	    datatype="plaintext"
 	    original="EXT:cookieconsent/Resources/Private/Language/locallang.xlf"
-	    date="2023-10-25T20:54:14Z"
+	    date="2023-10-26T11:54:14Z"
 		target-language="de"
 		product-name="cookieconsent">
 		<header/>
@@ -64,6 +64,11 @@
             <trans-unit id="media.btn">
                 <source>Allow Cookies and load this resource</source>
                 <target>Erlaube Cookies und lade diese Ressource</target>
+            </trans-unit>
+
+            <trans-unit id="config.header">
+                <source>Customize Consent Preferences</source>
+                <target>Einstellungen für die Zustimmung anpassen</target>
             </trans-unit>
 		</body>
 	</file>

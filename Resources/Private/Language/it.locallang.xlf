@@ -3,7 +3,7 @@
 	<file source-language="en"
 		datatype="plaintext"
 		original="EXT:cookieconsent/Resources/Private/Language/locallang.xlf"
-		date="2023-10-25T11:16:11Z"
+		date="2023-10-26T11:16:11Z"
 		product-name="cookieconsent"
 		target-language="it">
 		<header/>
@@ -65,46 +65,51 @@
 				<target>Consenti i cookie e carica questa risorsa</target>
 			</trans-unit>
 
-			  <trans-unit id="cookie.name">
-                    <source>Cookies</source>
-                    <target>Cookie</target>
-                </trans-unit>
-                <trans-unit id="cookie.category">
-                    <source>Category</source>
-                    <target>Categoria</target>
-                </trans-unit>
-                <trans-unit id="cookie.category.0">
-                    <source>Required</source>
-                    <target>Necessario</target>
-                </trans-unit>
-                <trans-unit id="cookie.category.1">
-                    <source>Statistics</source>
-                    <target>Statistiche</target>
-                </trans-unit>
-                <trans-unit id="cookie.category.2">
-                    <source>Marketing</source>
-                    <target>Marketing</target>
-                </trans-unit>
-                <trans-unit id="cookie.description">
-                    <source>Domain</source>
-                    <target>Dominio</target>
-                </trans-unit>
-                <trans-unit id="cookie.duration_time.1">
-                    <source>Day(s)</source>
-                    <target>Giorni</target>
-                </trans-unit>
-                <trans-unit id="cookie.duration_time.2">
-                    <source>Year(s)</source>
-                    <target>Anni</target>
-                </trans-unit>
-                <trans-unit id="cookie.duration">
-                    <source>Duration</source>
-                    <target>Durata</target>
-                </trans-unit>
-                <trans-unit id="cookie.vendor">
-                    <source>Vendor</source>
-                    <target>Venditore</target>
-                </trans-unit>
+            <trans-unit id="cookie.name">
+                <source>Cookies</source>
+                <target>Cookie</target>
+            </trans-unit>
+            <trans-unit id="cookie.category">
+                <source>Category</source>
+                <target>Categoria</target>
+            </trans-unit>
+            <trans-unit id="cookie.category.0">
+                <source>Required</source>
+                <target>Necessario</target>
+            </trans-unit>
+            <trans-unit id="cookie.category.1">
+                <source>Statistics</source>
+                <target>Statistiche</target>
+            </trans-unit>
+            <trans-unit id="cookie.category.2">
+                <source>Marketing</source>
+                <target>Marketing</target>
+            </trans-unit>
+            <trans-unit id="cookie.description">
+                <source>Domain</source>
+                <target>Dominio</target>
+            </trans-unit>
+            <trans-unit id="cookie.duration_time.1">
+                <source>Day(s)</source>
+                <target>Giorni</target>
+            </trans-unit>
+            <trans-unit id="cookie.duration_time.2">
+                <source>Year(s)</source>
+                <target>Anni</target>
+            </trans-unit>
+            <trans-unit id="cookie.duration">
+                <source>Duration</source>
+                <target>Durata</target>
+            </trans-unit>
+            <trans-unit id="cookie.vendor">
+                <source>Vendor</source>
+                <target>Venditore</target>
+            </trans-unit>
+
+            <trans-unit id="config.header">
+                <source>Customize Consent Preferences</source>
+                <target>Personalizza le preferenze di consenso</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

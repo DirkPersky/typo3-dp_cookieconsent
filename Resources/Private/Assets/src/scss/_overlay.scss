@@ -20,6 +20,9 @@
   padding: 2.5rem 1.5rem;
 
   text-align: center;
+
+  background-color: var(--dp-cookie-overlay-box-background);
+  color: var(--dp-cookie-overlay-box-text);
 }
 
 .dp--overlay-description {
@@ -38,6 +41,10 @@
   text-align: center;
   border: 2px solid transparent;
   cursor: pointer;
+
+
+  background-color: var(--dp-cookie-overlay-btn-background);
+  color: var(--dp-cookie-overlay-btn-text);
 }
 
 .dp--iframe.dp--loaded + .dp--overlay {

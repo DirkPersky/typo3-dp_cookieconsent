@@ -26,6 +26,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.dp--icon-fingerprint:before {
+.dp--icon-x:before {
   content: "\e900";
+}
+
+.dp--icon-fingerprint:before {
+  content: "\e901";
 }
