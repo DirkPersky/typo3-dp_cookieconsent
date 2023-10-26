@@ -48,6 +48,12 @@
             target:'<f:format.raw>{settings.target}</f:format.raw>',
             'allow-all': '<f:translate key="allowall" extensionName="dp_cookieconsent" />',
             config: '<f:translate key="config" extensionName="dp_cookieconsent" />',
+            'config-header':  '<f:translate key="config.header" extensionName="dp_cookieconsent" />',
+
+
+            cookie: '<f:translate key="cookie.name" extensionName="dp_cookieconsent" />',
+            duration: '<f:translate key="cookie.duration" extensionName="dp_cookieconsent" />',
+            vendor: '<f:translate key="cookie.vendor" extensionName="dp_cookieconsent" />',
 
             media: {
                 notice: '<f:translate key="media.notice" extensionName="dp_cookieconsent" />',
@@ -61,6 +67,7 @@
         revokable: <f:format.raw>{settings.revokable}</f:format.raw>,
         reloadOnRevoke: <f:format.raw>{settings.reloadOnRevoke}</f:format.raw>,
         checkboxes: <f:format.raw><dp:Json>{settings.checkboxes}</dp:Json></f:format.raw>,
+        cookies: <f:format.raw><dp:cookies>{settings}</dp:cookies></f:format.raw>,
         palette: {
             popup: {
                 background: '<f:format.raw>{settings.palette.popup.background}</f:format.raw>',
@@ -73,9 +80,6 @@
         }
     };
 </script>
-<f:if condition="{settings.type} == 'extend'">
-    <f:render arguments="{_all}" partial="Theme/DPExtend"/>
-</f:if>
 <!-- End Cookie Consent plugin -->
 <f:for as="script" each="{dp_cookie_scripts}" iteration="script_iteration">
     <f:render arguments="{script:script, settings:settings}" partial="Script"/>

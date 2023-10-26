@@ -14,7 +14,10 @@ import revokebutton from './html/revoke.html?raw';
 import iframeoverlay from './html/overlay.html?raw';
 // wrap
 import windowWrap from './html/window.html?raw';
-
+// config
+import configWrap from './html/config/window.html?raw';
+import configGroup from './html/config/group.html?raw';
+import configCookie from './html/config/cookie.html?raw';
 
 /*!
   * Cookie Consent
@@ -325,7 +328,10 @@ import windowWrap from './html/window.html?raw';
             // overlay
             overlayLayout: iframeoverlay,
             // wrap
-            wrap:  windowWrap,
+            wrap:  {
+                consent: windowWrap,
+                config: configWrap
+            },
             //  elements
             elements: {
                 'allow-all': allowAllBtn,
@@ -334,7 +340,7 @@ import windowWrap from './html/window.html?raw';
                 'deny': denyBtn,
                 'config': configBtn,
                 'selection': selections,
-                'description': description
+                'description': description,
             }
         };
 
@@ -363,11 +369,11 @@ import windowWrap from './html/window.html?raw';
             // loop elements
             for (const [key, value] of Object.entries(opts.elements)) {
                 // replace elemnts and go to Text replace
-                markup = markup.replace('{{' + key + '}}', value);
+                markup = markup.replace('{{' + key + '}}', value||'');
             }
             // loop content
             for (const [key, value] of Object.entries(opts.content)) {
-                markup = markup.replace('{{' + key + '}}', value);
+                markup = markup.replace('{{' + key + '}}', value||'');
             }
             // return content
             return markup;
@@ -414,7 +420,8 @@ import windowWrap from './html/window.html?raw';
                 this.revokeBtn = cc.utils.appendElement.call(this, this.options.revokeBtn);
             }
             // create window
-            this.window = cc.utils.appendElement.call(this, this.options.wrap);
+            this.window = cc.utils.appendElement.call(this, this.options.wrap.consent);
+            if(this.options.type == 'extend') cc.configWindow.initialise(this.options.wrap.config)
             // change style
             cc.utils.applyStyle.call(this, 'palette');
             cc.utils.applyStyle.call(this, 'overlay');
@@ -1005,6 +1012,52 @@ import windowWrap from './html/window.html?raw';
         // hide window an show revoke
         cc.popup.open();
     };
+    /**
+     * Cookie Config
+     */
+    var configWindow = (function(){
+        function _ConfigWindow(){
+
+        }
+
+        _ConfigWindow.prototype.initialise = function (html){
+            this.prepareConfig();
+
+            this.configWrap = cc.utils.appendElement.call(cc.popup, html);
+        };
+
+        _ConfigWindow.prototype.prepareConfig = function (){
+            var opts = cc.popup.options;
+
+            return; // TODO GO ONE
+            var cookieHTML = opts.cookies.map(( cookies, group) => {
+                var groupHTML = cookies.map( cookie => {
+                    this.options = cc.utils.deepExtend({
+                        elements: {},
+                        content:  cookie,
+                    }, opts);
+
+                    return cc.popup.replaceContent.call(this, configCookie);
+                }).join('');
+
+                this.options = cc.utils.deepExtend({
+                    elements: {
+                        'config-cookie': groupHTML,
+                    },
+                    content: {
+                        group: group
+                    }
+                }, opts);
+
+                return cc.popup.replaceContent.call(this, configGroup);
+            }).join('');
+
+            cc.popup.options.elements['cookie-group'] = cookieHTML;
+        };
+
+        return new _ConfigWindow();
+    })();
+    cc.configWindow = configWindow;
     /**
      * Allow Cookies
      */

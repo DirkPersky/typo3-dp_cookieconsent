@@ -27,6 +27,8 @@ plugin.tx_dpcookieconsent {
         revokable = {$plugin.tx_cookieconsent.settings.revokable}
         reloadOnRevoke = {$plugin.tx_cookieconsent.settings.reloadOnRevoke}
 
+        storagePid = {$plugin.tx_cookieconsent.settings.storagePid}
+
         checkboxes {
             statistics = {$plugin.tx_cookieconsent.settings.statistics}
             marketing = {$plugin.tx_cookieconsent.settings.marketing}
