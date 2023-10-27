@@ -53,12 +53,12 @@ class CookiesViewHelper extends AbstractViewHelper
             $category = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('cookie.category.'.$cookie->getCategory(), 'dp_cookieconsent');
 
 
-            if (!isset($data[$category])) $data[$category] = [];
+            if (!isset($data[$category])) $data[$category] = ['name' => $category, 'cookies' => []];
 
             $durationTime = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('cookie.duration_time.'.$cookie->getDurationTime(), 'dp_cookieconsent');
 
 
-            $data[$category][] = [
+            $data[$category]['cookies'][] = [
                 'cookie_name' => $cookie->getName(),
                 'cookie_description_short' => $cookie->getDescription(),
                 'cookie_description' => $cookie->getDescriptionLong(),
@@ -71,6 +71,6 @@ class CookiesViewHelper extends AbstractViewHelper
             ];
         }
 
-        return json_encode($data, $options);
+        return json_encode(array_values($data), $options);
     }
 }

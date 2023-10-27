@@ -1,5 +1,17 @@
 <div class="cc-config-group">
-    {{group}}
+    <div class="cc-config-group-name">
+        <button class="cc-btn cc-btn-collapse">
+            <i class="dp--icon-chevron"></i>
+            {{group}}
+        </button>
+
+        <div class="cc-form-switch">
+            <input class="dp--check-box" id="dp--cookie-{{group-lower}}" tabindex="1" type="checkbox" name="" value="">
+            <label class="cc-check-label" for="dp--cookie-{{group-lower}}">
+                <div class="cc-sr-only">{{group}}</div>
+            </label>
+        </div>
+    </div>
 
     <div class="cc-config-cookies">
         {{config-cookie}}

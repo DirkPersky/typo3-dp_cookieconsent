@@ -33,3 +33,13 @@
 .dp--icon-fingerprint:before {
   content: "\e901";
 }
+
+.dp--icon-chevron {
+  &:before {
+    content: "\e902";
+  }
+
+  &[data-icon="down"]:before {
+    content: "\e903";
+  }
+}

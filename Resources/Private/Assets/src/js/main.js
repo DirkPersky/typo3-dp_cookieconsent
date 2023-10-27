@@ -217,7 +217,7 @@ import configCookie from './html/config/cookie.html?raw';
          */
         applyStyle: function (group) {
             // check if element exist
-            if (typeof this.options[group] == 'undefined' ) return;
+            if (typeof this.options[group] == 'undefined') return;
 
             for (const [type, _colors] of Object.entries(this.options[group])) {
                 for (const [key, value] of Object.entries(_colors)) {
@@ -328,7 +328,7 @@ import configCookie from './html/config/cookie.html?raw';
             // overlay
             overlayLayout: iframeoverlay,
             // wrap
-            wrap:  {
+            wrap: {
                 consent: windowWrap,
                 config: configWrap
             },
@@ -365,15 +365,17 @@ import configCookie from './html/config/cookie.html?raw';
                 'cc-hide' // hide as default
             ];
             // replace class
-            markup = markup.replace('{{classes}}', classes.join(' '));
+            markup = markup.replaceAll('{{classes}}', classes.join(' '));
             // loop elements
             for (const [key, value] of Object.entries(opts.elements)) {
+
                 // replace elemnts and go to Text replace
-                markup = markup.replace('{{' + key + '}}', value||'');
+                markup = markup.replaceAll('{{' + key + '}}', value || '');
             }
             // loop content
             for (const [key, value] of Object.entries(opts.content)) {
-                markup = markup.replace('{{' + key + '}}', value||'');
+
+                markup = markup.replaceAll('{{' + key + '}}', value || '');
             }
             // return content
             return markup;
@@ -421,7 +423,7 @@ import configCookie from './html/config/cookie.html?raw';
             }
             // create window
             this.window = cc.utils.appendElement.call(this, this.options.wrap.consent);
-            if(this.options.type == 'extend') cc.configWindow.initialise(this.options.wrap.config)
+            if (this.options.type == 'extend') cc.configWindow.initialise(this.options.wrap.config)
             // change style
             cc.utils.applyStyle.call(this, 'palette');
             cc.utils.applyStyle.call(this, 'overlay');
@@ -442,7 +444,7 @@ import configCookie from './html/config/cookie.html?raw';
             // overwrite from cookie
             if (typeof currentCookie != 'undefined') util.deepExtend(this.options.checkboxes, currentCookie.checkboxes);
             // get input
-            var checkbox = this.compilance.querySelectorAll('input');
+            var checkbox = this.getCheckboxInputs(true);
             if (checkbox.length > 0) {
                 // loop and set checkbox
                 checkbox.forEach(e => {
@@ -455,6 +457,11 @@ import configCookie from './html/config/cookie.html?raw';
                             e.checked = preset.checked;
                         }
                     });
+                    // set required
+                    if(id == 'required') {
+                        e.checked = true;
+                        e.disabled = true;
+                    }
                 });
             }
         }
@@ -476,6 +483,7 @@ import configCookie from './html/config/cookie.html?raw';
             this.allowBtn = this.compilance.getElementsByClassName('cc-allow');
             this.denyBtn = this.compilance.getElementsByClassName('cc-deny');
             this.dismissBtn = this.compilance.getElementsByClassName('cc-dismiss');
+            this.configBtn = this.compilance.querySelector('button.cc-config');
         }
         /**
          * Button buttons to Click handler
@@ -491,28 +499,14 @@ import configCookie from './html/config/cookie.html?raw';
             if (this.denyBtn.length > 0) this.denyBtn[0].onclick = () => this.denyAll.call(this);
             // bind revoke handler
             if (this.revokeBtn) this.revokeBtn.onclick = () => this.revoke.call(this);
+            // open Config
+            if (this.configBtn) this.configBtn.onclick = () => cc.configWindow.showConfig();
         }
         /**
          * enable all checkboxes and save
          */
         CookiePopup.prototype.allowAll = function () {
-            // get all checkboxes values
-            var checkbox = this.compilance.querySelectorAll('input');
-            // chackboxes found?
-            if (checkbox.length > 0) {
-                // set to true
-                checkbox.forEach(e => {
-                    var id = e.id;
-                    // get key
-                    id = id.replace('dp--cookie-', '');
-                    // is key in preset
-                    this.options.checkboxes.map((preset, index) => {
-                        if (preset.name == id) {
-                            e.checked = true;
-                        }
-                    });
-                });
-            }
+            this.saveCheckboxes(true);
             // event handling
             cc.utils.fireEvent('dp--cookie-accept');
             // close modal
@@ -522,23 +516,7 @@ import configCookie from './html/config/cookie.html?raw';
          * disable all checkboxes and save
          */
         CookiePopup.prototype.denyAll = function () {
-            // get all checkboxes values
-            var checkbox = this.compilance.querySelectorAll('input');
-            // chackboxes found?
-            if (checkbox.length > 0) {
-                // set to false
-                checkbox.forEach(e => {
-                    var id = e.id;
-                    // get key
-                    id = id.replace('dp--cookie-', '');
-                    // is key in preset
-                    this.options.checkboxes.map((preset, index) => {
-                        if (preset.name == id) {
-                            e.checked = false;
-                        }
-                    });
-                });
-            }
+            this.saveCheckboxes(false);
             // event handling
             cc.utils.fireEvent('dp--cookie-deny');
             // run save handling
@@ -553,33 +531,63 @@ import configCookie from './html/config/cookie.html?raw';
             // close modal
             this.save();
         }
+
+        CookiePopup.prototype.getCheckboxInputs = function (disableFilter){
+            var checkbox = document.querySelectorAll('input[id^="dp--cookie-"]');
+            // return with disabled filter
+            if(disableFilter) return checkbox;
+            // filter inputs
+            var filteres = [];
+            checkbox.forEach( e => {
+                var id = e.id;
+                // get key
+                id = id.replace('dp--cookie-', '');
+                // filter check
+                switch (id) {
+                    case 'required':
+                        break;
+                    default:
+                        filteres.push(e);
+                }
+            });
+            return filteres;
+        };
         /**
          * save Checkboxes to variables
          */
-        CookiePopup.prototype.saveCheckboxes = function (id, value) {
-            this.options.checkboxes.map((preset, index) => {
-                if (preset.name == id) {
-                    this.options.checkboxes[index].checked = value;
-                }
-            });
+        CookiePopup.prototype.saveCheckboxes = function (value) {
+            // get all checkboxes values
+            var checkbox = this.getCheckboxInputs();
+            // chackboxes found?
+            if (checkbox.length > 0) {
+                // set to true
+                checkbox.forEach(e => {
+                    var id = e.id;
+                    // get key
+                    id = id.replace('dp--cookie-', '');
+                    // change status
+                    if(typeof value != 'undefined') e.checked = value;
+                    // save Checkbox
+                    var found = this.options.checkboxes.map((preset, index) => {
+                        if (preset.name == id) {
+                            this.options.checkboxes[index].checked = e.checked;
+                            return true;
+                        }
+                    }).filter(_e => _e);
+                    // save ne checkboxes that found
+                    if (!found.length) this.options.checkboxes.push({
+                        name: id,
+                        checked: e.checked,
+                    });
+                });
+            }
         }
         /**
          * save checkboxes and start cookie loading
          */
         CookiePopup.prototype.save = function () {
             // get all checkboxes values
-            var checkbox = this.compilance.querySelectorAll('input');
-            // chackboxes found?
-            if (checkbox.length > 0) {
-                // loop checkboxes
-                checkbox.forEach(e => {
-                    var id = e.id;
-                    // get key
-                    id = id.replace('dp--cookie-', '');
-                    // save key to preset
-                    this.saveCheckboxes(id, e.checked);
-                });
-            }
+            this.saveCheckboxes();
             // close modal
             this.close();
         }
@@ -666,7 +674,7 @@ import configCookie from './html/config/cookie.html?raw';
          */
         CookiePopup.prototype.open = function () {
             if (this.revokeBtn) this.revokeBtn.classList.add('cc-hide');
-            this.window.classList.remove('cc-hide');
+            this.showPopup();
             // get current Cookie & save
             this.originalCookie = cc.utils.getCookie(this.options.cookie.name);
             // bind callback function
@@ -680,11 +688,20 @@ import configCookie from './html/config/cookie.html?raw';
             // add body class
             document.querySelector('body').classList.add('dp--cookie-consent');
         }
+
+        CookiePopup.prototype.hidePopup = function () {
+            this.window.classList.add('cc-hide');
+        };
+
+        CookiePopup.prototype.showPopup = function () {
+            this.window.classList.remove('cc-hide');
+        };
         /**
          * close Modal handler
          */
         CookiePopup.prototype.close = function () {
-            this.window.classList.add('cc-hide');
+            this.hidePopup();
+            cc.configWindow.closeConfig();
             if (this.revokeBtn) this.revokeBtn.classList.remove('cc-hide');
             // bind callback function
             var cbk = this.options.onPopupClose.bind(this);
@@ -1015,26 +1032,29 @@ import configCookie from './html/config/cookie.html?raw';
     /**
      * Cookie Config
      */
-    var configWindow = (function(){
-        function _ConfigWindow(){
+    var configWindow = (function () {
+        function _ConfigWindow() {
 
         }
 
-        _ConfigWindow.prototype.initialise = function (html){
+        _ConfigWindow.prototype.initialise = function (html) {
             this.prepareConfig();
-
+            // create window
             this.configWrap = cc.utils.appendElement.call(cc.popup, html);
+            // get relevant buttons and bind to class
+            this.getElements();
+            // run button bindings
+            this.bindBtns();
         };
 
-        _ConfigWindow.prototype.prepareConfig = function (){
+        _ConfigWindow.prototype.prepareConfig = function () {
             var opts = cc.popup.options;
 
-            return; // TODO GO ONE
-            var cookieHTML = opts.cookies.map(( cookies, group) => {
-                var groupHTML = cookies.map( cookie => {
+            var cookieHTML = opts.cookies.map(group => {
+                var groupHTML = group.cookies.map(cookie => {
                     this.options = cc.utils.deepExtend({
                         elements: {},
-                        content:  cookie,
+                        content: cookie,
                     }, opts);
 
                     return cc.popup.replaceContent.call(this, configCookie);
@@ -1045,7 +1065,8 @@ import configCookie from './html/config/cookie.html?raw';
                         'config-cookie': groupHTML,
                     },
                     content: {
-                        group: group
+                        group: group.name,
+                        'group-lower': group.name.toLowerCase()
                     }
                 }, opts);
 
@@ -1055,6 +1076,49 @@ import configCookie from './html/config/cookie.html?raw';
             cc.popup.options.elements['cookie-group'] = cookieHTML;
         };
 
+        _ConfigWindow.prototype.getElements = function () {
+            this.closeBtn = this.configWrap.querySelector('button.cc-btn-close');
+            this.allowAllBtn = this.configWrap.querySelector('button.cc-allow-all');
+            this.allowBtn = this.configWrap.querySelector('button.cc-allow');
+            this.denyBtn = this.configWrap.querySelector('button.cc-deny');
+            this.configGroups = this.configWrap.querySelectorAll('.cc-config-group');
+        };
+
+        _ConfigWindow.prototype.bindBtns = function () {
+            // bind allow All Handler
+            if (this.allowAllBtn) this.allowAllBtn.onclick = () => cc.popup.allowAll(this);
+            // bind save selection handler
+            if (this.allowBtn) this.allowBtn.onclick = () => cc.popup.allow(this);
+            // bind deny all handler
+            if (this.denyBtn) this.denyBtn.onclick = () => cc.popup.denyAll(this);
+            // bind revoke handler
+            if (this.closeBtn) this.closeBtn.onclick = () => this.hideConfig.call(this);
+            // bind toogles
+            if (this.configGroups) this.configGroups.forEach(group => {
+                group.querySelector('.cc-btn-collapse').onclick = () => {
+                    var toggle = !group.classList.contains('cc-show');
+
+                    this.configGroups.forEach(_group => _group.classList.remove('cc-show'));
+
+                    if (toggle) group.classList.add('cc-show');
+                }
+            });
+
+        };
+
+        _ConfigWindow.prototype.closeConfig = function () {
+            if(this.configWrap) this.configWrap.classList.remove('cc-show');
+        };
+
+        _ConfigWindow.prototype.hideConfig = function () {
+            cc.popup.showPopup();
+            if(this.configWrap) this.closeConfig();
+        };
+
+        _ConfigWindow.prototype.showConfig = function () {
+            if(this.configWrap) this.configWrap.classList.add('cc-show');
+            cc.popup.hidePopup();
+        };
         return new _ConfigWindow();
     })();
     cc.configWindow = configWindow;
@@ -1064,7 +1128,7 @@ import configCookie from './html/config/cookie.html?raw';
     cc.forceAccept = function (e) {
         var type = e.getAttribute('data-cookieconsent');
         // get checkbox
-        var checkbox = cc.popup.compilance.querySelectorAll('input');
+        var checkbox = cc.popup.getCheckboxInputs();
         // chackboxes found?
         if (checkbox.length > 0) {
             checkbox.forEach(e => {
@@ -1088,7 +1152,7 @@ import configCookie from './html/config/cookie.html?raw';
     cc.forceDeny = function (e) {
         var type = e.getAttribute('data-cookieconsent');
         // get checkbox
-        var checkbox = cc.popup.compilance.querySelectorAll('input');
+        var checkbox = cc.popup.getCheckboxInputs();
         // chackboxes found?
         if (checkbox.length > 0) {
             checkbox.forEach(e => {
