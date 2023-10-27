@@ -27,6 +27,18 @@ Fontend
 
    Data Privacy cookie listing
 
+.. figure:: ../Images/config-mode.png
+   :class: with-shadow
+   :width: 400px
+
+   Consent Box `extend` mode
+
+.. figure:: ../Images/config_overlay.png
+   :class: with-shadow
+   :width: 400px
+
+   Consent Config `extend` mode
+
 Backend
 ^^^^^^^
 

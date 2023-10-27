@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2021-21-12T13:55:16Z" product-name="cookieconsent">
+	<file source-language="en" datatype="plaintext" original="messages" date="2023-25-10T13:50:10Z" product-name="cookieconsent">
 		<header/>
 		<body>
 			<trans-unit id="tx_dpcookieconsent_domain_model_cookie">
@@ -9,7 +9,6 @@
 			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.name">
 				<source>Cookies</source>
 			</trans-unit>
-
 			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.category">
 				<source>Category</source>
 			</trans-unit>
@@ -23,6 +22,12 @@
 				<source>Marketing</source>
 			</trans-unit>
 
+            <trans-unit id="tx_dpcookieconsent_domain_model_cookie.description_long">
+				<source>Cookie description</source>
+			</trans-unit>
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.description_long.info">
+				<source>Descriptions can find by scanning with https://www.cookieyes.com/</source>
+			</trans-unit>
 			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.description">
 				<source>Domain</source>
 			</trans-unit>

@@ -67,7 +67,7 @@ type
 :aspect:`Description`
    consent types
 :aspect:`Options`
-   opt-in, :guilabel:`... following ..`
+   opt-in, extend :guilabel:`... following ..`
 :aspect:`Default`
    opt-in
 

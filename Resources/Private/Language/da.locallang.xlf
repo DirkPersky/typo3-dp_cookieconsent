@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" datatype="plaintext" original="messages" date="2021-12-28T20:53:14Z"
-		  product-name="cookieconsent">
+	<file source-language="en"
+	    datatype="plaintext"
+	    original="EXT:cookieconsent/Resources/Private/Language/locallang.xlf"
+	    date="2023-10-26T11:53:14Z"
+		target-language="da"
+        product-name="cookieconsent">
 		<header/>
 		<body>
 			<trans-unit id="message">
@@ -19,6 +23,10 @@
             <trans-unit id="allowall">
                 <source>allow all!</source>
                 <target>alle accepterer</target>
+            </trans-unit>
+            <trans-unit id="config">
+                <source>customize</source>
+                <target>tilpasse</target>
             </trans-unit>
 			<trans-unit id="deny">
 				<source>decline</source>
@@ -56,6 +64,10 @@
             <trans-unit id="media.btn">
                 <source>Allow Cookies and load this resource</source>
                 <target>Tillad cookies og indlæs denne ressource</target>
+            </trans-unit>
+            <trans-unit id="config.header">
+                <source>Customize Consent Preferences</source>
+                <target>Tilpas samtykkepræferencer</target>
             </trans-unit>
 		</body>
 	</file>

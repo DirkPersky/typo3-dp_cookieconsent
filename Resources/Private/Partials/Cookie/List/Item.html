@@ -11,7 +11,7 @@
       xmlns:dp="http://typo3.org/ns/DirkPersky/DpCookieconsent/ViewHelpers"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
     <tr>
-        <td class="cc-no-wrap">
+        <td class="cc-no-wrap" rowspan="2">
             <f:format.raw>{cookieItem.name}</f:format.raw>
         </td>
         <td>
@@ -37,6 +37,13 @@
                 <f:else>
                     <f:format.raw>{cookieItem.vendor}</f:format.raw>
                 </f:else>
+            </f:if>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" class="dp--cookie-list-description">
+            <f:if condition="{cookieItem.descriptionLong}">
+                <f:format.raw>{cookieItem.descriptionLong}</f:format.raw>
             </f:if>
         </td>
     </tr>

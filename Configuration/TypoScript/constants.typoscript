@@ -19,8 +19,8 @@ plugin.tx_cookieconsent {
         theme = edgeless
         # cat=plugin.tx_cookieconsent; type=options[top,top-left,top-right,bottom,bottom-left,bottom-right]; label= Position
         position = bottom-right
-        # cat=plugin.tx_cookieconsent; type=options[info,opt-out,opt-in]; label = Type
-        type = info
+        # cat=plugin.tx_cookieconsent; type=options[extend,opt-in]; label = Type
+        type = opt-in
         # cat=plugin.tx_cookieconsent; type=options[true,false]; label = adds a button to review the consent window
         revokable = true
         # cat=plugin.tx_cookieconsent; type=options[true,false]; label = pre check statistics in checkboxes layout

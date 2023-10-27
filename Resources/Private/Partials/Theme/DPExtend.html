@@ -1,0 +1,36 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:dp="http://typo3.org/ns/DirkPersky/DpCookieconsent/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<div aria-describedby="cookieconsent:config" aria-label="cookieconsent" aria-live="polite" class="cc-window-config cc-type-extend" id="cookieconsent:config" role="dialog">
+    <div class="backdrop"></div>
+    <div class="cc-config" id="cookieconsent:config">
+        <div class="cc-config-header">
+            <span><f:translate key="config.header" extensionName="dp_cookieconsent" /></span>
+            <button class="cc-btn-close">
+                <i class="dp--icon-x"></i>
+            </button>
+        </div>
+        <div class="cc-config-body">
+            <div class="cc-message">
+                <f:format.raw><f:translate key="message" extensionName="dp_cookieconsent" /></f:format.raw>
+            </div>
+            <div data-cc-config-cookies=''>
+
+            </div>
+        </div>
+        <div class="cc-config-footer">
+            <button class="cc-btn">
+                <f:translate key="deny" extensionName="dp_cookieconsent" />
+            </button>
+            <button class="cc-btn">
+                <f:translate key="allow" extensionName="dp_cookieconsent" />
+            </button>
+            <button class="cc-btn cc-allow-all">
+                <f:translate key="allowall" extensionName="dp_cookieconsent" />
+            </button>
+        </div>
+    </div>
+</div>
+
+</html>
