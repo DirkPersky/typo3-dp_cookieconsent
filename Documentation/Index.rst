@@ -81,6 +81,7 @@ This document is published under the Open Content License available from http://
    Configuration/Scripts
    Configuration/Content
    Configuration/CookieList
+   Configuration/Extend
 
 .. toctree::
    :caption: For Developers
