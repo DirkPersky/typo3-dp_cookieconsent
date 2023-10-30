@@ -37,5 +37,5 @@ jobs:
             composer global require typo3/tailor --prefer-dist --no-progress
             # Upload
             echo "Uploading release ${{ env.version }} to TER\n"
-            php ~/.composer/vendor/bin/tailor ter:publish --comment "More information on\n https://github.com/DirkPersky/typo3-dp_cookieconsent/releases" ${{ env.version }}
+            php ~/.composer/vendor/bin/tailor ter:publish --comment "https://github.com/DirkPersky/typo3-dp_cookieconsent/releases" ${{ env.version }}
           fi;
