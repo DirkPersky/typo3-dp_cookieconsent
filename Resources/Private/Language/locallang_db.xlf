@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2023-25-10T13:50:10Z" product-name="cookieconsent">
+	<file source-language="en" datatype="plaintext" original="messages" date="2023-30-10T14:50:10Z" product-name="cookieconsent">
 		<header/>
 		<body>
 			<trans-unit id="tx_dpcookieconsent_domain_model_cookie">
@@ -12,6 +12,11 @@
 			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.category">
 				<source>Category</source>
 			</trans-unit>
+
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.category_name">
+				<source>Alternative Category</source>
+			</trans-unit>
+
 			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.category.0">
 				<source>Required</source>
 			</trans-unit>
@@ -20,6 +25,10 @@
 			</trans-unit>
 			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.category.2">
 				<source>Marketing</source>
+			</trans-unit>
+
+			<trans-unit id="tx_dpcookieconsent_domain_model_cookie.category.3">
+				<source>Custom</source>
 			</trans-unit>
 
             <trans-unit id="tx_dpcookieconsent_domain_model_cookie.description_long">

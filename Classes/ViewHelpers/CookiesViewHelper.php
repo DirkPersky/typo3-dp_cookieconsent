@@ -50,27 +50,37 @@ class CookiesViewHelper extends AbstractViewHelper
         $cobj = GeneralUtility::makeInstance(ContentObjectRenderer::class);
 
         foreach ($cookies as $cookie) {
-            $category = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('cookie.category.'.$cookie->getCategory(), 'dp_cookieconsent');
+            $category = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('cookie.category.' . $cookie->getCategory(), 'dp_cookieconsent');
 
+            if ($cookie->getCategory() == 3) $category = $cookie->getCategoryName();
+            if (!$category) continue;
 
             if (!isset($data[$category])) $data[$category] = ['name' => $category, 'cookies' => []];
 
-            $durationTime = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('cookie.duration_time.'.$cookie->getDurationTime(), 'dp_cookieconsent');
+            $durationTime = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('cookie.duration_time.' . $cookie->getDurationTime(), 'dp_cookieconsent');
 
-
-            $data[$category]['cookies'][] = [
+            $cookieConfig = [
                 'cookie_name' => $cookie->getName(),
                 'cookie_description_short' => $cookie->getDescription(),
                 'cookie_description' => $cookie->getDescriptionLong(),
 
                 'cookie_duration' => $cookie->getDuration(),
-                'cookie_duration_time'  => $durationTime,
+                'cookie_duration_time' => $durationTime,
 
                 'cookie_vendor' => $cookie->getVendor(),
                 'cookie_vendor_link' => $cobj->typoLink_URL(['parameter' => $cookie->getVendorLink()]),
             ];
+
+             $data[$category]['cookies'][] = $cookieConfig;
         }
 
-        return json_encode(array_values($data), $options);
+        $data = array_values($data);
+        usort($data, function ($a, $b){
+            if(strtolower($a['name']) == 'required') return -1;
+            if(strtolower($b['name']) == 'required') return 1;
+            return $a['name'] <=> $b['name'];
+        });
+
+        return json_encode($data, $options);
     }
 }

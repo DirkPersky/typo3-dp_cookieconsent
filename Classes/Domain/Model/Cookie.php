@@ -42,7 +42,10 @@ class Cookie extends AbstractEntity
      * @var string
      */
     protected $category = '';
-
+    /**
+     * @var string
+     */
+    protected $categoryName;
     /**
      * @var string
      */
@@ -255,6 +258,25 @@ class Cookie extends AbstractEntity
     }
 
     /**
+     * @return mixed
+     */
+    public function getCategoryName(): mixed
+    {
+        return $this->categoryName;
+    }
+
+    /**
+     * @param string $categoryName
+     * @return void
+     */
+    public function setCategoryName(string $categoryName): void
+    {
+        $this->categoryName = $categoryName;
+    }
+
+
+
+    /**
      * @return string
      */
     public function getDuration(): string
@@ -388,6 +410,9 @@ class Cookie extends AbstractEntity
     public function getType(): string
     {
         switch ($this->category) {
+            case '3':
+                $type = strtolower($this->categoryName);
+                break;
             case '1':
                 $type = 'statistics';
                 break;

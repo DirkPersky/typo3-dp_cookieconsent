@@ -31,7 +31,7 @@ return [
     ],
     'palettes' => [
         'type' => [
-            'showitem' => 'name, category'
+            'showitem' => 'name, category, --linebreak--, category_name'
         ],
         'dur' => [
             'showitem' => 'duration, duration_time'
@@ -120,10 +120,23 @@ return [
                     ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category.0', 0],
                     ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category.1', 1],
                     ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category.2', 2],
+                    ['LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category.3', 3],
                 ],
             ],
             'onChange' => 'reload'
         ],
+
+        'category_name' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category_name',
+            'config' => [
+                'type' => 'input',
+                'size' => 75,
+                'eval' => 'trim'
+            ],
+            'displayCond' => 'FIELD:category:=:3'
+        ],
+
         'description' => [
             'exclude' => true,
             'label' => 'LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.description',

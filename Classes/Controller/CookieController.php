@@ -48,9 +48,11 @@ class CookieController extends ActionController
         // get Cookies
         $cookies = $this->cookieRepository->findByPid($flexFormData['settings']['startingpoint'], $flexFormData['settings']['recursive']);
         // group cookies
-        $grouped = new ArrayObject([]);
+        $grouped = [];
         foreach ($cookies as $cookie) {
-            $category = $cookie->getCategory();
+            $category = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('cookie.category.' . $cookie->getCategory(), 'dp_cookieconsent');
+            if ($cookie->getCategory() == 3) $category = $cookie->getCategoryName();
+
             if (!isset($grouped[$category])) {
                 $grouped[$category] = new ArrayObject([
                     'category' => $category,
@@ -59,6 +61,14 @@ class CookieController extends ActionController
             }
             $grouped[$category]['items'][] = $cookie;
         }
+
+        usort($grouped, function ($a, $b){
+            if(strtolower($a['category']) == 'required') return -1;
+            if(strtolower($b['category']) == 'required') return 1;
+            return $a['category'] <=> $b['category'];
+        });
+
+        $grouped = new ArrayObject($grouped);
 
         // update settings
         $this->settings['base_uri'] = parse_url($this->request->getAttribute('normalizedParams')->getSiteUrl());

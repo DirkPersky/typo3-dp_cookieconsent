@@ -19,7 +19,7 @@
                 <thead class="border-top-0">
                     <tr class="caption">
                         <th colspan="4" class="{f:if(condition:groupIterator.isFirst, then:'', else:'pt-4')}">
-                            <f:translate key="cookie.category.{groupItem.category}"/>
+                            <f:format.raw>{groupItem.category}</f:format.raw>
                         </th>
                     </tr>
                     <tr class="table-dark">

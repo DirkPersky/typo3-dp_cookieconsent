@@ -14,6 +14,7 @@ CREATE TABLE tx_dpcookieconsent_domain_model_cookie
     pid              int(11) DEFAULT '0' NOT NULL,
 
     category         varchar(255) DEFAULT '' NOT NULL,
+    category_name    varchar(255) DEFAULT '' NOT NULL,
     name             varchar(255) DEFAULT '' NOT NULL,
     description      varchar(255) DEFAULT '' NOT NULL,
     description_long text,
