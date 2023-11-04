@@ -458,7 +458,7 @@ import configCookie from './html/config/cookie.html?raw';
                         }
                     });
                     // set required
-                    if(id == 'require') {
+                    if(id == 'required') {
                         e.checked = true;
                         e.disabled = true;
                     }
@@ -544,7 +544,7 @@ import configCookie from './html/config/cookie.html?raw';
                 id = id.replace('dp--cookie-', '');
                 // filter check
                 switch (id) {
-                    case 'require':
+                    case 'required':
                         break;
                     default:
                         filteres.push(e);
