@@ -458,7 +458,7 @@ import configCookie from './html/config/cookie.html?raw';
                         }
                     });
                     // set required
-                    if(id == 'required') {
+                    if(id == 'require') {
                         e.checked = true;
                         e.disabled = true;
                     }
@@ -544,12 +544,13 @@ import configCookie from './html/config/cookie.html?raw';
                 id = id.replace('dp--cookie-', '');
                 // filter check
                 switch (id) {
-                    case 'required':
+                    case 'require':
                         break;
                     default:
                         filteres.push(e);
                 }
             });
+
             return filteres;
         };
         /**
@@ -1129,6 +1130,8 @@ import configCookie from './html/config/cookie.html?raw';
         var type = e.getAttribute('data-cookieconsent');
         // get checkbox
         var checkbox = cc.popup.getCheckboxInputs();
+
+        console.log(checkbox);
         // chackboxes found?
         if (checkbox.length > 0) {
             checkbox.forEach(e => {
