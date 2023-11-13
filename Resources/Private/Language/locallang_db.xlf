@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2023-30-10T14:50:10Z" product-name="cookieconsent">
+	<file source-language="en"
+        datatype="plaintext"
+        original="messages"
+        date="2023-30-10T14:50:10Z"
+        product-name="cookieconsent">
 		<header/>
 		<body>
 			<trans-unit id="tx_dpcookieconsent_domain_model_cookie">

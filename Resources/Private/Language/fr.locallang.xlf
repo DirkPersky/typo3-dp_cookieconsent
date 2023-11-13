@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file source-language="en"
-	    target-language="fr"
 	    datatype="plaintext"
 	    original="EXT:cookieconsent/Resources/Private/Language/locallang.xlf"
 	    date="2023-10-26T11:54:14Z"
