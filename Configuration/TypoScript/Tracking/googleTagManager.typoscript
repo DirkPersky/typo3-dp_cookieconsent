@@ -37,6 +37,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         30.value (
 /* DP publisch Events to Tag Manager */
 window.dataLayer = window.dataLayer || [];
+if(typeof gtag == 'undefined') function gtag(){dataLayer.push(arguments);
+gtag('consent', 'default', {
+  'analytics_storage': 'granted'
+});
 window.dataLayer.push({ 'event': 'dp-cookie-statistics-accept' });
 /* End DP publisch Events to Tag Manager */
         )
@@ -50,6 +54,11 @@ window.dataLayer.push({ 'event': 'dp-cookie-statistics-accept' });
         40.value (
 /* DP publisch Events to Tag Manager */
 window.dataLayer = window.dataLayer || [];
+gtag('consent', 'default', {
+  'ad_storage': 'granted',
+  'ad_user_data': 'granted',
+  'ad_personalization': 'granted'
+});
 window.dataLayer.push({ 'event': 'dp-cookie-marketing-accept' });
 /* End DP publisch Events to Tag Manager */
         )
