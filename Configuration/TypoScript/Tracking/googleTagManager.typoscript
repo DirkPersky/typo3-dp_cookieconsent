@@ -14,13 +14,26 @@ page.headerData.998 {
             15 = TEXT
             15.value = {$plugin.tx_cookieconsent.settings.tracking.googleTagManager.id}
             15.wrap (
-/* Google Tag Manager */
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','#');
-/* End Google Tag Manager */
+if(!window.tx_cookieconsent_init){
+    window.tx_cookieconsent_init = true;
+    /* Google Tag Manager */
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','#');
+    /* End Google Tag Manager */
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function() { window.dataLayer.push(arguments); }
+    window.gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
+    });
+}
             )
             15.wrap.splitChar = #
             15.required = 1
@@ -36,9 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         30 = TEXT
         30.value (
 /* DP publisch Events to Tag Manager */
-window.dataLayer = window.dataLayer || [];
-if(typeof gtag == 'undefined') function gtag(){dataLayer.push(arguments);
-gtag('consent', 'default', {
+gtag('consent', 'update', {
   'analytics_storage': 'granted'
 });
 window.dataLayer.push({ 'event': 'dp-cookie-statistics-accept' });
@@ -53,8 +64,7 @@ window.dataLayer.push({ 'event': 'dp-cookie-statistics-accept' });
         40 = TEXT
         40.value (
 /* DP publisch Events to Tag Manager */
-window.dataLayer = window.dataLayer || [];
-gtag('consent', 'default', {
+gtag('consent', 'update', {
   'ad_storage': 'granted',
   'ad_user_data': 'granted',
   'ad_personalization': 'granted'
