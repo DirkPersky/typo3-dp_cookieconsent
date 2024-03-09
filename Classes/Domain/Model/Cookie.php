@@ -244,7 +244,7 @@ class Cookie extends AbstractEntity
     /**
      * @return string
      */
-    public function getDescriptionLong(): mixed
+    public function getDescriptionLong(): string
     {
         return $this->descriptionLong;
     }
@@ -258,9 +258,9 @@ class Cookie extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getCategoryName(): mixed
+    public function getCategoryName(): string
     {
         return $this->categoryName;
     }
@@ -273,8 +273,6 @@ class Cookie extends AbstractEntity
     {
         $this->categoryName = $categoryName;
     }
-
-
 
     /**
      * @return string
