@@ -52,10 +52,29 @@ class CookiesViewHelper extends AbstractViewHelper
         foreach ($cookies as $cookie) {
             $category = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('cookie.category.' . $cookie->getCategory(), 'dp_cookieconsent');
 
-            if ($cookie->getCategory() == 3) $category = $cookie->getCategoryName();
+            switch ($cookie->getCategory()) {
+                case '0':
+                    $field = 'required';
+                    break;
+                case '1':
+                    $field = 'statistics';
+                    break;
+                case '2':
+                    $field = 'marketing';
+                    break;
+                default:
+                    $field = $cookie->getCategoryName();
+            }
+            if ($cookie->getCategory() == 3) {
+                $category = $cookie->getCategoryName();
+            }
             if (!$category) continue;
 
-            if (!isset($data[$category])) $data[$category] = ['name' => $category, 'cookies' => []];
+            if (!isset($data[$category])) $data[$category] = [
+                'field' => strtolower($field),
+                'name' => $category,
+                'cookies' => []
+            ];
 
             $durationTime = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('cookie.duration_time.' . $cookie->getDurationTime(), 'dp_cookieconsent');
 
@@ -76,9 +95,9 @@ class CookiesViewHelper extends AbstractViewHelper
 
         $data = array_values($data);
         usort($data, function ($a, $b){
-            if(strtolower($a['name']) == 'required') return -1;
-            if(strtolower($b['name']) == 'required') return 1;
-            return $a['name'] <=> $b['name'];
+            if(strtolower($a['field']) == 'required') return -1;
+            if(strtolower($b['field']) == 'required') return 1;
+            return $a['field'] <=> $b['field'];
         });
 
         return json_encode($data, $options);

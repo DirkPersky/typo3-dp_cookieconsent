@@ -1067,7 +1067,7 @@ import configCookie from './html/config/cookie.html?raw';
                     },
                     content: {
                         group: group.name,
-                        'group-lower': group.name.toLowerCase()
+                        'group-lower': group.field
                     }
                 }, opts);
 
