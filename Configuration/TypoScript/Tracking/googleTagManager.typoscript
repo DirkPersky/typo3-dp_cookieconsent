@@ -14,7 +14,7 @@ page.headerData.998 {
             15 = TEXT
             15.value = {$plugin.tx_cookieconsent.settings.tracking.googleTagManager.id}
             15.wrap (
-if(!window.tx_cookieconsent_init){
+if(typeof window.tx_cookieconsent_init == 'undefined'){
     window.tx_cookieconsent_init = true;
     /* Google Tag Manager */
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -25,7 +25,7 @@ if(!window.tx_cookieconsent_init){
     /* End Google Tag Manager */
 
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function() { window.dataLayer.push(arguments); }
+    if(typeof window.gtag == 'undefined') window.gtag = function() { window.dataLayer.push(arguments); };
     window.gtag('consent', 'default', {
         ad_storage: 'denied',
         analytics_storage: 'denied',
