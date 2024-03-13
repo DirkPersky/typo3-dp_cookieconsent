@@ -59,7 +59,7 @@ class Cookie extends AbstractEntity
     /**
      * @var string
      */
-    protected $descriptionLong;
+    protected $descriptionLong = '';
 
 
     /**
