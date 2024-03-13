@@ -10,3 +10,10 @@
  */
 
 defined('TYPO3') or die();
+
+$boot = static function (): void {
+
+};
+
+$boot();
+unset($boot);
