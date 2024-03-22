@@ -9,7 +9,7 @@ page.headerData.998 {
 
         10 = COA
         10 {
-            wrap = <script data-ignore="1" >function DPInitTagManager(){|}</script>
+            wrap = <script data-ignore="1" >(function(){|})();</script>
 
             15 = TEXT
             15.value = {$plugin.tx_cookieconsent.settings.tracking.googleTagManager.id}
@@ -38,13 +38,6 @@ if(typeof window.tx_cookieconsent_init == 'undefined'){
             15.wrap.splitChar = #
             15.required = 1
         }
-
-        20 = TEXT
-        20.value = /* Init DP Tag Manager */ DPInitTagManager(); /* End Init DP Tag Manager*/
-        20.wrap = <script data-ignore="1" data-cookieconsent="statistics" type="text/plain">|</script>
-
-        25 < .20
-        25.wrap = <script data-ignore="1" data-cookieconsent="marketing" type="text/plain">|</script>
 
         30 = TEXT
         30.value (
