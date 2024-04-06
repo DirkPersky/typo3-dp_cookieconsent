@@ -69,7 +69,7 @@
         </button>\r
     </div>\r
 </div>\r
-`,x='<div aria-describedby="cookieconsent:desc" aria-label="cookieconsent" aria-live="polite" class="cc-window {{classes}}" id="cookieconsent:window" role="dialog"></div>',E=`<div aria-describedby="cookieconsent:config" aria-label="cookieconsent" aria-live="polite" class="cc-window-config cc-type-extend" id="cookieconsent:config" role="dialog">\r
+`,x='<div aria-describedby="cookieconsent:desc" aria-label="cookieconsent-dialog" aria-live="polite" class="cc-window {{classes}}" id="cookieconsent:window" role="dialog"></div>',E=`<div aria-describedby="cookieconsent:config" aria-label="cookieconsent-dialog" aria-live="polite" class="cc-window-config cc-type-extend" id="cookieconsent:config" role="dialog">\r
     <div class="cc-config" >\r
         <div class="cc-config-header">\r
             <span>{{config-header}}</span>\r
