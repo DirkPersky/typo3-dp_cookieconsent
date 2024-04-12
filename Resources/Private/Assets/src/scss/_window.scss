@@ -108,3 +108,17 @@
 	box-sizing: border-box;
   }
 }
+
+.cc-window,
+.cc-window-config {
+  .powered-by {
+	padding: 0 .5rem;
+	text-align: right;
+	font-size: 12px;
+	opacity: .4;
+
+	a {
+	  color: inherit;
+	}
+  }
+}
