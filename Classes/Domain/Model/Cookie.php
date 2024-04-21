@@ -409,7 +409,7 @@ class Cookie extends AbstractEntity
     {
         switch ($this->category) {
             case '3':
-                $type = strtolower($this->categoryName);
+                $type = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-',$this->categoryName)));
                 break;
             case '1':
                 $type = 'statistics';

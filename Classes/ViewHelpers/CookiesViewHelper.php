@@ -51,27 +51,14 @@ class CookiesViewHelper extends AbstractViewHelper
 
         foreach ($cookies as $cookie) {
             $category = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('cookie.category.' . $cookie->getCategory(), 'dp_cookieconsent');
-
-            switch ($cookie->getCategory()) {
-                case '0':
-                    $field = 'required';
-                    break;
-                case '1':
-                    $field = 'statistics';
-                    break;
-                case '2':
-                    $field = 'marketing';
-                    break;
-                default:
-                    $field = $cookie->getCategoryName();
-            }
+            $field = $cookie->getType();
             if ($cookie->getCategory() == 3) {
                 $category = $cookie->getCategoryName();
             }
             if (!$category) continue;
 
             if (!isset($data[$category])) $data[$category] = [
-                'field' => strtolower($field),
+                'field' => $field,
                 'name' => $category,
                 'cookies' => []
             ];
