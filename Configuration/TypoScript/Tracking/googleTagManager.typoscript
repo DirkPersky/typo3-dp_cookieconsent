@@ -7,6 +7,16 @@ page.headerData.998 {
             negate = 1
         }
 
+        5 = COA
+        5 = {
+            10 = TEXT
+            10.value = https://www.googletagmanager.com
+            10.wrap = <link rel="dns-prefetch" href="|" />
+
+            20 < .10
+            20.wrap = <link rel="preconnect" href="|" />
+        }
+
         10 = COA
         10 {
             wrap = <script data-ignore="1" >(function(){|})();</script>
