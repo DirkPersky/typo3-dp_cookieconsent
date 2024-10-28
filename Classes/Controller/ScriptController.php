@@ -23,7 +23,7 @@ class ScriptController extends ActionController{
      */
     public function listAction(): ResponseInterface
     {
-        $cObj = $this->configurationManager->getContentObject();
+        $cObj = $this->request->getAttribute('currentContentObject');
         // parse Flexform
         $flexFormData = GeneralUtility::makeInstance(FlexFormService::class)->convertFlexFormContentToArray($cObj->data['pi_flexform']);
         // remove duplicate Settings
@@ -42,7 +42,7 @@ class ScriptController extends ActionController{
      */
     public function showAction(): ResponseInterface
     {
-        $cObj = $this->configurationManager->getContentObject();
+        $cObj = $this->request->getAttribute('currentContentObject');
         // parse Flexform
         $flexFormData = GeneralUtility::makeInstance(FlexFormService::class)->convertFlexFormContentToArray($cObj->data['pi_flexform']);
         // remove duplicate Settings
