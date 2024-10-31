@@ -1,105 +1,86 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3DataStructure>
-    <meta type="array">
-        <langDisable>1</langDisable>
-    </meta>
     <sheets>
-        <general>
-            <ROOT type="array">
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.title</sheetTitle>
-                </TCEforms>
-                <el type="array">
-                    <type type="array">
-                        <TCEforms type="array">
-                            <label>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category</label>
-                            <config type="array">
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items>
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category.1</numIndex>
-                                        <numIndex index="1">statistics</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category.2</numIndex>
-                                        <numIndex index="1">marketing</numIndex>
-                                    </numIndex>
-                                </items>
-                                <enableMultiSelectFilterTextfield>1</enableMultiSelectFilterTextfield>
-                            </config>
-                        </TCEforms>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.title</sheetTitle>
+                <el>
+                    <type>
+                        <label>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <numIndex index="0">LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category.1</numIndex>
+                                    <numIndex index="1">statistics</numIndex>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <numIndex index="0">LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_domain_model_cookie.category.2</numIndex>
+                                    <numIndex index="1">marketing</numIndex>
+                                </numIndex>
+                            </items>
+                            <enableMultiSelectFilterTextfield>1</enableMultiSelectFilterTextfield>
+                        </config>
                     </type>
 
-                    <consentscript type="array">
-                        <TCEforms type="array">
-                            <label>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.consentscript</label>
-                            <config type="array">
-                                <type>text</type>
-                                <cols>24</cols>
-                                <rows>8</rows>
-                                <renderType>t3editor</renderType>
-                                <format>html</format>
-                            </config>
-                        </TCEforms>
+                    <consentscript>
+                        <label>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.consentscript</label>
+                        <config>
+                            <type>text</type>
+                            <cols>24</cols>
+                            <rows>8</rows>
+                            <renderType>t3editor</renderType>
+                            <format>html</format>
+                        </config>
                     </consentscript>
 
-                    <records type="array">
-                        <TCEforms type="array">
-                            <label>LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:records</label>
-                            <config type="array">
-                                <type>group</type>
-                                <allowed>tt_content</allowed>
-                                <size>5</size>
-                                <maxitems>200</maxitems>
-                            </config>
-                        </TCEforms>
+                    <records>
+                        <label>LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:records</label>
+                        <config>
+                            <type>group</type>
+                            <allowed>tt_content</allowed>
+                            <size>5</size>
+                            <maxitems>200</maxitems>
+                        </config>
                     </records>
                 </el>
             </ROOT>
-        </general>
+        </sDEF>
         <consent>
-            <ROOT type="array">
-                <TCEforms>
-                    <sheetTitle>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.consent</sheetTitle>
-                </TCEforms>
-                <el type="array">
-                    <notice type="array">
-                        <TCEforms type="array">
-                            <label>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.notice</label>
-                            <config type="array">
-                                <type>input</type>
-                                <size>250</size>
-                                <eval>trim</eval>
-                                <default></default>
-                                <placeholder>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang.xlf:media.notice</placeholder>
-                            </config>
-                        </TCEforms>
+            <ROOT>
+                <sheetTitle>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.consent</sheetTitle>
+                <el>
+                    <notice>
+                        <label>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.notice</label>
+                        <config>
+                            <type>input</type>
+                            <size>250</size>
+                            <eval>trim</eval>
+                            <default></default>
+                            <placeholder>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang.xlf:media.notice</placeholder>
+                        </config>
                     </notice>
-                    <description type="array">
-                        <TCEforms type="array">
-                            <label>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.desc</label>
-                            <config type="array">
-                                <type>text</type>
-                                <cols>250</cols>
-                                <rows>3</rows>
-                                <eval>trim</eval>
-                                <default></default>
-                                <placeholder>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang.xlf:media.desc</placeholder>
-                            </config>
-                        </TCEforms>
+                    <description>
+                        <label>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.desc</label>
+                        <config>
+                            <type>text</type>
+                            <cols>250</cols>
+                            <rows>3</rows>
+                            <eval>trim</eval>
+                            <default></default>
+                            <placeholder>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang.xlf:media.desc</placeholder>
+                        </config>
                     </description>
-                    <btn type="array">
-                        <TCEforms type="array">
-                            <label>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.btn</label>
-                            <config type="array">
-                                <type>input</type>
-                                <size>250</size>
-                                <eval>trim</eval>
-                                <default></default>
-                                <placeholder>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang.xlf:media.btn</placeholder>
-                            </config>
-                        </TCEforms>
+                    <btn>
+                        <label>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.btn</label>
+                        <config>
+                            <type>input</type>
+                            <size>250</size>
+                            <eval>trim</eval>
+                            <default></default>
+                            <placeholder>LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang.xlf:media.btn</placeholder>
+                        </config>
                     </btn>
                 </el>
             </ROOT>

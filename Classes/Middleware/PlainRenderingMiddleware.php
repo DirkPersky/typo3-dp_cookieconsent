@@ -15,6 +15,8 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use TYPO3\CMS\Core\TypoScript\AST\Node\ChildNode;
+use TYPO3\CMS\Core\TypoScript\AST\Node\RootNode;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 
@@ -24,34 +26,37 @@ class PlainRenderingMiddleware implements MiddlewareInterface
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        $frontendController = $GLOBALS['TSFE'];
         // check for default handling
-        if (!$frontendController->isGeneratePage() || !isset($request->getQueryParams()[self::namespace])) {
+        $controller = $request->getAttribute('frontend.controller');
+        if (!isset($request->getQueryParams()[self::namespace]) || !$controller->isGeneratePage()) {
             return $handler->handle($request);
         }
+
+        $frontendTyposcript = $request->getAttribute('frontend.typoscript');
+
+        $configArray = $frontendTyposcript->getConfigArray();
+        $configArray['debug'] = 0;
+        $configArray['disableAllHeaderCode'] = 1;
+        $configArray['disableCharsetHeader'] = 0;
+        $frontendTyposcript->setConfigArray($configArray);
+
         // prepare rendering overwrite
-        $frontendController->config['config']['debug'] = 0;
-        $frontendController->config['config']['disableAllHeaderCode'] = 1;
-        $frontendController->config['config']['disableCharsetHeader'] = 0;
-        // disable svgstore
-        if (isset($frontendController->config['config']['svgstore.'])) $frontendController->config['config']['svgstore.']['enabled'] = 0;
         // set UID
         $uid = $request->getQueryParams()[self::namespace]['content'];
-        // prepare typoscript
-        $frontendController->pSetup = [
-            '10' => 'COA',
+
+        $pageArray = $frontendTyposcript->getPageArray();
+        $pageArray['10'] = 'COA';
+        $pageArray['10.'] = [
+            '10' => 'RECORDS',
             '10.' => [
-                '10' => 'RECORDS',
-                '10.' => [
-                    'tables' => 'tt_content',
-                    'source' => "tt_content_{$uid}"
-                ]
-            ],
+                'tables' => 'tt_content',
+                'source' => "tt_content_{$uid}"
+            ]
         ];
-        // change fluid Layout to remove Wrap
-        if (isset($frontendController->tmpl->setup['lib.']['contentElement.'])) $frontendController->tmpl->setup['lib.']['contentElement.']['layoutRootPaths.'][999] = 'EXT:dp_cookieconsent/Resources/Private/Overwrite/Layouts/';
-        // handle result
+        $frontendTyposcript->setPageArray($pageArray);
+
+        $request = $request->withAttribute('frontend.typoscript', $frontendTyposcript);
+
         return $handler->handle($request);
     }
-
 }
