@@ -25,7 +25,7 @@
     "AGPL-3.0-or-later"
   ],
   "require": {
-    "typo3/cms-core": "^10.4.0||^11.5.0||^12.4.0||^13.4.0||dev-master||dev-main"
+    "typo3/cms-core": "^12.4.0||^13.4.0||dev-main"
   },
   "replace": {
     "typo3-ter/dp_cookieconsent": "self.version"
