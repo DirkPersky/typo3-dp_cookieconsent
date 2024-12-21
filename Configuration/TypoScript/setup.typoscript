@@ -141,6 +141,4 @@ page {
 # Remove Original Google Tag-Manager & Piwiki from CS_SEO
 page.jsInline.654 >
 
-[{$plugin.tx_cookieconsent.settings.tracking.googleTagManager.id} != ""]
 @import 'EXT:dp_cookieconsent/Configuration/TypoScript/Tracking/googleTagManager.typoscript'
-[END]
