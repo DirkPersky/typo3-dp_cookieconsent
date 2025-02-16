@@ -8,7 +8,7 @@ page.headerData.998 {
         }
 
         5 = COA
-        5 = {
+        5 {
             10 = TEXT
             10.value = https://www.googletagmanager.com
             10.wrap = <link rel="dns-prefetch" href="|" />
