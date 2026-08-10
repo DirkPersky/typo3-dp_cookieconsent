@@ -8,6 +8,7 @@
         {{allow}}
         {{deny}}
     </div>
+    <div class="cc-legal-links">{{legalLinks}}</div>
     <div class="powered-by">Powered by <a href="https://dp-wired.de/?ref=consent-note" rel="noopener" target="_blank">DP Wired</a></div>
 </div>`,f=`<div class="cc-body" id="cookieconsent:body">
     <span class="cc-message" id="cookieconsent:desc">
@@ -18,6 +19,7 @@
         {{config}}
         {{deny}}
     </div>
+    <div class="cc-legal-links">{{legalLinks}}</div>
     <div class="powered-by">Powered by <a href="https://dp-wired.de/?ref=consent-note" rel="noopener" target="_blank">DP Wired</a></div>
 </div>`,h=`<div class="dp--cookie-check">
     <label for="dp--cookie-require">
@@ -80,7 +82,7 @@
             </button>
         </div>
         <div class="cc-config-body">
-            <div class="cc-message">{{message}}</div>
+            <div class="cc-message">{{messageWithLink}}</div>
             <div>
                 {{cookie-group}}
             </div>
@@ -90,6 +92,7 @@
             {{allow}}
             {{allow-all}}
         </div>
+        <div class="cc-legal-links">{{legalLinks}}</div>
         <div class="powered-by">Powered by <a href="https://dp-wired.de/?ref=consent-note" rel="noopener" target="_blank">DP Wired</a></div>
     </div>
 </div>

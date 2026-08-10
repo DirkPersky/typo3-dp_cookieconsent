@@ -35,10 +35,8 @@ $boot = static function (): void {
         [
         ]
     );
-    // wizards
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
-    @import \'EXT:dp_cookieconsent/Configuration/TSconfig/ContentElementWizard.tsconfig\'
-    ');
+    // wizards: page TSconfig is auto-included via Configuration/page.tsconfig since TYPO3 v12
+    // (ExtensionManagementUtility::addPageTSConfig() was removed in TYPO3 v14)
 };
 $boot();
 unset($boot);

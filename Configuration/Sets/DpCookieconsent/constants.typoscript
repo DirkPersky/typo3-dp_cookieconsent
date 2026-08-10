@@ -1,0 +1,2 @@
+# For backward compatibility reasons constants.typoscript was not moved
+@import 'EXT:dp_cookieconsent/Configuration/TypoScript/constants.typoscript'

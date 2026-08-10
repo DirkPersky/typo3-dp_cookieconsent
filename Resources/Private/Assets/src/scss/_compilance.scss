@@ -58,3 +58,19 @@
 .cc-w-100 {
   width: 100%;
 }
+
+.cc-legal-links {
+  text-align: center;
+  padding: .25rem 0 .5rem;
+  font-size: .75em;
+  opacity: .7;
+
+  &:empty {
+    display: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

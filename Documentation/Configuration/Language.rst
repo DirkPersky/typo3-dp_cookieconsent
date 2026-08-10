@@ -14,7 +14,7 @@ You can change the default language packs by adding new translations via TypoScr
 Arguments
 =========
 .. _language_arguments:
-plugin.tx_dp_cookieconsent._LOCAL_LANG.##LANG##.
+plugin.tx_dpcookieconsent._LOCAL_LANG.##LANG##.
 --------------------
 :aspect:`message`
     the default consent message
@@ -56,7 +56,7 @@ plugin.tx_dp_cookieconsent._LOCAL_LANG.##LANG##.
 .. code-block:: typoscript
     :caption: TypoScript setup
 
-    plugin.tx_dp_cookieconsent._LOCAL_LANG {
+    plugin.tx_dpcookieconsent._LOCAL_LANG {
         de {
             message = XXX
             dismiss = XXX

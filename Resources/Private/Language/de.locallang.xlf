@@ -111,6 +111,14 @@
                 <source>Customize Consent Preferences</source>
                 <target>Einstellungen für die Zustimmung anpassen</target>
             </trans-unit>
+            <trans-unit id="legal.imprint">
+                <source>Imprint</source>
+                <target>Impressum</target>
+            </trans-unit>
+            <trans-unit id="legal.privacy">
+                <source>Privacy Policy</source>
+                <target>Datenschutz</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

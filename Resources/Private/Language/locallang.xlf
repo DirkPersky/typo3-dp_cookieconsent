@@ -83,6 +83,12 @@
             <trans-unit id="config.header">
                 <source>Customize Consent Preferences</source>
             </trans-unit>
+			<trans-unit id="legal.imprint">
+				<source>Imprint</source>
+			</trans-unit>
+			<trans-unit id="legal.privacy">
+				<source>Privacy Policy</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -1,5 +1,5 @@
 ```typoscript
-plugin.tx_dp_cookieconsent._LOCAL_LANG {
+plugin.tx_dpcookieconsent._LOCAL_LANG {
     de {
         message = XXX
         dismiss = XXX

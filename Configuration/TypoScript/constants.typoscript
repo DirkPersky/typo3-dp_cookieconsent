@@ -31,6 +31,13 @@ plugin.tx_cookieconsent {
         reloadOnRevoke = false
 
 
+        legalLinks {
+            # cat=plugin.tx_cookieconsent/links; type=int+; label= Impressum: Seiten-ID
+            imprintPid =
+            # cat=plugin.tx_cookieconsent/links; type=int+; label= Datenschutz: Seiten-ID
+            privacyPid =
+        }
+
         tracking.googleTagManager {
             # cat=plugin.tx_cookieconsent/tracking; type=string; label= Google Tag Manager ID
             id =
