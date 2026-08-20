@@ -59,7 +59,11 @@
                 notice: '<f:translate key="media.notice" extensionName="dp_cookieconsent" />',
                 desc: '<f:translate key="media.desc" extensionName="dp_cookieconsent" />',
                 btn: '<f:translate key="media.btn" extensionName="dp_cookieconsent" />',
-            }
+            },
+
+            legalLinks: '<f:if condition="{settings.legalLinks.imprintPid} || {settings.legalLinks.privacyPid}"><f:then><f:if condition="{settings.legalLinks.imprintPid}"><a href=\'<f:uri.page pageUid="{settings.legalLinks.imprintPid}" />\'><f:translate key="legal.imprint" extensionName="dp_cookieconsent" /></a></f:if><f:if condition="{settings.legalLinks.imprintPid} && {settings.legalLinks.privacyPid}"> &nbsp;|&nbsp; </f:if><f:if condition="{settings.legalLinks.privacyPid}"><a href=\'<f:uri.page pageUid="{settings.legalLinks.privacyPid}" />\'><f:translate key="legal.privacy" extensionName="dp_cookieconsent" /></a></f:if></f:then></f:if>',
+
+            messageWithLink: '<f:translate key="message" extensionName="dp_cookieconsent" /> <f:if condition="{settings.url}"><f:then><a role="button" class="cc-link" href=\'<f:uri.page pageUid="{settings.url}" />\' rel="noopener noreferrer nofollow" target="{settings.target}"><f:translate key="link" extensionName="dp_cookieconsent"/></a></f:then></f:if>'
         },
         theme: '<f:format.raw>{settings.theme}</f:format.raw>',
         position: '<f:format.raw>{settings.position}</f:format.raw>',

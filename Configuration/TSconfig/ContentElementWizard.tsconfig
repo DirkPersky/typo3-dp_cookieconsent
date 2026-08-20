@@ -6,8 +6,7 @@ mod {
                 title = LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.title
                 description = LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_ajax.description
                 tt_content_defValues {
-                    CType = list
-                    list_type = dpcookieconsent_pi1
+                    CType = dpcookieconsent_pi1
                 }
             }
 
@@ -16,8 +15,7 @@ mod {
                 title = LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_cookie.title
                 description = LLL:EXT:dp_cookieconsent/Resources/Private/Language/locallang_db.xlf:tx_dpcookieconsent_cookie.description
                 tt_content_defValues {
-                    CType = list
-                    list_type = dpcookieconsent_pi2
+                    CType = dpcookieconsent_pi2
                 }
             }
         }

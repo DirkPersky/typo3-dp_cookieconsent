@@ -1,0 +1,198 @@
+categories:
+  DpCookieconsent:
+    label: 'DP CookieConsent'
+  DpCookieconsent.files:
+    label: 'Files'
+    parent: DpCookieconsent
+  DpCookieconsent.general:
+    label: 'Others'
+    parent: DpCookieconsent
+  DpCookieconsent.tracking:
+    label: 'Tracking'
+    parent: DpCookieconsent
+  DpCookieconsent.overlay:
+    label: 'Overlay'
+    parent: DpCookieconsent
+  DpCookieconsent.palette:
+    label: 'Palette'
+    parent: DpCookieconsent
+  DpCookieconsent.links:
+    label: 'Legal links'
+    parent: DpCookieconsent
+
+settings:
+  plugin.tx_cookieconsent.view.templateRootPath:
+    label: 'templateRootPath'
+    description: 'Override template root path (e.g. EXT:my_sitepackage/Resources/Private/Extensions/dp_cookieconsent/Templates/)'
+    type: string
+    default: ''
+    category: DpCookieconsent.files
+
+  plugin.tx_cookieconsent.view.partialRootPath:
+    label: 'partialRootPath'
+    description: 'Override partial root path'
+    type: string
+    default: ''
+    category: DpCookieconsent.files
+
+  plugin.tx_cookieconsent.view.layoutRootPath:
+    label: 'layoutRootPath'
+    description: 'Override layout root path'
+    type: string
+    default: ''
+    category: DpCookieconsent.files
+
+  plugin.tx_cookieconsent.settings.storagePid:
+    label: 'PID of Cookie Storage'
+    type: int
+    default: 0
+    category: DpCookieconsent.general
+
+  plugin.tx_cookieconsent.settings.url:
+    label: 'PID to Data Protection'
+    type: int
+    default: 0
+    category: DpCookieconsent.general
+
+  plugin.tx_cookieconsent.settings.target:
+    label: 'target for link tag'
+    type: string
+    default: '_blank'
+    category: DpCookieconsent.general
+
+  plugin.tx_cookieconsent.settings.theme:
+    label: 'Layout'
+    type: string
+    default: 'edgeless'
+    enum:
+      edgeless: 'edgeless'
+      classic: 'classic'
+      basic: 'basic'
+      wire: 'wire'
+    category: DpCookieconsent.general
+
+  plugin.tx_cookieconsent.settings.position:
+    label: 'Position'
+    type: string
+    default: 'bottom-right'
+    enum:
+      top: 'top'
+      top-left: 'top-left'
+      top-right: 'top-right'
+      bottom: 'bottom'
+      bottom-left: 'bottom-left'
+      bottom-right: 'bottom-right'
+    category: DpCookieconsent.general
+
+  plugin.tx_cookieconsent.settings.type:
+    label: 'Type'
+    type: string
+    default: 'opt-in'
+    enum:
+      extend: 'extend'
+      opt-in: 'opt-in'
+    category: DpCookieconsent.general
+
+  plugin.tx_cookieconsent.settings.revokable:
+    label: 'adds a button to review the consent window'
+    type: bool
+    default: true
+    category: DpCookieconsent.general
+
+  plugin.tx_cookieconsent.settings.statistics:
+    label: 'pre check statistics in checkboxes layout'
+    type: bool
+    default: false
+    category: DpCookieconsent.general
+
+  plugin.tx_cookieconsent.settings.marketing:
+    label: 'pre check marketing in checkboxes layout'
+    type: bool
+    default: false
+    category: DpCookieconsent.general
+
+  plugin.tx_cookieconsent.settings.reloadOnRevoke:
+    label: 'force page reload after revoke'
+    type: bool
+    default: false
+    category: DpCookieconsent.general
+
+  plugin.tx_cookieconsent.settings.tracking.googleTagManager.id:
+    label: 'Google Tag Manager ID'
+    type: string
+    default: ''
+    category: DpCookieconsent.tracking
+
+  plugin.tx_cookieconsent.settings.tracking.googleTagManager.on:
+    label: 'Init on Checkboxes'
+    type: string
+    default: 'statistics,marketing'
+    category: DpCookieconsent.tracking
+
+  plugin.tx_cookieconsent.settings.overlay.notice:
+    label: 'display iframe overlay'
+    type: bool
+    default: true
+    category: DpCookieconsent.overlay
+
+  plugin.tx_cookieconsent.settings.overlay.box.background:
+    label: 'Overlay: Background'
+    type: color
+    default: 'rgba(0,0,0,.8)'
+    category: DpCookieconsent.overlay
+
+  plugin.tx_cookieconsent.settings.overlay.box.text:
+    label: 'Overlay: Text'
+    type: color
+    default: '#fff'
+    category: DpCookieconsent.overlay
+
+  plugin.tx_cookieconsent.settings.overlay.button.background:
+    label: 'Overlay Button: Background'
+    type: color
+    default: '#b81839'
+    category: DpCookieconsent.overlay
+
+  plugin.tx_cookieconsent.settings.overlay.button.text:
+    label: 'Overlay Button: Text'
+    type: color
+    default: '#fff'
+    category: DpCookieconsent.overlay
+
+  plugin.tx_cookieconsent.settings.palette.popup.background:
+    label: 'Bar: Background'
+    type: color
+    default: 'rgba(0,0,0,.8)'
+    category: DpCookieconsent.palette
+
+  plugin.tx_cookieconsent.settings.palette.popup.text:
+    label: 'Bar: Text'
+    type: color
+    default: '#fff'
+    category: DpCookieconsent.palette
+
+  plugin.tx_cookieconsent.settings.palette.button.background:
+    label: 'Button: Background'
+    type: color
+    default: '#b81839'
+    category: DpCookieconsent.palette
+
+  plugin.tx_cookieconsent.settings.palette.button.text:
+    label: 'Button: Text'
+    type: color
+    default: '#fff'
+    category: DpCookieconsent.palette
+
+  plugin.tx_cookieconsent.settings.legalLinks.imprintPid:
+    label: 'Impressum: Seiten-ID'
+    description: 'Seite, auf die der Impressum-Link im Consent-Banner zeigt'
+    type: page
+    default: 0
+    category: DpCookieconsent.links
+
+  plugin.tx_cookieconsent.settings.legalLinks.privacyPid:
+    label: 'Datenschutz: Seiten-ID'
+    description: 'Seite, auf die der Datenschutz-Link im Consent-Banner zeigt'
+    type: page
+    default: 0
+    category: DpCookieconsent.links

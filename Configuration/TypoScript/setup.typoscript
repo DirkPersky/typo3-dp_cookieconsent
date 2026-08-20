@@ -29,6 +29,11 @@ plugin.tx_dpcookieconsent {
 
         storagePid = {$plugin.tx_cookieconsent.settings.storagePid}
 
+        legalLinks {
+            imprintPid = {$plugin.tx_cookieconsent.settings.legalLinks.imprintPid}
+            privacyPid = {$plugin.tx_cookieconsent.settings.legalLinks.privacyPid}
+        }
+
         checkboxes {
             statistics = {$plugin.tx_cookieconsent.settings.statistics}
             marketing = {$plugin.tx_cookieconsent.settings.marketing}
