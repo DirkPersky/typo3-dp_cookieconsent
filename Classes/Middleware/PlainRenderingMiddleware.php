@@ -29,7 +29,11 @@ class PlainRenderingMiddleware implements MiddlewareInterface
     {
         // check for default handling
         $controller = $request->getAttribute('frontend.controller');
-        if (!isset($request->getQueryParams()[self::namespace]) || !$controller->isGeneratePage()) {
+        // TYPO3 v14 removed the controller; getSetupArray() below needs the full TypoScript setup
+        $isGeneratePage = $controller !== null
+            ? $controller->isGeneratePage()
+            : (bool)$request->getAttribute('frontend.typoscript')?->hasSetup();
+        if (!isset($request->getQueryParams()[self::namespace]) || !$isGeneratePage) {
             return $handler->handle($request);
         }
 
